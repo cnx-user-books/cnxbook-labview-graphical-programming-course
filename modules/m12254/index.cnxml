@@ -1,0 +1,193 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Create String VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>ca1a43b3-2ae0-463a-aa2a-1a72e8459c05</md:uuid>
+</metadata>
+  <!--When 0.6 comes out, this module will need to be revised to
+  include para in the items indicated-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm28624">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item><!--needs para--> 
+	      <!--para--> 
+	      Open a blank VI and build the front panel shown in <link target-id="s1l1f1"/>. Do not add labels for the comments;
+	      they are shown for informational purposes only.
+	      <figure id="s1l1f1">
+		<media id="idp2380496" alt=""><image src="../../media/buildstring.png" mime-type="image/png"/></media>
+	      </figure>
+	      <!--para-->
+	      Use the following hints to build the front panel:
+	      <list id="s1l1l1">
+		<item><!--needs para-->
+		  <!--para-->
+		  Right-click <code>String 2</code> and select
+		  '<code>\</code>' <code>Codes Display</code> from the
+		  shortcut menu.
+		  <!--para-->
+		  The text typed in <code>String 2</code> is
+		  <code>Volts DC: +1.26E+1</code>. As shown using
+		  Codes display in the front panel above, there are
+		  two spaces after the colon (<code>\s\s</code>), and
+		  the text ends with a carriage return
+		  (<code>\r\n</code>). You may see only a
+		  <code>\r</code> or a <code>\n</code> for the
+		  carriage return.
+		</item>
+		<item>
+		  Change <code>String Length</code> and <code>Offset
+		  Past Match</code> to 32-bit signed integer (I32)
+		  representation.
+		</item>
+		<item>
+		  After entering text in the controls, select
+		  <code>Operate&gt;&gt;Make Current Values Default</code> to
+		  set the text as the default values of these
+		  controls.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idp1118272" alt=""><image src="../../media/buildstringbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		    <media id="idm7396096" alt=""><image src="../../media/BuildIcon-23b4.png" mime-type="image/png"/></media>
+		  Place the <code>Build Text Express
+		  VI</code>, located on the
+		  <code>Functions&gt;&gt;Output</code> palette, on the block
+		  diagram. This function converts <code>Number</code>
+		  to a string. The Build Text configuration dialog box
+		  appears.
+		  <list id="s2l1l1l1" list-type="enumerated">
+		    <item>
+		      Type <code>%Header% %Number% %Trailer%</code> in
+		      the <code>Text with Variables in Percents</code>
+		      text box to create three variables. The
+		      variables appear in the <code>Configure
+		      Variables</code> section.
+		    </item>
+		    <item>
+		      Select <code>Number</code> in the
+		      <code>Variable</code> section.
+		    </item>
+		    <item>
+		      In the <code>Variable Properties</code> section,
+		      select the <code>Number</code> option, set the
+		      <code>Format</code> to <code>Format fractional
+		      number</code>. Place a checkmark in the
+		      <code>Use specified precision</code> checkbox
+		      and set the <code>Precision</code> to
+		      <code>4</code>. Leave the <code>Header</code>
+		      and <code>Trailer</code> variables in the
+		      default state.
+		    </item>
+		    <item>
+		      Click the <code>OK</code> button to close the
+		      dialog box.
+		    </item>
+		  </list>
+		</item>
+		<item>
+		    <media id="idp1074256" alt=""><image src="../../media/strglengthicon-8b50.png" mime-type="image/png"/></media>
+		  Place the <code>String
+		  Length</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;String</code>
+		  palette, on the block diagram. This function returns
+		  the number of characters in <code>Result</code>.
+		</item>
+		<item><!--needs para-->
+		    <media id="idp1203728" alt=""><image src="../../media/matchpaticon.png" mime-type="image/png"/></media>
+		  <!--para-->
+		  Place the <code>Match
+		  Pattern</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;String</code>
+		  palette, on the block diagram. This function
+		  searches <code>String 2</code> for a colon
+		  (<code>:</code>).
+		  <!--para-->
+		  Right-click the <code>regular expression</code>
+		  input, select <code>Create&gt;&gt;Constant</code> from the
+		  shortcut menu, type a colon (<code>:</code>), and
+		  press the <code>&lt;Enter&gt;</code> key on the numeric
+		  keypad. You also can click the <code>Enter</code>
+		  button on the toolbar to complete the entry. Do not
+		  use the <code>&lt;Enter&gt;</code> key on the main
+		  keyboard because in this case it adds the return
+		  character to the search expression.
+		</item>
+		<item>
+		    <media id="idp1803632" alt=""><image src="../../media/scanfromstrgicon.png" mime-type="image/png"/></media>
+		  Place the <code>Scan From
+		  String</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;String</code>
+		  palette, on the block diagram. This function
+		  converts the string after the colon to a numeric
+		  value.
+		</item>
+		<item>
+		  Complete the block diagram as shown in <link target-id="s2l1f1"/>.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Icon &amp; Connector Pane</title>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Display the front panel and create an icon and connector
+	      pane so you can use this VI as a subVI later in this
+	      course. Refer to the lesson on <link document="m12204">Modular
+	      Programming</link> for more information about creating
+	      icons and connector panes.
+	      <figure id="s3l1f1">
+		<media id="idp2415216" alt=""><image src="../../media/createstringconpane.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      Save the VI as <code>Create String.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code>
+	      directory. You will use this VI later in the course.
+	    </item>
+	  </list>
+	</section>
+	<section id="s4">
+	  <title>Run the VI</title>
+	  <list id="s4l1" list-type="enumerated">
+	    <item><!--needs para-->
+	      <!--para-->
+	      Change the values of the front panel controls and run
+	      the VI.
+	      <!--para-->
+	      The VI concatenates <code>Header</code>,
+	      <code>Number</code>, and <code>Trailer</code> into
+	      <code>Combined String</code> and displays the string
+	      length.
+	      <!--para-->
+	      The VI also searches <code>String 2</code> for a colon,
+	      converts the string following the colon to <code>Number
+	      Out</code>, and displays the index of the first
+	      character after the colon in <code>Offset Past
+	      Match</code>.
+	    </item>
+	    <item>
+	      Save and close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+
+
+  </content>
+  
+</document>

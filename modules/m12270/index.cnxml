@@ -1,0 +1,198 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Voltmeter VI </title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>bb87e56c-3c23-4843-b27c-eb43a0404bde</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp293264">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idm568688" alt=""><image src="../../media/voltmeterfp.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s1l1l1" list-type="enumerated">
+		<item>
+		  Place the <code>Meter</code>, located on the
+		  <code>Controls&gt;&gt;Numeric Indicators</code> palette,
+		  on the front panel. Configure the meter scale for
+		  <code>0.0</code> to <code>0.4</code>. Use the <code>Labeling</code> tool to double-click
+		  <code>10.0</code> and type <code>0.4</code>. You might need to enlarge the
+		  meter to display the scale as shown in the <link target-id="s1l1f1">example</link>.
+		</item>
+		<item>
+		  Place a <code>Vertical Toggle Switch</code>, located
+		  on the <code>Controls&gt;&gt;Buttons &amp; Switches</code>
+		  palette, on the front panel. Configure the toggle
+		  switch to a default value of <code>False</code> and
+		  a mechanical action of <code>Latch When
+		  Pressed</code>.
+		</item>
+		<item>
+		  Create two free labels, <code>Off</code> and
+		  <code>On</code>, using the <code>Labeling</code>
+		  tool.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idp6549808" alt=""><image src="../../media/voltmeterbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		    <media id="idm6939120" alt=""><image src="../../media/DAQAssistantIcon-b834.png" mime-type="image/png"/></media>
+		  Place the <code>DAQ Assistant</code> Express
+		  VI located on the <code>Functions&gt;&gt;Input
+		  palette</code>, on the block diagram. Configure this
+		  VI to read an analog input channel and return the
+		  voltage.
+		  <list id="s2l1l1l1">
+		    <item>
+		      Select <code>Analog Input&gt;&gt;Voltage</code> for
+		      the measurement to make.
+		    </item>
+		    <item>
+		      Select <code>Dev1&gt;&gt;ai0</code> for the physical
+		      channel.
+		    </item>
+		    <item>
+		      Click the <code>Finish</code> button.
+		    </item>
+		    <item>
+		      The <code>Analog Input Voltage Task</code>
+		      dialog box appears. Configure the <code>Task
+		      Timing</code> to <code>Acquire 1 Sample</code>.
+		    </item>
+		    <item>
+		      Click the <code>OK</code> button to close the
+		      <code>Analog Input Voltage Task
+		      Configuration</code> dialog box. This saves the
+		      settings specified for the task in the <code>DAQ
+		      Assistant Express</code> VI.
+		    </item>
+		  </list>
+		</item>
+		<item>
+		    <media id="idm8153984" alt=""><image src="../../media/waitms-cf81.png" mime-type="image/png"/></media>
+		  Place the <code>Wait Until Next ms
+		  Multiple</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Time &amp;
+		  Dialog</code> palette, on the block
+		  diagram. Right-click the input and select
+		  <code>Create Constant</code> from the shortcut
+		  menu. Type <code>100</code> in the constant to cause
+		  the loop to execute every 100 ms.
+		</item>
+		<item>
+		    <media id="idm7613376" alt=""><image src="../../media/unbundle-36e1.png" mime-type="image/png"/></media>
+		  Place the <code>Unbundle by
+		  Name</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code>
+		  palette, on the block diagram. Use this function to
+		  access the <code>status</code> from the error
+		  cluster.
+		</item>
+		<item>
+		    <media id="idm7647856" alt=""><image src="../../media/or-d3e4.png" mime-type="image/png"/></media>
+		  Place the <code>Or</code>
+		  function, located on the <code>Functions&gt;&gt;Arithmetic
+		  &amp; Comparison&gt;&gt;Express Boolean</code> palette, on
+		  the block diagram. This function stops the loop if
+		  an error occurs or the user clicks the power switch
+		  on the front panel.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Voltmeter.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code>
+	      directory. You will use this VI later in the course.
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      Display the front panel and run the VI.
+	      <!--para-->
+	      The meter displays the voltage the temperature sensor
+	      outputs. Place your finger on the temperature sensor and
+	      notice that the voltage increases.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Scales</title>
+	  <para id="s3p1">
+	    The temperature sensor on the DAQ Signal Accessory outputs
+	    the voltage in degrees Celsius, scaled by 100. In order to
+	    convert the voltage into degrees Celsius, it is necessary
+	    to multiply the voltage by 100. You could multiply the
+	    output of the <code>DAQ Assistant</code> Express VI by 100, or
+	    configure the <code>DAQ Assistant</code> Express VI to automatically
+	    scale the voltage. Using the capabilities that exist
+	    within the VI reduces block diagram clutter.
+	  </para>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Double-click the <code>DAQ Assistant</code> to display
+	      the <code>Analog Input Voltage Task Configuration</code>
+	      dialog box.
+	    </item>
+	    <item>
+	      Select <code>Create New</code> in the <code>Custom
+	      Scaling</code> pull-down menu.
+	    </item>
+	    <item>
+	      Select <code>Linear</code> and name the scale
+	      <code>temperature</code>. Click the <code>Finish</code>
+	      button.
+	    </item>
+	    <item>
+	      A dialog box appears where you can scale the data by a
+	      multiplier and an offset.
+	      <list id="s3l1l1" list-type="enumerated">
+		<item>
+		  Set the <code>slope</code> to <code>100</code> and the <code>Scaled
+		  Units</code> to <code>Celsius</code>.
+		</item>
+		<item>
+		  Click the <code>OK</code> button to close the dialog
+		  box.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      In the <code>Analog Input Voltage Task
+	      Configuration</code> dialog box, set the <code>minimum input
+	      range</code> to <code>0</code>, set the <code>maximum input range</code> to
+	      <code>100</code>, and click the <code>OK</code> button
+	      to return to the block diagram.
+	    </item>
+	    <item>
+	      Run the VI. The temperature displays in the meter. The
+	      temperature values are 100 times greater than the
+	      voltage values. Change the meter scale to see the
+	      correct values.
+	    </item>
+	    <item>
+	      Stop the VI. Save the VI but do not close it. You will
+	      use the VI in the <link document="m12271">Measurement
+	      Averaging VI</link> exercise.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+		  
+		      
+  </content>
+  
+</document>

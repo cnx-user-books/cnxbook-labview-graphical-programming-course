@@ -1,0 +1,223 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Configuring the Appearance of Front Panels</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>020434ab-6110-4049-9ff2-157e2bc01164</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      After you build a VI, you can configure the appearance of the
+      front panel so users can more easily operate the VI. For
+      example, you can hide the menu bar and scrollbars to create VIs
+      that look and behave like standard dialog boxes for each
+      platform.  
+    </para>
+    <para id="p2">
+      Select <code>File&gt;&gt;VI Properties</code> to configure the
+      appearance and behavior of a VI. You also can right-click the VI
+      icon on the front panel or block diagram and select <code>VI
+      Properties</code> from the shortcut menu. You cannot access the
+      <code>VI Properties</code> dialog box while a VI is
+      running. Refer to the <cite><cite-title>LabVIEW Basics II: Development
+      Course Manual</cite-title></cite> for more information about configuring the
+      behavior of VIs.
+    </para>
+    <para id="p3">
+      Use the <code>Category</code> pull-down menu at the top of the
+      <code>VI Properties</code> dialog box to select from several
+      different option categories, including the following:
+      <list id="p3l1" list-type="labeled-item">
+	<item><label>General</label>
+	   
+	  
+	  Displays the current path where a VI is saved, its revision
+	  number, revision history, and any changes made since the VI
+	  was last saved. You also can use this page to edit the icon
+	  or the size of the alignment grid for the VI.
+	</item>
+
+	<item><label>Documentation</label>
+	  
+
+	  Use this page to add a description of the VI and link to a
+	  help file topic. Refer to the original <link document="m12209">Thermometer VI</link> for more information about documenting VIs.
+	</item>
+
+	<item><label>Security</label>
+	  
+
+	  Use this page to lock or password-protect a VI.
+	</item>
+
+	<item><label>Window Appearance</label>
+	  
+	  
+	  Use this page to configure various window settings.
+	</item>
+
+	<item><label>Window Size</label>
+	  
+
+	  Use this page to set the size of the window.
+	</item>
+
+	<item><label>Execution</label>
+	  
+
+	  Use this page to configure how a VI runs. For example, you
+	  can configure a VI to run immediately when it opens or to
+	  pause when called as a subVI.
+	</item>
+
+	<item><label>Editor Options</label>
+	  
+
+	  Use this page to set the size of the alignment grid for the
+	  current VI and to change the style of control or indicator
+	  LabVIEW creates when you right-click a terminal and select
+	  <code>Create&gt;&gt;Control</code> or
+	  <code>Create&gt;&gt;Indicator</code> from the shortcut menu.
+	</item>
+      </list>
+    </para>
+    <section id="s1">
+      <title>Window Appearance</title>
+      <para id="s1p1">
+	In the <code>VI Properties</code> dialog box, select
+	<code>Window Appearance</code> from the <code>Category</code>
+	pull-down menu to customize the window appearance for VIs.
+      </para>
+      <para id="s1p2">
+	These options apply to the VI when it is running. Use these
+	options to change how the user interacts with the application
+	by restricting access to LabVIEW features and by changing the
+	way the window looks and behaves. You can make the VI look and
+	act like a dialog box so the user cannot interact with other
+	windows while the VI window is open. You also can remove the
+	scrollbars and toolbar, and you can set a window to be
+	centered or automatically sized to fit the screen.
+      </para>
+      <para id="s1p3">
+	By default, the VI window title is the same as the VI
+	name. You can customize the VI window title to make it more
+	descriptive than the VI filename. This is useful for localized
+	VIs so the VI window title can be translated to the local
+	language. Remove the checkmark from the <code>Same as VI
+	Name</code> checkbox to edit <code>Window title</code>.
+      </para>
+      <para id="s1p4">
+	To configure the window appearance, select one of the
+	following window styles. A graphical representation of each
+	style displays on the right when you select the style.
+	<list id="s1p4l1" list-type="labeled-item">
+	  <item><label>Top-level Application Window</label>
+	    
+	    
+	    Shows the title bar and menu bar, hides the scrollbars and
+	    toolbar, allows the user to close the window, allows
+	    run-time shortcut menus, does not allow resizing, and
+	    shows the front panel when called.
+	  </item>
+	  <item><label>Dialog</label>
+	    
+	    
+	    The VI functions as a dialog box in the operating system,
+	    so the user cannot interact with other LabVIEW windows
+	    while this VI window is open. This option does not prevent
+	    you from bringing windows of other applications to the
+	    front. (<term>UNIX</term>) You cannot make a window stay
+	    in front of all other windows.
+
+	    Dialog style windows stay on top, have no menu bar,
+	    scrollbars, or toolbar, allow the user to close the window
+	    but not resize it, allow run-time shortcut menus, and show
+	    the front panel when called. Also, if a Boolean parameter
+	    on the front panel is associated with the
+	    <code>&lt;Enter&gt;</code> or <code>&lt;Return&gt;</code>
+	    key, LabVIEW highlights the parameter with a dark border.
+	  </item>
+	  <item><label>Default</label>
+	    
+
+	    Same window style used in the LabVIEW development
+	    environment.
+	  </item>
+	  <item><label>Custom</label>
+	    
+
+	    Custom window style.
+	  </item>
+	  <item><label>Customize</label>
+	    
+
+	    Displays the Customize Window Appearance dialog box.
+	  </item>
+	</list>
+      </para>
+    </section>
+    <section id="s2">
+      <title>Window Size</title>
+      <para id="s2p1">
+	In the <code>VI Properties</code> dialog box, select
+	<code>Window Size</code> from the <code>Category</code>
+	pull-down menu to customize the window size for VIs. This page
+	includes the following components:
+	<list id="s2p1l1" list-type="labeled-item">
+	  <item><label>Minimum Panel Size</label>
+	    
+
+	    Sets the minimum size of the front panel. If you allow the
+	    user to resize the window on the <code>Window
+	    Appearance</code> page, the user cannot resize the front
+	    panel smaller than the width and height you set on this
+	    page.
+	  </item>
+	  <item><label>Size the front panel to the width and height of the
+	    entire screen</label>
+	    
+
+	    Automatically resizes the front panel window to fit the
+	    screen when you run the VI. The VI does not retain a
+	    record of its original size and location, so it stays in
+	    the new location if you switch back to edit mode.
+	  </item>
+	  <item><label>Maintain proportions of window for different monitor
+	    resolutions</label>
+	    
+
+	    Resizes the VI so it takes up approximately the same
+	    amount of screen space when opened on a computer with a
+	    different monitor resolution. For example, if you develop
+	    a VI on a computer with a monitor resolution of 
+	    <m:math>
+	      <m:apply>
+		<m:cartesianproduct/>
+		<m:cn>1,024</m:cn>
+		<m:cn>768</m:cn>
+	      </m:apply>
+	    </m:math>, you might want to run the VI on a computer
+	    with a monitor resolution of 
+	    <m:math>
+	      <m:apply>
+		<m:cartesianproduct/>
+		<m:cn>800</m:cn>
+		<m:cn>600</m:cn>
+	      </m:apply>
+	    </m:math>. Use this control in conjunction with scaling
+	    one or all the objects on the front panel.
+	  </item>
+	  <item><label>Scale all objects on front panel as the window
+	    resizes</label>
+	    
+	    
+	   Automatically resizes all front panel objects with respect
+	   to and in proportion to the size of the front panel
+	   window. Text does not resize because the font sizes are
+	   fixed. Use this option when you allow the user to resize
+	   the front panel window.
+	  </item>
+	</list>
+      </para>
+    </section>
+
+  </content>
+</document>

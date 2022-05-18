@@ -1,0 +1,181 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Waveform and XY Graphs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>dbe1828b-17f2-47cb-b892-8ea049ded47b</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="delete_me">
+      VIs with graphs usually collect the data in an array and then
+      plot the data to the graph. <link target-id="real"/> shows the
+      elements of a graph.
+      
+      <figure id="real">
+	<media id="idm7126400" alt=""><image src="../../media/intensitygraphchart-89a3.png" mime-type="image/png"/></media>
+      </figure>
+    </para>   
+    
+    <para id="a_me">
+      The graphs located on the <code>Controls&gt;&gt;Graph
+      Indicators</code> palette include the <code>waveform
+      graph</code> and <code>XY graph</code>. The <code>waveform
+      graph</code> plots only single-valued functions, as in 
+      <m:math>
+	<m:apply>
+	  <m:eq/>
+	  <m:ci>y</m:ci>
+	  <m:apply>
+	    <m:ci type="fn">f</m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:apply>
+      </m:math>, with points evenly distributed along the x-axis, such
+      as acquired time-varying waveforms.  <code>XY graphs</code>
+      display any set of points, evenly sampled or not.
+    </para>
+    
+    <para id="b_me">
+      Resize the plot legend to display multiple plots. Use multiple
+      plots to save space on the front panel and to make comparisons
+      between plots.  <code>XY</code> and <code>waveform graphs</code>
+      automatically adapt to multiple plots.
+    </para>
+    
+    <section id="idm6343872">
+      <title> Single Plot Waveform Graphs </title>
+      
+      <para id="c_me">
+	The <code>waveform graph</code> accepts a single array of
+	values and interprets the data as points on the graph and
+	increments the <m:math><m:ci>x</m:ci></m:math> index by one
+	starting at 
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>x</m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>. The graph also accepts a cluster of an
+	initial <m:math><m:ci>x</m:ci></m:math> value, a 
+	<m:math>
+	  <m:apply>
+	    <m:ci><m:mo>Δ</m:mo></m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:math>, and an array of <m:math><m:ci>y</m:ci></m:math>
+	data. Refer to the <code>Waveform Graph</code> VI in the
+	<code>NI Example Finder</code> for examples of the data types
+	that single-plot <code>waveform graphs</code> accept.
+      </para>
+    </section>
+    
+    <section id="idp2581920">
+      <title>Multiplot Waveform Graphs </title>
+      <para id="q_me">
+	A multiplot <code>waveform graph</code> accepts a 2D array of
+	values, where each row of the array is a single plot. The
+	graph interprets the data as points on the graph and
+	increments the <m:math><m:ci>x</m:ci></m:math> index by one,
+	starting at 
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>x</m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>. Wire a 2D array data type to the graph, right-click
+	the graph, and select <code>Transpose Array</code> from the
+	shortcut menu to handle each column of the array as a plot.
+	Refer to the <code>(Y) Multi Plot 1 graph</code> in the
+	<code>Waveform Graph</code> VI in the <code>NI Example
+	Finder</code> for an example of a graph that accepts this data
+	type.
+      </para>
+      
+      <para id="w_me">
+	A multiplot <code>waveform graph</code> also accepts a cluster
+	of an <m:math><m:ci>x</m:ci></m:math> value, a
+	<m:math>
+	  <m:apply>
+	    <m:ci><m:mo>Δ</m:mo></m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:math> value, and a 2D array of
+	<m:math><m:ci>y</m:ci></m:math> data. The graph interprets the
+	<m:math><m:ci>y</m:ci></m:math> data as points on the graph
+	and increments the <m:math><m:ci>x</m:ci></m:math> index by 
+	<m:math>
+	  <m:apply>
+	    <m:ci><m:mo>Δ</m:mo></m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:math>, starting at 
+	<m:math>
+	  <m:apply>
+	    <m:eq/>
+	    <m:ci>x</m:ci>
+	    <m:cn>0</m:cn>
+	  </m:apply>
+	</m:math>. Refer to the <code>(Xo, dX, Y) Multi Plot 3
+	graph</code> in the <code>Waveform Graph</code> VI in the
+	<code>NI Example Finder</code> for an example of a graph that
+	accepts this data type.
+      </para>
+      
+      <para id="r_me">
+	A multiplot <code>waveform graph</code> accepts a cluster of
+	an initial <m:math><m:ci>x</m:ci></m:math> value, a 
+	<m:math>
+	  <m:apply>
+	    <m:ci><m:mo>Δ</m:mo></m:ci>
+	    <m:ci>x</m:ci>
+	  </m:apply>
+	</m:math>
+	value, and an array that contains clusters. Each cluster
+	contains a point array that contains the
+	<m:math><m:ci>y</m:ci></m:math> data. You use the
+	<code>Bundle</code> function to bundle the arrays into
+	clusters, and you use the <code>Build Array</code> function to
+	build the resulting clusters into an array. You also can use
+	the <code>Build Cluster</code> Array, which creates arrays of
+	clusters that contain inputs you specify. Refer to the
+	<code>(Xo, dX, Y) Multi Plot 2</code> graph in the
+	<code>Waveform Graph</code> VI in the <code>NI Example
+	Finder</code> for an example of a graph that accepts this data
+	type.
+      </para>
+      
+    </section>
+    
+    
+    <section id="idp1800160">
+      <title>Single Plot XY Graphs </title>
+      <para id="t_me">
+	The <code>single-plot XY graph</code> accepts a cluster that
+	contains an <m:math><m:ci>x</m:ci></m:math> array and a
+	<m:math><m:ci>y</m:ci></m:math> array. The <code>XY
+	graph</code> also accepts an array of points, where a point is
+	a cluster that contains an <m:math><m:ci>x</m:ci></m:math>
+	value and a <m:math><m:ci>y</m:ci></m:math> value. Refer to
+	the <code>XY Graph</code> VI in the <code>NI Example
+	Finder</code> for an example of single-plot <code>XY
+	graph</code> data types.
+	</para>
+    </section>
+    
+    <section id="idp2209168">
+      <title>Multiplot XY Graphs</title>
+      <para id="y_me">
+	The multiplot <code>XY graph</code> accepts an array of plots,
+	where a plot is a cluster that contains an x array and a y
+	array. The multiplot <code>XY graph</code> also accepts an
+	array of clusters of plots, where a plot is an array of
+	points. A point is a cluster that contains an x value and a y
+	value. Refer to the <code>XY Graph</code> VI in the<code> NI
+	Example Finder</code> for an example of multiplot <code>XY
+	graph</code> data types.
+      </para>
+      
+    </section>
+  </content>
+  
+</document>

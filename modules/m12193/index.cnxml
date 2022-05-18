@@ -1,0 +1,777 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+	<title>LabVIEW Environment</title>
+	<metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c3c117b4-2f5e-4196-8181-a053c7d135ba</md:uuid>
+</metadata>
+	<content>
+		<para id="para1">
+      When you launch LabVIEW, the <link target-id="f1">navigation dialog
+      box</link> appears that includes introductory material and
+      common commands.  </para>
+		<figure id="f1">
+			<media id="idp1111728" alt=""><image src="../../media/LabVIEWdialogbox.png" mime-type="image/png"/></media>
+			<caption>LabVIEW Dialog Box</caption>
+		</figure>
+		<para id="para2">
+      The LabVIEW dialog box includes the following components:
+    </para>
+		<list id="list1">
+			<item>
+	A menu with standard items such as <code>File&gt;&gt;Exit</code>.
+      </item>
+			<item>
+	A set of buttons for creating and opening VIs, configuring data
+	acquisition devices, and finding helpful information.
+	<list id="list2" list-type="labeled-item">
+					<item>
+	    Click the <code>New</code> button to create a new
+	    VI. Click the arrow on the <code>New</code> button to
+	    choose to open a blank VI or to open the <code>New</code>
+	    dialog box.
+	  </item>
+					<item>
+	    Click the <code>Open</code> button to open an existing
+	    VI. Click the arrow on the <code>Open</code> button to
+	    open recent files.
+	  </item>
+					<item>
+	    Click the <code>Configure</code> button to configure your
+	    data acquisition devices. Click the arrow on the
+	    <code>Configure</code> button to configure LabVIEW.
+	  </item>
+					<item>
+	    Click the <code>Help</code> button to launch the
+	    <cite><cite-title>LabVIEW Help</cite-title></cite>. Click the arrow on the
+	    <code>Help</code> button for other Help options, including
+	    the <code>NI Example Finder</code>.
+	  </item>
+				</list>
+			</item>
+		</list>
+		<section id="section1">
+			<title>Creating and Saving a VI</title>
+			<para id="para3">
+	When you click the <code>New</code> button in the
+	<code>LabVIEW</code> dialog box, the <code>New</code> dialog
+	box appears. You also can select <code>File&gt;&gt;New</code> to
+	display this dialog box. When you select a template in the
+	<code>Create new</code> list, previews of the VI appear in the
+	<code>Front panel preview</code> and the <code>Block diagram
+	preview</code> sections, and a description of the template
+	appears in the <code>Description</code> section. <link target-id="f2"/> shows the <code>New</code> dialog box and the
+	<code>SubVI with Error Handling VI</code> template.
+      </para>
+			<figure id="f2">
+				<media id="idm6089168" alt=""><image src="../../media/newdialogbox.png" mime-type="image/png"/></media>
+				<caption>New Dialog Box</caption>
+			</figure>
+			<para id="para4">
+	Click the <code>OK</code> button to open the template. You
+	also can double-click the name of the template VI in the
+	<code>Create new</code> list to open the template. If no
+	template is available for the task you want to create, you can
+	start with a blank VI and create a VI to accomplish the
+	specific task. In the <code>LabVIEW</code> dialog box, click
+	the arrow on the <code>New</code> button and select
+	<code>Blank VI</code> from the shortcut menu or press the
+	<code>Ctrl-N</code> keys to open a blank VI.
+      </para>
+			<note type="note" id="idm5917024">
+	You also can open a blank VI by selecting <code>Blank
+	VI</code> from the <code>Create new</code> list in the
+	<code>New</code> dialog box or by selecting <code>File&gt;&gt;New
+	VI</code>.
+      </note>
+			<section id="section2">
+				<title>Open/Templates</title>
+				<para id="para5">
+	  Use the <code>New</code> dialog box to create different
+	  components in LabVIEW to help you build an application. You
+	  can start with a blank VI to write a VI from scratch, or
+	  start with a template to simplify the programming. The
+	  <code>New</code> dialog box includes the following
+	  components:
+	</para>
+				<list id="list3" list-type="labeled-item">
+					<item><label>Create new</label>
+						Displays templates you can use to
+	    start building VIs and other LabVIEW documents. Select
+	    from the following templates and click the <code>OK</code>
+	    button to start building a VI or other LabVIEW document.
+	    <list id="list4" list-type="labeled-item">
+							<item><label>Blank VI</label>
+								Opens a blank front panel and
+		blank block diagram.
+	      </item>
+							<item><label>VI from Template</label>
+								Opens a front panel and
+		block diagram with components you need to build
+		different types of VIs.
+			</item>
+							<item><label>Other Document Types</label>
+								Opens
+		the tools you use to build other LabVIEW objects.
+	      </item>
+						</list></item>
+					<item><label>Browse for Template</label>
+						Displays the
+	    <code>Browse</code> dialog box so you can navigate to a
+	    VI, control, or template. If you previously have browsed
+	    for and selected a template from this dialog box, use the
+	    pull-down menu of the <code>Browse</code> button to select
+	    a template to reopen it.
+	  </item>
+					<item><label>Front panel preview</label>
+						Displays the front panel
+	    for the VI template you selected in the <code>Create
+	    new</code> list.
+	  </item>
+					<item><label>Block diagram preview</label>
+						Displays the block
+	    diagram for the VI template you selected in the
+	    <code>Create new</code> list.
+	  </item>
+					<item><label>Description</label>
+						Displays a description of the
+	    template you selected in the <code>Create new</code> list
+	    if the template includes a description.
+	  </item>
+				</list>
+			</section>
+			<section id="section3">
+				<title>Opening an Existing VI</title>
+				<para id="para6">
+	  You load a VI into memory by selecting
+	  <code>File&gt;&gt;Open</code>. In the <code>Choose the VI to
+	  open</code> dialog box that appears, navigate to the VI you
+	  want to open.
+	</para>
+				<para id="para7">
+	  The VIs you edit in this course are located in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+				<para id="para8">
+	  As the VI loads, a status dialog box similar to <link target-id="f3"/> might appear.
+	</para>
+				<figure id="f3">
+					<media id="idp1846480" alt=""><image src="../../media/loading.png" mime-type="image/png"/></media>
+				</figure>
+				<para id="para9">
+	  The <code>Loading</code> section lists the subVIs of the VI
+	  as they are loaded into memory. <code>Number Loaded</code>
+	  is the number of subVIs loaded into memory so far. You can
+	  cancel the load at any time by clicking the
+	  <code>Stop</code> button.
+	</para>
+				<para id="para10">
+	  If LabVIEW cannot immediately locate a subVI, it begins
+	  searching through all directories specified by the <code>VI
+	  Search Path</code>. You can edit the <code>VI Search
+	  Path</code> by selecting <code>Tools&gt;&gt;Options</code> and
+	  selecting <code>Paths</code> from the top pull-down
+	  menu. The <code>Searching</code> section lists directories
+	  or VIs as LabVIEW searches through them. You can have
+	  LabVIEW ignore a subVI by clicking the <code>Ignore
+	  SubVI</code> button, or you can click the
+	  <code>Browse</code> button to search for the missing subVI.
+	</para>
+			</section>
+			<section id="section4">
+				<title>Saving VIs</title>
+				<para id="para11">
+	  Select <code>Save</code>, <code>Save As</code>, <code>Save
+	  All</code>, or <code>Save with Options</code> from the
+	  <code>File</code> menu to save VIs as individual files or
+	  group several VIs together and save them in a VI library. VI
+	  library files end with the extension
+	  <code>.llb</code>. National Instruments recommends that you
+	  save VIs as individual files, organized in directories,
+	  especially if multiple developers are working on the same
+	  project.
+	</para>
+				<para id="para12">
+	  LabVIEW uses the native file dialog boxes so they act
+	  similar to other applications on the computer. You can
+	  disable this feature by selecting
+	  <code>Tools&gt;&gt;Options</code> and selecting
+	  <code>Miscellaneous</code> from the top pull-down menu. If
+	  you disable native file dialogs, LabVIEW uses its own
+	  platform-independent file dialog boxes with some convenient
+	  features, such as providing a list of recent paths and
+	  reducing the steps necessary to save VIs in VI libraries.
+	</para>
+			</section>
+			<section id="section5">
+				<title>Moving VIs Across Platforms</title>
+				<para id="para13">
+	  You can transfer VIs from one platform to another, such as
+	  from Mac OS to Windows. LabVIEW automatically translates and
+	  recompiles the VIs on the new platform.
+	</para>
+				<para id="para14">
+	  Because VIs are files, you can use any file transfer method
+	  or utility to move VIs between platforms. You can port VIs
+	  over networks using FTP, Z or XModem protocols, or similar
+	  utilities. Such network transfers eliminate the need for
+	  additional file translation software. If you port VIs using
+	  magnetic media, such as floppy disks or a moveable external
+	  hard drive, you need a generic file transfer utility
+	  program, such as the following:
+	</para>
+				<list id="list6">
+					<item>
+	    (<emphasis>Windows</emphasis>) MacDisk and TransferPro
+	    transfer Mac OS files to the PC format and vice versa.
+	  </item>
+					<item>
+	    (<emphasis>Mac OS</emphasis>) DOS Mounter, MacLink, and
+	    Apple File Exchange convert PC files to the Mac OS format
+	    and vice versa.
+	  </item>
+					<item>
+	    (<emphasis>Sun</emphasis>) PC File System (PCFS) converts
+	    PC files to the Sun format and vice versa.
+	  </item>
+				</list>
+				<note type="note" id="idm5534912">
+	  Certain operating system-specific VIs are not portable
+	  between platforms, such as DDE (Dynamic Data Exchange) VIs,
+	  ActiveX VIs, and AppleEvents.
+	</note>
+				<para id="para15">
+	  Refer to the <cite><cite-title>Porting and Localizing LabVIEW VIs</cite-title></cite>
+	  Application Note, available by selecting <code>Help&gt;&gt;Search
+	  the LabVIEW Bookshelf</code>, for more information about
+	  porting VIs.
+	</para>
+			</section>
+		</section>
+		<section id="section6">
+			<title>Menus</title>
+			<para id="para16">
+	The menus at the top of a VI window contain items common to
+	other applications, such as <code>Open</code>,
+	<code>Save</code>, <code>Copy</code>, and <code>Paste</code>,
+	and other items specific to LabVIEW. Some menu items also list
+	shortcut key combinations.
+      </para>
+			<para id="para17">
+	(<emphasis>Mac OS</emphasis>) The menus appear at the top of
+	the screen.
+      </para>
+			<para id="para18">
+	(<emphasis>Windows</emphasis> and <emphasis>UNIX</emphasis>)
+	The menus display only the most recently used items by
+	default. Click the arrows at the bottom of a menu to display
+	all items. You can display all menu items by default by
+	selecting <code>Tools&gt;&gt;Options</code> and selecting
+	<code>Miscellaneous</code> from the top pull-down menu.
+      </para>
+			<note type="note" id="idp2880592">
+	Some menu items are unavailable while a VI is in run mode.
+      </note>
+			<list id="list7">
+				<item>
+	  The <code>File</code> menu contains items used for basic
+	  file operations, such as opening, closing, saving, and
+	  printing files.
+	</item>
+				<item>
+	  The <code>Edit</code> menu contains items that allow you to
+	  search for and modify LabVIEW files and their components.
+	</item>
+				<item>
+	  The <code>Operate</code> menu contains items you use to
+	  control the operation of VIs.
+	</item>
+				<item>
+	  The <code>Tools</code> menu contains items for configuring
+	  LabVIEW, your projects, and your VIs.
+	</item>
+				<item>
+	  The <code>Browse</code> menu contains items that allow you
+	  to view aspects of the current VI and its hierarchy.
+	</item>
+				<item>
+	  The <code>Window</code> menu contains items that allow you
+	  to configure the appearance of the current windows and
+	  palettes. You also can access the <code>Error List</code>
+	  window and view the contents of the clipboard.
+	</item>
+				<item>
+	  The <code>Help</code> menu contains items to explain and
+	  define LabVIEW features and other components, provide full
+	  LabVIEW documentation, and access National Instruments
+	  technical support.
+	</item>
+			</list>
+		</section>
+		<section id="section7">
+			<title>Front Panel and Block Diagram Windows</title>
+			<para id="para19">
+	When you open a blank VI, an untitled front panel window
+	appears. This window displays the front panel and is one of
+	the two LabVIEW windows you use to build a VI. The other
+	window contains the block diagram. The illustration in <link target-id="f4"/> shows a front panel and its corresponding block
+	diagram with front panel and block diagram components.
+      </para>
+			<figure id="f4">
+				<media id="idp1862512" alt=""><image src="../../media/usetemp.png" mime-type="image/png"/></media>
+				<caption>
+	  1. Toolbar, 
+	  2. Owned Label, 
+	  3. Numeric Control, 
+	  4. Free Label, 
+	  5. Numeric Control Terminal, 
+	  6. Knob Terminal, 
+	  7. Numeric Constant, 
+	  8. Multiply Function, 
+	  9. Icon, 
+	  10. Knob Control, 
+	  11. Plot Legend, 
+	  12. XY Graph, 
+	  13. Wire Data Path, 
+	  14. XY Graph Terminal, 
+	  15. Bundle Function, 
+	  16. SubVI, 
+	  17. For Loop Structure
+	</caption>
+			</figure>
+		</section>
+		<section id="section8">
+			<title>Front Panel Toolbar</title>
+			<para id="para20">
+	Use the toolbar buttons to run and edit a VI. The toolbar in
+	<link target-id="f5"/> appears on the front panel.
+      </para>
+			<figure id="f5">
+				<media id="idp751392" alt=""><image src="../../media/fptoolbar.png" mime-type="image/png"/></media>
+			</figure>
+			<para id="para21">
+				<media id="idp331056" alt=""><image src="../../media/run-00e5.png" mime-type="image/png"/></media> Click the
+	<code>Run</code> button to run a VI. LabVIEW compiles the VI,
+	if necessary. You can run a VI if the Run button appears as a
+	solid white arrow. The solid white arrow, shown above, also
+	indicates you can use the VI as a subVI if you create a
+	connector pane for the VI.
+      </para>
+			<para id="para22">
+				<media id="idm10359328" alt=""><image src="../../media/runtop.png" mime-type="image/png"/></media> While the VI runs,
+	the <code>Run</code> button appears as shown at left if the VI
+	is a top-level VI, meaning it has no callers and therefore is
+	not a subVI.
+      </para>
+			<para id="para">
+				<media id="idm5582016" alt=""><image src="../../media/runsubvi.png" mime-type="image/png"/></media> If the VI that
+	is running is a subVI, the <code>Run</code> button appears as
+	shown at left.
+      </para>
+			<para id="para23">
+				<media id="idp2763936" alt=""><image src="../../media/brokrun.png" mime-type="image/png"/></media> The
+	<code>Run</code> button appears broken, shown at left, when
+	the VI you are creating or editing contains errors. If the
+	<code>Run</code> button still appears broken after you finish
+	wiring the block diagram, the VI is broken and cannot
+	run. Click this button to display the <code>Error list</code>
+	window, which lists all errors and warnings.
+      </para>
+			<para id="para24">
+				<media id="idp58208" alt=""><image src="../../media/contrun-7017.png" mime-type="image/png"/></media> Click the
+	<code>Run Continuously</code> button, shown at left, to run
+	the VI until you abort or pause execution. You also can click
+	the button again to disable continuous running.
+      </para>
+			<para id="para25">
+				<media id="idp1127920" alt=""><image src="../../media/abortexe.png" mime-type="image/png"/></media> While the VI
+	runs, the <code>Abort Execution</code> button, shown at left,
+	appears. Click this button to stop the VI immediately if there
+	is no other way to stop the VI. If more than one running
+	top-level VI uses the VI, the button is dimmed.
+      </para>
+			<note type="note" id="idp1336912">
+	Avoid using the <code>Abort Execution</code> button to stop a
+	VI. Either let the VI complete its data flow or design a
+	method to stop the VI programmatically. By doing so, the VI is
+	at a known state. For example, place a button on the front
+	panel that stops the VI when you click it.
+      </note>
+			<para id="para26">
+				<media id="idp7457632" alt=""><image src="../../media/pause.png" mime-type="image/png"/></media> Click the
+	<code>Pause</code> button, shown at left, to pause a running
+	VI. When you click the <code>Pause</code> button, LabVIEW
+	highlights on the block diagram the location where you paused
+	execution, and the <code>Pause</code> button appears
+	red. Click the button again to continue running the VI.
+      </para>
+			<para id="para27">
+				<media id="idp2181296" alt=""><image src="../../media/font.png" mime-type="image/png"/></media> Select the
+	<code>Text Settings</code> pull-down menu, shown at left, to
+	change the font settings for the selected portions of the VI,
+	including size, style, and color.
+      </para>
+			<para id="para28">
+				<media id="idm5209920" alt=""><image src="../../media/align.png" mime-type="image/png"/></media> Select the
+	<code>Align Objects</code> pull-down menu, shown at left, to
+	align objects along axes, including vertical, top edge, left,
+	and so on.
+      </para>
+			<para id="para29">
+				<media id="idm6175712" alt=""><image src="../../media/distrbut.png" mime-type="image/png"/></media> Select the
+	<code>Distribute Objects</code> pull-down menu, shown at left,
+	to space objects evenly, including gaps, compression, and so
+	on.
+      </para>
+			<para id="para30">
+				<media id="idp3416944" alt=""><image src="../../media/resizeobjects.png" mime-type="image/png"/></media> Select the
+	<code>Resize Objects</code> pull-down menu, shown at left, to
+	resize multiple front panel objects to the same size.
+      </para>
+			<para id="para31">
+				<media id="idp2498272" alt=""><image src="../../media/reorder.png" mime-type="image/png"/></media> Select the
+	<code>Reorder</code> pull-down menu, shown at left, when you
+	have objects that overlap each other and you want to define
+	which one is in front or back of another. Select one of the
+	objects with the Positioning tool and then select from
+	<code>Move Forward</code>, <code>Move Backward</code>,
+	<code>Move To Front</code>, and <code>Move To Back</code>.
+      </para>
+			<para id="para32">
+				<media id="idp2805312" alt=""><image src="../../media/helpbutton.png" mime-type="image/png"/></media> Select the
+	<code>Show Context Help Window</code> button, shown at left,
+	to toggle the display of the <code>Context Help</code> window.
+      </para>
+			<para id="para33">
+				<media id="idp3327776" alt=""><image src="../../media/enter-2763.png" mime-type="image/png"/></media>
+				<code>Type</code>
+	appears to remind you that a new value is available to replace
+	an old value. The Enter button disappears when you click it,
+	press the <code>Enter</code> key, or click the front panel or
+	block diagram workspace.
+      </para>
+		</section>
+		<section id="section9">
+			<title>Block Diagram Toolbar</title>
+			<para id="para34">
+	When you run a VI, buttons appear on the block diagram toolbar
+	that you can use to debug the VI. The toolbar in <link target-id="f6"/> appears on the block diagram.
+      </para>
+			<figure id="f6">
+				<media id="idp2808496" alt=""><image src="../../media/fptoolbar.png" mime-type="image/png"/></media>
+			</figure>
+			<para id="para35">
+				<media id="idp3119264" alt=""><image src="../../media/exehilit-bc04.png" mime-type="image/png"/></media> Click the
+	<code>Highlight Execution</code> button, shown at left, to
+	display an animation of the block diagram execution when you
+	click the <code>Run</code> button. see the flow of data
+	through the block diagram. Click the button again to disable
+	execution highlighting.
+      </para>
+			<para id="para36">
+				<media id="idp165824" alt=""><image src="../../media/stepinto.png" mime-type="image/png"/></media> Click the
+	<code>Step Into</code> button, shown at left, to open a node
+	and pause. When you click the <code>Step Into</code> button
+	again, it executes the first action and pauses at the next
+	action of the subVI or structure. You also can press the
+	<code>Ctrl</code> and down arrow keys. Single-stepping through
+	a VI steps through the VI node by node. Each node blinks to
+	denote when it is ready to execute. By stepping into the node,
+	you are ready to single-step inside the node.
+      </para>
+			<para id="para37">
+				<media id="idp1627552" alt=""><image src="../../media/stepover.png" mime-type="image/png"/></media> Click the
+	<code>Step Over</code> button, shown at left, to execute a
+	node and pause at the next node. You also can press the
+	<code>Ctrl</code> and right arrow keys. By stepping over the
+	node, you execute the node without single-stepping through the
+	node.
+      </para>
+			<para id="para38">
+				<media id="idm5499440" alt=""><image src="../../media/stepout.png" mime-type="image/png"/></media> Click the
+	<code>Step Out</code> button, shown at left, to finish
+	executing the current node and pause. When the VI finishes
+	executing, the <code>Step Out</code> button becomes
+	dimmed. You also can press the <code>Ctrl</code> and up arrow
+	keys. By stepping out of a node, you complete single-stepping
+	through the node and go to the next node.
+      </para>
+			<para id="para39">
+				<media id="idp3861824" alt=""><image src="../../media/warnbtn.png" mime-type="image/png"/></media> The
+	<code>Warning</code> button, shown at left, appears if a VI
+	includes a warning and you placed a checkmark in the
+	<code>Show Warnings</code> checkbox in the <code>Error
+	List</code> window. A warning indicates there is a potential
+	problem with the block diagram, but it does not stop the VI
+	from running.
+      </para>
+		</section>
+		<section id="section10">
+			<title>Palettes</title>
+			<para id="para40">
+	LabVIEW has graphical, floating palettes to help you create
+	and run VIs. The three palettes include the
+	<code>Tools</code>, <code>Controls</code>, and
+	<code>Functions</code> palettes. You can place these palettes
+	anywhere on the screen.
+      </para>
+			<section id="section11">
+				<title>Tools Palette</title>
+				<para id="para41">
+	  You can create, modify, and debug VIs using the tools
+	  located on the floating <link target-id="f7">Tools</link>
+	  palette. The <code>Tools</code> palette is available on both
+	  the front panel and the block diagram. A tool is a special
+	  operating mode of the mouse cursor. The cursor corresponds
+	  to the icon of the tool selected in the <code>Tools</code>
+	  palette. Use the tools to operate and modify front panel and
+	  block diagram objects.
+	</para>
+				<para id="para42">
+	  Select <code>Window&gt;&gt;Show Tools Palette</code> to display
+	  the <code>Tools</code> palette.
+	</para>
+				<note type="note" id="idm5870432">
+	  Press the <code>Shift</code> key and right-click to display
+	  a temporary version of the <code>Tools</code> palette at the
+	  location of the cursor.
+	</note>
+				<figure id="f7">
+					<media id="idm7259776" alt=""><image src="../../media/toolspal.png" mime-type="image/png"/></media>
+					<caption>Tools Palette</caption>
+				</figure>
+				<para id="para43">
+	  If automatic tool selection is enabled and you move the
+	  cursor over objects on the front panel or block diagram,
+	  LabVIEW automatically selects the corresponding tool from
+	  the <code>Tools</code> palette. You can disable automatic
+	  tool selection and select a tool manually by clicking the
+	  tool you want on the <code>Tools</code> palette.
+	</para>
+				<para id="para44">
+					<media id="idm7004544" alt=""><image src="../../media/autotool.png" mime-type="image/png"/></media> If you want to
+	  use the <code>Tab</code> key to cycle through the four most
+	  common tools on the <code>Tools</code> palette, click the
+	  <code>Automatic Tool Selection</code> button, shown at left,
+	  on the <code>Tools</code> palette to disable automatic tool
+	  selection. Press the <code>Shift-Tab</code> keys or click
+	  the <code>Automatic Tool Selection</code> button to enable
+	  automatic tool selection again. You also can manually select
+	  a tool on the <code>Tools</code> palette to disable
+	  automatic tool selection. Press the <code>Tab</code> or
+	  <code>Shift-Tab</code> keys or click the <code>Automatic
+	  Tool Selection</code> button on the <code>Tools</code>
+	  palette to enable automatic tool selection again. If
+	  automatic tool selection is disabled, you can press the
+	  spacebar to switch to the next most useful tool.
+	</para>
+				<para id="para45">
+					<media id="idp1272912" alt=""><image src="../../media/operate-8479.png" mime-type="image/png"/></media>
+					<media id="idp1279648" alt=""><image src="../../media/opertext.png" mime-type="image/png"/></media> Use the <code>Operating</code>
+	  tool, shown at left, to change the values of a control or
+	  select the text within a control. The <code>Operating</code> tool changes
+	  to the icon shown at left when it moves over a text control,
+	  such as a numeric or string control.
+	</para>
+				<para id="para46">
+					<media id="idp9232" alt=""><image src="../../media/position.png" mime-type="image/png"/></media> Use the
+	  <code>Positioning</code> tool, shown at left, to select, move, or resize
+	  objects. The <code>Positioning</code> tool changes to resizing handles
+	  when it moves over the edge of a resizable object.
+	</para>
+				<para id="para47">
+					<media id="idp2867808" alt=""><image src="../../media/labeling.png" mime-type="image/png"/></media>
+					<media id="idm5400160" alt=""><image src="../../media/lblcurs.png" mime-type="image/png"/></media> Use the
+	  <code>Labeling</code> tool, shown at left, to edit text and
+	  create free labels. The <code>Labeling</code> tool changes
+	  to the following icon when you create free labels.
+	</para>
+				<para id="para48">
+					<media id="idp3163312" alt=""><image src="../../media/wiring-cff5.png" mime-type="image/png"/></media> Use the
+	  <code>Wiring</code> tool, shown at left, to wire objects
+	  together on the block diagram.
+	</para>
+				<para id="para49">
+					<media id="idp2877776" alt=""><image src="../../media/objshort.png" mime-type="image/png"/></media> Use the
+	  <code>Object Shortcut Menu</code>, shown at left, tool to
+	  access an object shortcut menu with the left mouse button.
+	</para>
+				<para id="para50">
+					<media id="idm5828704" alt=""><image src="../../media/scroll.png" mime-type="image/png"/></media> Use the
+	  <code>Scrolling</code> tool, shown at left, to scroll
+	  through windows without using scrollbars.
+	</para>
+				<para id="para51">
+					<media id="idp7505520" alt=""><image src="../../media/brkpoint.png" mime-type="image/png"/></media> Use the
+	  <code>Breakpoint</code> tool, shown at left, to set
+	  breakpoints on VIs, functions, nodes, wires, and structures
+	  to pause execution at that location.
+	</para>
+				<para id="para52">
+					<media id="idp93216" alt=""><image src="../../media/probe.png" mime-type="image/png"/></media> Use the
+	  <code>Probe</code> tool, shown at left, to create probes on
+	  wires on the block diagram. Use the <code>Probe</code> tool
+	  to check intermediate values in a VI that produces
+	  questionable or unexpected results.
+	</para>
+				<para id="para53">
+					<media id="idp1462256" alt=""><image src="../../media/colorcpy-c48c.png" mime-type="image/png"/></media> Use the
+	  <code>Color Copy</code> tool, shown at left, to copy colors
+	  for pasting with the <code>Coloring</code> tool.
+	</para>
+				<para id="para54">
+					<media id="idp1282768" alt=""><image src="../../media/coloring-99f5.png" mime-type="image/png"/></media> Use the
+	  <code>Coloring</code> tool, shown at left, to color an
+	  object. It also displays the current foreground and
+	  background color settings.
+	</para>
+			</section>
+			<section id="section12">
+				<title>Controls and Functions Palettes</title>
+				<para id="para55">
+	  The <code>Controls</code> and <code>Functions</code>
+	  palettes contain subpalettes of objects you can use to
+	  create a VI. When you click a subpalette icon, the entire
+	  palette changes to the subpalette you selected. To use an
+	  object on the palettes, click the object and place it on the
+	  front panel or block diagram.
+	</para>
+				<para id="para56">
+	  The <code>Controls</code> palette, shown in <link target-id="f8"/>, is available only on the front panel. The
+	  <code>Controls</code> palette contains the controls and
+	  indicators you use to build the front panel. Refer to the
+	  <link document="m12194">Front Panel</link> section for more
+	  information about the using the <code>Controls</code>
+	  palette on the front panel. The controls and indicators
+	  located on the <code>Controls</code> palette depend on the
+	  palette view currently selected.
+	</para>
+				<figure id="f8">
+					<media id="idm5126496" alt=""><image src="../../media/controlspal.png" mime-type="image/png"/></media>
+					<caption>Controls Palette</caption>
+				</figure>
+				<para id="para57">
+	  The <code>Functions</code> palette, shown in the <link target-id="f9"/>, is available only on the block diagram. The
+	  <code>Functions</code> palette contains the VIs and
+	  functions you use to build the block diagram. Refer to the
+	  <link document="m12195">Block Diagram</link> section of this
+	  lesson for more information about using the
+	  <code>Functions</code> palette on the block diagram. The VIs
+	  and functions located on the <code>Functions</code> palette
+	  depend on the palette view currently selected. The VIs and
+	  functions are located on subpalettes based on the types of
+	  VIs and functions.
+	</para>
+				<figure id="f9">
+					<media id="idp2524032" alt=""><image src="../../media/functionspal.png" mime-type="image/png"/></media>
+					<caption>Functions Palette</caption>
+				</figure>
+			</section>
+			<section id="section13">
+				<title>Changing Palette Views</title>
+				<para id="para58">
+	  Use the <code>Options</code> button on the
+	  <code>Controls</code> or <code>Functions</code> palette
+	  toolbar to change to another palette view or format:
+	</para>
+				<list id="list8" list-type="enumerated">
+					<item>
+						<media id="idp3019344" alt=""><image src="../../media/options.png" mime-type="image/png"/></media> Click the
+	    <code>Options</code> button, shown at left, on the
+	    <code>Controls</code> or <code>Functions</code> palette
+	    toolbar to display the
+	    <code>Controls</code>/<code>Functions Palettes</code> page
+	    of the <code>Options</code> dialog box.
+	  </item>
+					<item>
+	    Select a palette view from the <code>Palette View</code>
+	    pull-down menu.
+	  </item>
+					<item>
+	    Select a format from the <code>Format</code> pull-down
+	    menu, such as <code>Standard</code>, <code>All
+	    Icons</code>, <code>All Text</code>, or <code>Icons and
+	    Text</code>.
+	  </item>
+					<item>
+	    Click the <code>OK</code> button. The
+	    <code>Controls</code> and <code>Functions</code> palettes
+	    change to the palette view and format you selected.
+	  </item>
+				</list>
+			</section>
+			<section id="section14">
+				<title>Searching for Controls, VIs, and Functions</title>
+				<para id="para59">
+	  Use the following navigation buttons on the
+	  <code>Controls</code> and <code>Functions</code> palettes to
+	  navigate and search for controls, VIs, and functions:
+	</para>
+				<list id="list9" list-type="labeled-item">
+					<item><label>Up to Owning Palette</label>
+						
+						<media id="idp2510896" alt=""><image src="../../media/up.png" mime-type="image/png"/></media> Navigates up one
+	    level in the palette hierarchy.
+	  </item>
+					<item><label>Search</label>
+						
+						<media id="idp3136192" alt=""><image src="../../media/search.png" mime-type="image/png"/></media>
+						<!--needs to be corrected, should be different paragraphs-->
+	    Changes the palette to search mode. In search mode, you
+	    can perform text-based searches to locate controls, VIs,
+	    or functions on the palettes.
+	    <!--different para-->
+	    For example, if you want to find the <code>Random
+	    Number</code> function, click the <code>Search</code>
+	    button on the <code>Functions</code> palette toolbar and
+	    start typing <code>Random Number</code> in the text box at
+	    the top of the palette. LabVIEW lists all matching items
+	    that either start with or contain the text you typed. You
+	    can click one of the search results and drag it to the
+	    block diagram, as shown in <link target-id="f10"/>.
+	  </item>
+				</list>
+				<figure id="f10">
+					<media id="idm5680416" alt=""><image src="../../media/searchdrag.png" mime-type="image/png"/></media>
+				</figure>
+				<para id="para60">
+	  Double-click the search result to highlight its location on
+	  the palette. You then can click the <code>Up to Owning
+	  Palette</code> button to view the hierarchy of where the
+	  object resides.
+	</para>
+			</section>
+		</section>
+		<section id="section15">
+			<title>Shortcut Menus</title>
+			<para id="para61">
+	The most often-used menu is the object shortcut menu. All
+	LabVIEW objects and empty space on the front panel and block
+	diagram have associated shortcut menus. Use the shortcut menu
+	items to change the look or behavior of front panel and block
+	diagram objects. To access the shortcut menu, right-click the
+	object, front panel, or block diagram. The shortcut menu for a
+	meter is shown in <link target-id="f11"/>.
+      </para>
+			<figure id="f11">
+				<media id="idp1389136" alt=""><image src="../../media/shortcutmenu.png" mime-type="image/png"/></media>
+				<caption>Meter Shortcut Menu</caption>
+			</figure>
+			<section id="section16">
+				<title>Property Dialog Boxes</title>
+				<para id="para62">
+	  Front panel objects also have property dialog boxes that you
+	  can use to change the look or behavior of front panel
+	  objects. Right-click a front panel object and select
+	  <code>Properties</code> from the shortcut menu to access the
+	  property dialog box for an object. <link target-id="f12"/>
+	  shows the property dialog box for the meter in the previous
+	  figure. The options available on the property dialog box for
+	  an object are similar to the options available on the
+	  shortcut menu for that object.
+	</para>
+				<figure id="f12">
+					<media id="idp1081504" alt=""><image src="../../media/meterproperty.png" mime-type="image/png"/></media>
+					<caption>Meter Property Dialog Box</caption>
+				</figure>
+			</section>
+		</section>
+	</content>
+</document>

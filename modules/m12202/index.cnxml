@@ -1,0 +1,270 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Debug Exercise (Main) VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>32e7ada0-85cf-4dc8-9e90-c83dfcd8385d</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idm1722144">
+	<para id="para1">
+	  Complete the following steps to load a broken VI and correct the
+	  error. Use single-stepping and execution highlighting to step
+	  through the VI.
+	</para>
+	<section id="section1">
+	  <title>Front Panel</title>
+	  <list id="list1" list-type="enumerated">
+	    <item>
+	      <!--needs to be corrected, should be seperate paragraphs-->
+	      Select <code>File&gt;&gt;Open</code> and navigate to
+	      <code>C:\Exercises\LabVIEW Basics I</code> to open the
+	      <code>Debug Exercise (Main)</code> VI.
+	      <!--different para-->
+	      The front panel shown in <link target-id="f1"/> appears.
+	      <figure id="f1">
+		<media id="idp504272" alt=""><image src="../../media/debugfp.png" mime-type="image/png"/></media>
+	      </figure>
+	      <!--different para-->
+	      <media id="idp505552" alt=""><image src="../../media/brokrun.png" id="m1" mime-type="image/png"/></media>
+	      Notice the <code>Run</code> button on the toolbar appears
+	      broken, shown in <link target-id="m1"/>, indicating that the VI
+	      is broken and cannot run.
+	    </item>
+	  </list>
+	</section>
+	<section id="section2">
+	  <title>Block Diagram</title>
+	  <list id="list2" list-type="enumerated">
+	    <item>
+	      <!--needs to be corrected, should be seperate paragraphs-->
+	      Select <code>Window&gt;&gt;Show Block Diagram</code> to display
+	      the block diagram shown in <link target-id="f2"/>.
+	      <figure id="f2">
+		<media id="idp1095136" alt=""><image src="../../media/debugbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <media id="idp1096096" alt=""><image src="../../media/randnum-e63f.png" mime-type="image/png"/></media>
+	      <!--different para-->
+	      The <code>Random Number (0-1)</code> function, located on
+	      the <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Numeric</code> palette, produces a random number between
+	      <m:math>
+		<m:cn>0</m:cn>
+	      </m:math>
+	      and
+	      <m:math>
+		<m:cn>1</m:cn>
+	      </m:math>.
+	      <media id="idm7597840" alt=""><image src="../../media/multiply-06b5.png" mime-type="image/png"/></media>
+	      <!--different para-->
+	      The <code>Multiply</code> function, located on the
+	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Numeric</code> palette, multiplies the random number by
+	      <m:math>
+		<m:cn>10.0</m:cn>
+	      </m:math>.
+	      <!--different para-->
+	      <media id="idm8290848" alt=""><image src="../../media/numconst2.png" mime-type="image/png"/></media>
+	      The <code>numeric constant</code>, located on the
+	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Numeric</code> palette, is the number to multiply by the
+	      random number.  
+	      <!--different para--> 
+	      <media id="idp803216" alt=""><image src="../../media/debugsub.png" mime-type="image/png"/></media> The
+	      <code>Debug Exercise (Sub)</code> VI, located in the
+	      <code>C:\Exercises\ LabVIEW Basics I</code> directory, adds
+	      <m:math>
+		<m:cn>100.0</m:cn>
+	      </m:math> and calculates the square root
+	      of the value.
+	    </item>
+	    <item>
+	      Find and fix each error.
+	      <list id="list3" list-type="enumerated">
+		<item>
+		  Click the broken <code>Run</code> button to display the
+		  <code>Error list</code> window, which lists all the
+		  errors.
+		</item>
+		<item>
+		  Select an error description in the <code>Error
+		    list</code> window. The <code>Details</code> section
+		  describes the error and in some cases recommends how to
+		  correct the error.
+		</item>
+		<item>
+		  Click the <code>Help</code> button to display a topic in
+		  the <cite><cite-title>LabVIEW Help</cite-title></cite> that describes the error
+		  in detail and includes step-by-step instructions for
+		  correcting the error.
+		</item>
+		<item>
+		  Click the <code>Show Error</code> button or double-click
+		  the error description to highlight the area on the block
+		  diagram that contains the error.
+		</item>
+		<item>
+		  Use the <code>Error list</code> window to fix each error.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Select <code>File&gt;&gt;Save</code> to save the VI.
+	    </item>
+	    <item>
+	      Display the front panel by clicking it or by selecting
+	      <code>Window&gt;&gt;Show Front Panel</code>.
+	    </item>
+	  </list>
+	</section>
+	<section id="section3">
+	  <title>Run the VI</title>
+	  <list id="list4" list-type="enumerated">
+	    <item>
+	      Click the <code>Run</code> button to run the VI several times.
+	    </item>
+	    <item>
+	      Select <code>Window&gt;&gt;Show Block Diagram</code> to display
+	      the block diagram.
+	    </item>
+	    <item>
+	      Animate the flow of data through the block diagram.
+	      <list id="list5" list-type="enumerated">
+		<item>
+		  <media id="idp292800" alt=""><image src="../../media/exehilit-bc04.png" id="m2" mime-type="image/png"/></media> Click the
+		  <code>Highlight Execution</code> button, shown in <link target-id="m2"/>, on the toolbar to enable execution
+		  highlighting.
+		</item>
+		<item>
+		  <media id="idm895968" alt=""><image src="../../media/stepinto.png" id="m3" mime-type="image/png"/></media>
+		  Click the <code>Step Into</code> button, shown in <link target-id="m3"/>, to start single-stepping. Execution
+		  highlighting shows the movement of data on the block
+		  diagram from one node to another using bubbles that move
+		  along the wires. Nodes blink to indicate they are ready
+		  to execute.
+		</item>
+		<item>
+		  <media id="idm918528" alt=""><image src="../../media/stepover.png" id="m4" mime-type="image/png"/></media>
+		  <!--needs to be corrected, should be seperate paragraphs-->
+		  Click the <code>Step Over</code> button, shown in <link target-id="m4"/>, after each node to step through the
+		  entire block diagram. Each time you click the <code>Step
+		    Over</code> button, the current node executes and pauses
+		  at the next node.
+		  <!--different para-->
+		  Data appear on the front panel as you step through the
+		  VI. The VI generates a random number and multiplies it
+		  by <m:math> <m:cn>10.0</m:cn> </m:math>. The subVI adds
+		  <m:math><m:cn>100.0</m:cn> </m:math> and takes the
+		  square root of the result.
+		</item>
+		<item>
+		  <media id="idm2311408" alt=""><image src="../../media/stepout.png" id="m5" mime-type="image/png"/></media>
+		  When a blinking border surrounds the entire block
+		  diagram, click the <code>Step Out</code> button, shown
+		  in <link target-id="m5"/>, to stop single-stepping through
+		  the <code>Debug Exercise (Main)</code> VI.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Single-step through the VI and its subVI.
+	      <list id="list6" list-type="enumerated">
+		<item>
+		  Click the <code>Step Into</code> button to start
+		  single-stepping.
+		</item>
+		<item>
+		  <media id="idm780032" alt=""><image src="../../media/runsubvi.png" mime-type="image/png"/></media> When the
+		  <code>Debug Exercise (Sub)</code> VI blinks, click the
+		  <code>Step Into</code> button. Notice the run button on
+		  the subVI.
+		</item>
+		<item>
+		  <media id="idm900656" alt=""><image src="../../media/debugbdglyph.png" id="m6" mime-type="image/png"/></media> Display the <code>Debug
+		    Exercise (Main)</code> VI block diagram by clicking
+		  it. A green glyph, shown in <link target-id="m6"/>, appears
+		  on the subVI icon on the <code>Debug Exercise
+		    (Main)</code> VI block diagram, indicating that the
+		  subVI is running.
+		</item>
+		<item>
+		  Display the <code>Debug Exercise (Sub)</code> VI block
+		  diagram by clicking it.
+		</item>
+		<item>
+		  Click the <code>Step Out</code> button twice to finish
+		  single-stepping through the subVI block diagram. The
+		  <code>Debug Exercise (Main)</code> VI block diagram is
+		  active.
+		</item>
+		<item>
+		  Click the <code>Step Out</code> button to stop
+		  single-stepping.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Use a probe to check intermediate values on a wire as a VI
+	      runs.
+	      <list id="list7" list-type="enumerated">
+		<item>
+		  <!--needs to be corrected, should be seperate
+		  paragraphs-->
+		  <media id="idm1431584" alt=""><image src="../../media/probe.png" id="m7" mime-type="image/png"/></media> Use
+		  the <code>Probe</code> tool, shown <link target-id="m7"/>,
+		  to click any wire. A window similar to <link target-id="f3"/> appears.
+		  <figure id="f3">
+		    <media id="idm7738928" alt=""><image src="../../media/probewin.png" mime-type="image/png"/></media>
+		  </figure>
+		  <!--different para-->
+		  LabVIEW numbers the <code>Probe</code> window
+		  automatically and displays the same number in a glyph on
+		  the wire you clicked.
+		</item>
+		<item>
+		  Single-step through the VI again. The <code>Probe</code>
+		  window displays data passed along the wire.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Place breakpoints on the block diagram to pause execution at
+	      that location.
+	      <list id="list8" list-type="enumerated">
+		<item>
+		  <media id="idm7887456" alt=""><image src="../../media/brkpoint.png" id="m8" mime-type="image/png"/></media>
+		  Use the <code>Breakpoint</code> tool, shown in <link target-id="m8"/>, to click nodes or wires. Place a
+		  breakpoint on the block diagram to pause execution after
+		  all nodes on the block diagram execute.
+		</item>
+		<item>
+		  Click the <code>Run</code> button to run the VI. When
+		  you reach a breakpoint during execution, the VI pauses
+		  and the <code>Pause</code> button on the toolbar appears
+		  red.
+		</item>
+		<item>
+		  <media id="idm8904144" alt=""><image src="../../media/pause.png" id="m9" mime-type="image/png"/></media> Click
+		  the <code>Continue</code> button, shown <link target-id="m9"/>, to continue running to the next
+		  breakpoint or until the VI finishes running.
+		</item>
+		<item>
+		  Use the <code>Breakpoint</code> tool to click the
+		  breakpoints you set and remove them.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Click the <code>Highlight Execution</code> button to disable
+	      execution highlighting.
+	    </item>
+	    <item>
+	      Select <code>File&gt;&gt;Close</code> to close the VI and all open
+	      windows.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

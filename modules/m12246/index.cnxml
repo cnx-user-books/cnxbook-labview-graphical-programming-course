@@ -1,0 +1,134 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Square Root VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0e86f6bc-8eb4-4a2e-916d-1a4322ca9296</md:uuid>
+</metadata>
+  <!--When CNXML 0.6 comes out, this module will need to be revised to
+  include para in the items indicated.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm652800">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idp1455344" alt=""><image src="../../media/squareroot.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idm7046800" alt=""><image src="../../media/squarerootbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		    <media id="idp2261376" alt=""><image src="../../media/case-547d.png" mime-type="image/png"/></media>
+		  Place the <code>Case</code>
+		  structure, located on the <code>Functions&gt;&gt;Execution
+		  Control</code> palette, on the block diagram. Click
+		  the <code>decrement</code> or <code>increment</code>
+		  button to select the <code>False</code> case.
+		</item>
+		<item>
+		    <media id="idp3084608" alt=""><image src="../../media/greateq0icon.png" mime-type="image/png"/></media>
+		  Place the <code>Greater or Equal
+		  to 0?</code> function, located on the
+		  <code>Functions&gt;&gt;Arithmetic &amp;
+		  Comparison&gt;&gt;Express Comparison</code> palette, on
+		  the block diagram. This function returns
+		  <code>True</code> if <code>Number</code> is greater
+		  than or equal to <code>0</code>.
+		</item>
+		<item>
+		    <media id="idp3212848" alt=""><image src="../../media/numconstSR.png" mime-type="image/png"/></media>
+		  Right-click the <code>numeric
+		  constant</code> and select <code>Properties</code>
+		  from the shortcut menu. Select the <code>Format and
+		  Precision</code> tab. Set <code>Digits of
+		  precision</code> to <code>1</code>, select
+		  <code>Floating point notation</code>, and click the
+		  <code>OK</code> button to ensure there is no data
+		  conversion between the constant and the numeric
+		  indicator outside the <code>Case</code> structure.
+		</item>
+		<item>
+		    <media id="idm7030336" alt=""><image src="../../media/onebutdialogicon.png" mime-type="image/png"/></media>
+		  Place the <code>One Button
+		  Dialog</code> function, located on the
+		  <code>Functions&gt;&gt; All Functions&gt;&gt;Time &amp;
+		  Dialog</code> palette, on the block diagram. This
+		  function displays a dialog box that contains the
+		  message <code>Error...Negative Number</code>.
+		</item>
+		<item>
+		    <media id="idm7359008" alt=""><image src="../../media/strconst.png" mime-type="image/png"/></media>
+		  Right-click the <code>message</code> terminal of the
+		  <code>One Button Dialog</code> function, select
+		  <code>Create&gt;&gt;Constant</code> from the shortcut
+		  menu, type <code>Error...Negative Number</code> in
+		  the constant, and click the <code>Enter</code>
+		  button on the toolbar or click outside the
+		  control. Refer to the lesson on <link document="m12252">Strings and File I/O</link> for more
+		  information about strings.
+		</item>
+		<item>
+		  Complete the diagram as shown in <link target-id="s2l1f1"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item><!--needs para--> 
+	      <!--para--> 
+	      Select the <code>True</code> case of the
+	      <code>Case</code> structure.
+	      <!--para-->
+		<media id="idm7043840" alt=""><image src="../../media/sqrticon.png" mime-type="image/png"/></media>
+	      Place the <code>Square Root</code>
+	      function, located on the <code>Functions&gt;&gt;Arithmetic
+	      &amp; Comparison&gt;&gt;Express Numeric</code> palette, on the
+	      block diagram. This function returns the square root of
+	      <code>Number</code>. Wire the function as shown in <link target-id="s2l1f3"/>.
+	      <figure id="s2l1f3">
+		<media id="idm7033824" alt=""><image src="../../media/squareroot2bd.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      Save the VI as <code>Square Root.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Run the VI</title>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Display the front panel and run the VI.
+	      <note type="caution" id="idp2011072"><label>Caution</label>
+		Do not run this VI continuously. Under certain
+		circumstances, continuously running this VI could
+		result in an endless loop.
+	      </note>
+	      If <code>Number</code> is positive, the VI executes the
+	      <code>True</code> case and returns the square root of
+	      <code>Number</code>. If <code>Number</code> is negative,
+	      the VI executes the <code>False</code> case, returns
+	      <code>-99999</code>, and displays a dialog box with the
+	      message <code>Error...Negative Number</code>.
+	    </item>
+	    <item>
+	      Close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+		
+
+  </content>
+  
+</document>

@@ -1,0 +1,80 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Opening SubVI Front Panels when a VI Runs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>37f430a5-0b58-42d0-9559-fc592aa2f4f7</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      A single front panel sometimes is too restrictive to present
+      numerous options or displays. To solve this problem, organize
+      VIs so the top-most VI presents high-level options, and subVIs
+      present related options.  
+    </para>
+    <note type="tip" id="idm7054704">
+      You also can use tab controls to make the front panel more
+      usable.
+    </note>
+    <para id="p2">
+      When LabVIEW calls a subVI, ordinarily the subVI runs without
+      opening its front panel. If you want a single instance of the
+      subVI to open its front panel when called, use the <code>SubVI
+      Node Setup</code> dialog box. If you want every instance of the
+      subVI to open its front panel when called, use the <code>VI
+      Properties</code> dialog box.
+    </para>
+    <section id="s1">
+      <title>Single Instance</title>
+      <para id="s1p1">
+	If you want a single instance of the subVI to open its front
+	panel when called, right-click the subVI and select
+	<code>SubVI Node Setup</code> from the shortcut menu to
+	display the <code>SubVI Node Setup</code> dialog box. Place
+	checkmarks in the <code>Show Front Panel when called</code>
+	and <code>Close afterwards if originally closed</code>
+	checkboxes to open the subVI front panel when called. This
+	dialog box also includes the following components:
+	<list id="s1p1l1" list-type="labeled-item">
+	  <item><label>Open Front Panel when loaded</label>
+	    
+
+	    Displays the front panel when the subVI loads or when the
+	    VI that calls it loads.
+	  </item>
+	  <item><label>Show Front Panel when called</label>
+	    
+
+	    Displays the front panel when the subVI is called.
+	  </item>
+	  <item><label>Close afterwards if originally closed</label>
+	    
+
+	    If <code>Show Front Panel when called</code> also contains
+	    a checkmark and if the subVI was previously closed, the
+	    front panel closes after the subVI runs.
+	  </item>
+	  <item><label>Suspend when called</label>
+	    
+
+	    Suspends a subVI when called and waits for user
+	    interaction. This option is the same as selecting
+	    <code>Operate&gt;&gt;Suspend when called</code>.
+	  </item>
+	</list>
+      </para>
+    </section>
+    <section id="s2">
+      <title>Every Instance</title>
+      <para id="s2p1">
+	If you want every instance of the subVI to open its front
+	panel when called, open the subVI and select
+	<code>File&gt;&gt;VI Properties</code>. Select <code>Window
+	Appearance</code> from the <code>Category</code> pull-down
+	menu, click the <code>Customize</code> button, and place
+	checkmarks in the <code>Show Front Panel When Called</code>
+	and <code>Close Afterwards if Originally Closed</code>
+	checkboxes.
+      </para>
+    </section>
+  </content>
+  
+</document>

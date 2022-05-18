@@ -1,0 +1,431 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Thermometer VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>680227d1-d031-475d-b029-25312ad0a046</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp259696">
+	<para id="intr_1">
+	  Complete the following steps to create a VI that reads a
+	  measurement from the temperature sensor on the DAQ Signal
+	  Accessory and displays the temperature in Celsius or Fahrenheit.
+	</para>
+
+	<para id="intr_2">
+	  The sensor returns a voltage proportional to temperature. For
+	  example, if the temperature is 23°, the sensor output
+	  voltage is 0.23 V.  The sensor is connected to Channel 0 of
+	  Device 1. Device 1 is the DAQ device. On some systems, the DAQ
+	  device may have another device number.  </para>
+	
+	<section id="idp3085152">
+	  <title> Front Panel</title>
+	  <list id="sajm672" list-type="enumerated">
+	    <item>
+	      In the <code>LabVIEW</code> dialog box, click the arrow on
+	      the <code> New</code> button and select <code> Blank </code>
+	      VI from the shortcut menu or press the
+	      <code>&lt;Ctrl-N&gt;</code> keys to open a blank VI.
+
+	    </item>
+	    <item>
+	      Create the following front panel.
+	      <figure id="tempsa">
+		<media id="idm7630576" alt=""><image src="../../media/thermfp.png" mime-type="image/png"/></media> 
+	      </figure>
+	      <list id="sub_11" list-type="enumerated">
+		<item>
+		  Place a thermometer, located on the <code>
+		    Controls&gt;&gt;Numeric Indicators </code> palette, on the
+		  front panel.
+		</item>
+		<item>
+		  <media id="idm700784" alt=""><image src="../../media/enter-491c.png" mime-type="image/png"/></media> 
+		  Type <code> Temperature </code> in the label and press
+		  the <code>&lt;Enter&gt;</code> key or click the
+		  <code>Enter</code> button on the toolbar, shown at left.
+		</item>
+		<item>
+		  Right-click the thermometer and select <code>Visible
+		    Items&gt;&gt; Digital Display</code> from the shortcut menu to
+		  show the digital display for the thermometer.
+		</item>
+		<item>
+		  Place a vertical toggle switch control, located on
+		  the <code> Controls&gt;&gt;Buttons &amp; Switches </code>
+		  palette, on the front panel.
+		</item>
+		<item>
+		  Type <code>Temp Scale</code> in the label and press the
+		  <code>&lt;Enter&gt;</code> key or click the
+		  <code>Enter</code> button.
+		</item>
+		<item>
+		  <media id="idp485840" alt=""><image src="../../media/text.png" id="m1" mime-type="image/png"/></media> Use the
+		  <code>Labeling</code> tool, shown in <link target-id="m1"/>, to place a free label, <code>deg
+		    C</code>, next to the <code>True</code> position of the
+		  switch.  If you are using automatic tool selection,
+		  double-click the blank area of the front panel to begin
+		  typing a free label.
+		</item>
+		<item>
+		  Place a free label, <code>deg F </code>, next to the
+		  <code>False </code> position of the switch.  </item>
+	      </list>
+	    </item> 
+	    
+	  </list>
+	</section>
+	
+	<section id="idm477168">
+	  <title> User Documentation </title>
+	  <list id="saj75903" list-type="enumerated">
+	    <item>
+	      Document the VI so a description appears in the <code> Context
+		Help </code> window when you move the cursor over the VI icon.
+	      <list id="sub03" list-type="enumerated">
+		<item>
+		  Select <code> File&gt;&gt;VI Properties</code> to
+		  display the <code> VI Properties</code> dialog box.
+		</item>
+		
+		<item>  
+		  Select <code> Documentation </code> from the
+		  <code> Category</code> pull-down menu.
+		</item>
+		
+		<item>
+		  Type the following description for the VI 
+		  in the <code>VI description</code> text box:
+		  <code>  
+		    This VI measures temperature using the temperature 
+		    sensor on the DAQ Signal Accessory.
+		  </code> 
+		</item>
+		
+		<item>  
+		  
+		  Click the <code>OK</code> button.
+		</item>
+		
+	      </list>
+	    </item>
+	    
+	    <item>
+	      Document the thermometer indicator and switch control so 
+	      descriptions appear in the <code>Context Help</code> window when
+	      you move the cursor over the objects and tip strips appear on 
+	      the front panel
+	      or block diagram when you move the cursor over the objects while 
+	      the VI runs.
+	      
+	      <list id="sub903" list-type="labeled-item">
+		<item>
+		  Right-click the thermometer indicator and select
+		  <code> Description and Tip </code> from the shortcut menu.
+		</item>
+		
+		<item>
+		  Type the following description for the thermometer in the
+		  <code> Description </code> text box:
+		  <code> Displays the temperature measurement.</code>
+		</item>
+		
+		<item>
+		  Type <code> temperature</code> in the
+		  <code>Tip</code> text box.
+		</item>
+		
+		<item>
+		  Click the <code> OK</code> button.
+		</item>
+		
+		<item>
+		  Right-click the switch control and select
+		  <code> Description and Tip</code> from the shortcut menu.
+		</item>
+		
+		<item>
+		  Type the following description for the vertical
+		  switch control in the <code>Description</code> text
+		  box:
+		  <code>
+		    Determines the scale (Fahrenheit or Celsius) to
+		    use for the temperature measurement.
+		  </code>
+		</item>
+		
+		<item>
+		  Type <code>scale - C or F</code> in the <code>Tip</code>
+		  text box.
+		</item>
+		
+		<item>
+		  Click the <code> OK</code> button.
+		</item>
+	      </list>
+	    </item>
+
+	    <item>
+	      Select <code>Help&gt;&gt;Show Context Help</code> to display the
+	      <code>Context Help</code> window.
+	    </item>
+	    
+	    <item>
+	      Move the cursor over the front panel objects and the VI icon to 
+	      display the descriptions in the <code>Context Help</code> window.
+	    </item>
+	    
+	  </list>
+	</section>
+	
+	
+	<section id="idm7231888">
+	  <title> Block Diagram </title>
+	  
+	  <list id="sajm62717" list-type="enumerated">
+	    <item>
+	      Select <code>Window&gt;&gt;Show Block Diagram</code> to display the
+	      <link target-id="tepsa">block diagram</link>.
+	      <figure id="tepsa">
+		<media id="idm12720" alt=""><image src="../../media/thermbd-b212.png" mime-type="image/png"/></media> 
+	      </figure>
+	    </item>
+	    
+	    <item>
+	      <media id="idm6147728" alt=""><image src="../../media/daqmxassist.png" mime-type="image/png"/></media> Place the
+	      <code>DAQ Assistant</code> Express VI, located on the
+	      <code>Functions&gt;&gt;Input</code> palette, on the block diagram.
+	      When you place this Express VI on the block diagram the DAQ
+	      Assistant configuration dialog box appears.
+
+	      <list id="npready" list-type="enumerated">
+		<item>
+		  Select <code>Analog Input&gt;&gt;Voltage</code> for the type of 
+		  measurement to make.
+		</item>
+		
+		<item>
+		  Select <code>Dev1&gt;&gt;ai0</code> (or
+		  <code>Dev2&gt;&gt;ai0</code>) for the physical channel and
+		  click the <code>Finish</code> button.
+		</item>
+		
+		<item>  
+		  You must multiply the temperature by 100 to convert it
+		  from voltage to Celsius. On the <code>Settings</code>
+		  tab, select <code>Custom Scaling&gt;&gt;Create
+		    New</code>. Select a <code>Linear</code> scale.  Name
+		  the scale <code>Temperature</code>.  Enter a <code>slope
+		    scale</code> of <code>100</code>. Click the
+		  <code>OK</code> button.
+		</item>
+
+		<item>
+		  Set <code>min = 0</code>. Set <code>max = 100</code>
+		</item>
+		
+		<item> 
+		  Select the <code>Acquire 1 Sample</code> option on the 
+		  <code>Task Timing</code> tab.
+		  Click the <code>OK</code> button.
+		  <note id="idp770832">
+		    If you do not have a DAQ device with a temperature
+		    sensor connected to your computer, use the
+		    <code>(Demo) Read Voltage</code> VI, located in the
+		    <code>C:\Exercises LabVIEW Basics I</code> directory.
+		  </note>
+		</item>
+		
+	      </list>
+	    </item>
+	    
+	    <item>
+	      <media id="idp753456" alt=""><image src="../../media/cddt-7567.png" mime-type="image/png"/></media> Place the
+	      <code>Convert from Dynamic Data</code> Express VI, located
+	      on the <code>Functions&gt;&gt;Signal Manipulation</code> palette,
+	      on the block diagram. This VI converts the dynamic data
+	      type. In the configuration dialog box, select <code>Single
+		scalar</code> in the <code>Resulting data type</code>
+	      listbox.
+	    </item>
+	    
+	    <item>
+	      <media id="idm7116320" alt=""><image src="../../media/ctoftherm.png" mime-type="image/png"/></media> Place the
+	      <code>Convert C to F</code> VI on the block diagram. Select
+	      <code>Functions&gt;&gt;All Functions&gt;&gt;Select a VI</code>, navigate
+	      to <code>C:\Exercises\LabVIEW Basics I\Convert C to
+		F.vi</code>.  This VI converts the Celsius readings to
+	      Fahrenheit.
+	    </item>
+
+	    <item>
+	      <media id="idm7015008" alt=""><image src="../../media/selecttherm-342a.png" mime-type="image/png"/></media> Place the
+	      <code>Select</code> function, located on the
+	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Comparison</code> palette, on the block diagram. This
+	      function returns either the Fahrenheit (<code>False</code>)
+	      or Celsius (<code>True</code>) temperature value, depending
+	      on the value of <code>Temp Scale</code>.  Use the
+	      <code>Positioning</code> tool to place the icons as shown in
+	      the <link target-id="tepsa">block diagram</link> and use the
+	      <code>Wiring</code> tool to wire them together.  <note id="idm7227728"> To
+		display terminals for a node, right-click the icon and
+		select <code>Visible Items&gt;&gt;Terminals</code> from the
+		shortcut menu.
+	      </note>
+	    </item>
+	  </list>
+	</section>
+	
+	<section id="idm7226352">
+	  <title>Front Panel</title>
+	  <list id="haha" list-type="enumerated">
+
+	    <item>Display the front panel by clicking it or by selecting 
+	      <code> Window&gt;&gt;Show Front Panel </code>.
+	    </item>
+
+	    <item>
+	      <media id="idm6068064" alt=""><image src="../../media/contrun-6047.png" mime-type="image/png"/></media> Click the
+	      <code>Run Continuously </code> button, shown at left, to run
+	      the VI continuously.
+	    </item>
+
+	    <item>
+	      Put your finger on the temperature sensor and notice the
+	      temperature increase.
+	    </item>
+
+	    <item>
+	      Click the <code> Run Continuously </code> button again to
+	      stop the VI. This allows the VI to finish the current run of
+	      the VI.
+	    </item>
+	  </list>
+	</section>
+
+	<section id="idm7507008">
+	  <title>Icon and Connector Pane</title>
+	  <list id="hasha" list-type="enumerated">
+
+	    <item>
+	      Create an icon so you can use the <code>Thermometer</code>
+	      VI as a subVI. The following icon is an example. If
+	      necessary, create a simpler icon to save time.
+	      <figure id="tsa">
+		<media id="idp2536416" alt=""><image src="../../media/tempicon-7c9c.png" mime-type="image/png"/></media> 
+	      </figure>
+
+	      <list id="sassy" list-type="enumerated">
+		<item> Right-click the icon in the upper
+		  right corner of the front panel and select
+		  <code>Edit</code> Icon from the shortcut menu. The
+		  <code>Icon Editor</code> dialog box appears.
+		</item>
+
+		<item>
+		  <media id="idm7091504" alt=""><image src="../../media/select.png" mime-type="image/png"/></media> Double-click
+		  the <code>Select</code> tool, shown at left, on the left
+		  side of the <code>Icon Editor</code> dialog box to
+		  select the default icon.
+		</item>
+
+		<item>
+		  Press the <code>&lt;Delete&gt;</code> key to remove the
+		  default icon.
+		</item>
+
+		<item>
+		  
+		  <media id="idm6996496" alt=""><image src="../../media/rect.png" id="m2" mime-type="image/png"/></media> Double-click
+		  the <code>Rectangle</code> tool, shown at <link target-id="m2"/>, to redraw the border.
+		</item>
+
+		<item>
+		  <media id="idp1372576" alt=""><image src="../../media/pencil.png" id="m3" mime-type="image/png"/></media> Use
+		  the <code>Pencil</code> tool, shown in <link target-id="m3"/>, to draw an icon that represents the
+		  thermometer.
+		</item>
+
+		<item>
+		  Use the <code>Foreground and Fill</code> tools to color
+		  the thermometer red.  <note id="idp2382752">To draw horizontal or
+		    vertical straight lines, press the
+		    <code>&lt;Shift&gt;</code> key while you use the
+		    <code>Pencil</code> tool to drag the cursor.
+		  </note>
+		</item>
+
+		<item>
+		  <media id="idm6249600" alt=""><image src="../../media/text.png" id="m4" mime-type="image/png"/></media>
+		  Double-click the <code>Text</code> tool, shown in <link target-id="m4"/>, and change the font to <code>Small
+		    Fonts</code>.
+		</item>
+
+		<item>
+		  Type <code>Temp</code>. Reposition the text if
+		  necessary.
+		</item>
+
+		<item>
+		  Select the <code>B &amp; W </code> icon and select
+		  <code>256 Colors </code> in the <code>Copy from </code>
+		  section to create a black and white icon, which LabVIEW
+		  uses for printing unless you have a color printer.
+		</item>
+
+		<item>
+		  When the icon is complete, click the <code>OK</code>
+		  button. The icon appears in the upper right corner of
+		  the front panel.
+		</item>
+
+	      </list>
+	    </item>
+
+	    <item>
+	      Right-click the icon and select <code>Show Connector</code>
+	      from the shortcut menu and assign terminals to the switch
+	      and the thermometer.
+	      <list id="sassy2" list-type="enumerated">
+
+		<item>
+		  Click the left terminal in the connector pane.
+		</item>
+
+		<item>
+		  Click the <code>Temp Scale</code> control. The left
+		  terminal turns green.
+		</item>
+
+		<item>
+		  Click the right terminal in the connector pane.
+		</item>
+
+		<item>
+		  Click the <code>Temperature</code> indicator. The right
+		  terminal turns orange.
+		</item>
+
+		<item>
+		  Click an open space on the front panel.
+		</item>
+	      </list>
+	    </item>
+
+	    <item>
+	      Save the VI as <code>Thermometer.vi</code> in the
+	      <code>C:\Exercises\ LabVIEW Basics I </code> directory.You
+	      will use this VI later in the course.
+	    </item>
+
+	    <item>Close the VI.</item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

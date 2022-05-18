@@ -1,0 +1,36 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Creating a SubVI from Sections of a VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>625e16ef-f0fb-460c-b637-8d697e9d2fe9</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="intro">
+      You can simplify the block diagram of a VI by converting
+      sections of the block diagram into subVIs. Convert a section of
+      a VI into a subVI by using the <code>Positioning</code> tool to
+      select the section of the block diagram you want to reuse and
+      selecting <code> Edit&gt;&gt;Create SubVI. </code> An icon for the new
+      subVI replaces the selected section of the block
+      diagram. LabVIEW creates controls and indicators for the new
+      subVI and wires the subVI to the existing wires. <link target-id="f1"/> shows how to convert a selection into a subVI.
+
+      <figure id="f1"> 
+	<media id="idp2576576" alt=""><image src="../../media/slopesubvi.png" mime-type="image/png"/></media>
+      </figure> 
+    </para>   
+
+    <para id="intro_1">
+
+      The new subVI uses a default pattern for the connector pane and
+      a default icon. Double-click the subVI to edit the connector
+      pane and icon, and to save the subVI.
+
+      <note id="idp589248">
+	Do not select more than 28 objects to create a subVI because
+	28 is the maximum number of connections on a connector pane.
+      </note>
+    </para>
+
+  </content>
+  
+</document>

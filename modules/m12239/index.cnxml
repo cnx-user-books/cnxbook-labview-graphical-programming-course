@@ -1,0 +1,103 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Graph Circle VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c05efe03-07af-4387-aeb1-4dc9e4222ec7</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp8570016">
+	<para id="p1">
+	  Complete the following steps to build a VI that plots a circle
+	  using independent <m:math><m:ci>x</m:ci></m:math> and
+	  <m:math><m:ci>y</m:ci></m:math> arrays.
+	</para>
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="l1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="f1"/>.
+	      <figure id="f1">
+		<media id="idp9354064" alt=""><image src="../../media/graphcirc.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="l2" list-type="enumerated">
+		<item>
+		  
+		  Place an <code>XY Graph</code>, located on the
+		  <code>Controls&gt;&gt;All Controls&gt;&gt;Graph</code> palette, on
+		  the front panel.
+		</item>
+		<item>
+		  
+		  Label the graph <code>XY Circle Graph</code>.
+		</item>
+		<item>
+		  
+		  Change <code>Plot 0</code> to <code>Circle</code> in the
+		  plot legend.
+		</item>
+		<item>
+		  Right-click the plot in the plot legend, select
+		  <code>Point Style</code> from the shortcut menu, and
+		  select the small square.
+		</item>
+		<item>
+		  
+		  Change the scale labels and ranges, as shown in <link target-id="f1"/>.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="l3" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="f2"/>.
+	      <figure id="f2">
+		<media id="idp8236000" alt=""><image src="../../media/graphcircbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="l4" list-type="enumerated">
+		<item>      
+		  <media id="idp9140752" alt=""><image src="../../media/sinecosicon.png" mime-type="image/png"/></media>
+
+		  Place the<code> Sine &amp; Cosine</code> function,
+		  located on the <code>Functions&gt;&gt;Arithmetic &amp;
+		    Comparison&gt;&gt;Express Numeric&gt;&gt;Express
+		    Trigonometric</code> palette, on the block diagram. This
+		  function builds an array of points that represents one
+		  cycle of a sine wave and a cosine wave.
+		</item>
+		<item>      
+		  <media id="idp340592" alt=""><image src="../../media/bundleicon.png" mime-type="image/png"/></media>
+		  Place the <code>Bundle</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette,
+		  on the block diagram. This function assembles the sine
+		  array and the cosine array to plot the sine array
+		  against the cosine array to produce a circle.
+		</item>
+		<item>      
+		  <media id="idp14015776" alt=""><image src="../../media/pimult.png" mime-type="image/png"/></media>
+		  Place the <code>Pi Multiplied by 2</code> constant,
+		  located on the <code>Functions&gt;&gt;Arithmetic &amp;
+		    Comparison&gt;&gt;Express Numeric&gt;&gt;Express Numeric
+		    Constants</code> palette, on the block diagram.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Graph Circle.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	    <item>
+	      Display the front panel and run the VI.
+	    </item>
+	    <item>
+	      Close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

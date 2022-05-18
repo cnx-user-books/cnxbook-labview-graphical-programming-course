@@ -1,0 +1,258 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Overview and Configuration of DAQ Devices</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d5c208a8-2d81-4c48-a8a2-6ae4388c1589</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      LabVIEW includes a set of VIs that let you configure, acquire
+      data from, and send data to DAQ devices. Often, one device can
+      perform a variety of functions--analog-to-digital (A/D)
+      conversion, digital-to-analog (D/A) conversion, digital I/O, and
+      counter/timer operations. Each device supports different DAQ and
+      signal generation speeds. Also, each DAQ device is designed for
+      specific hardware platforms and operating systems. Refer to
+      <link url="http://ni.com/daq">ni.com/daq</link> for more
+      information about DAQ devices.
+    </para>
+    <section id="s1">
+      <title>DAQ System Components</title>
+      <para id="s1p1">
+	Before a computer-based measurement system can measure a
+	physical signal, such as temperature, a sensor or transducer
+	must convert the physical signal into an electrical one, such
+	as voltage or current. You might consider the plug-in DAQ
+	device to be the entire measurement system, but it is actually
+	only one system component. You cannot always directly connect
+	signals to a plug-in DAQ device. In these cases, you must use
+	signal conditioning accessories to condition the signals
+	before the plug-in DAQ device converts them to digital
+	information. The software controls the DAQ system by acquiring
+	the raw data, analyzing, and presenting the results.
+      </para>
+      <para id="s1p2">
+	Consider the following options for a DAQ system:
+	<list id="s1p2l1">
+	  <item>
+	    The plug-in DAQ device resides in the computer. You can
+	    plug the device into the PCI slot of a desktop computer or
+	    the PCMCIA slot of a laptop computer for a portable DAQ
+	    measurement system.
+	  </item>
+	  <item>
+	    The DAQ device is external and connects to the computer
+	    through an existing port, such as the serial port or
+	    Ethernet port, which means you can quickly and easily
+	    place measurement nodes near sensors.
+	  </item>
+	</list>
+      </para>
+      <para id="s1p3">
+	The computer receives raw data through the DAQ device. The
+	application you write presents and manipulates the raw data in
+	a form you can understand. The software also controls the DAQ
+	system by commanding the DAQ device when and from which
+	channels to acquire data. Typically, DAQ software includes
+	drivers and application software. Drivers are unique to the
+	device or type of device and include the set of commands the
+	device accepts. Application software, such as LabVIEW, sends
+	the drivers commands, such as acquire and return a
+	thermocouple reading. The application software also displays
+	and analyzes the acquired data. NI measurement devices include
+	NI-DAQ driver software, a collection of VIs you use to
+	configure, acquire data from, and send data to the measurement
+	devices.
+      </para>
+      <section id="s1s1">
+	<title>NI-DAQ</title>
+	<para id="s1s1p1">
+	  NI-DAQ 7.0 contains two NI-DAQ drivers--Traditional
+	  NI-DAQ and NI-DAQmx--each with its own application
+	  programming interface (API), hardware configuration, and
+	  software configuration.
+	  <list id="s1s1p1l1">
+	    <item>
+	      Traditional NI-DAQ is an upgrade to NI-DAQ 6.9.x, the
+	      earlier version of NI-DAQ. Traditional NI-DAQ has the
+	      same VIs and functions and works the same way as NI-DAQ
+	      6.9.x. You can use Traditional NI-DAQ on the same
+	      computer as NI-DAQmx, which you cannot do with NI-DAQ
+	      6.9.x.
+	    </item>
+	    <item>
+	      NI-DAQmx is the latest NI-DAQ driver with new VIs,
+	      functions, and development tools for controlling
+	      measurement devices. The advantages of NI-DAQmx over
+	      previous versions of NI-DAQ include the DAQ Assistant
+	      for configuring channels and measurement tasks for a
+	      device; increased performance, including faster
+	      single-point analog I/O and multithreading; and a
+	      simpler API for creating DAQ applications using fewer
+	      functions and VIs than earlier versions of NI-DAQ.
+	    </item>
+	  </list>
+	</para>
+	<para id="s1s1p2">
+	  Traditional NI-DAQ and NI-DAQmx support different sets of
+	  devices. Refer to the <link url="http://ni.com/daq">National
+	  Instruments Web site</link> for the list of supported
+	  devices. This lesson describes the NI-DAQmx API.
+	</para>
+	<para id="s1s1p3">
+	  <link target-id="s1s1f1"/> shows the measurement software
+	  framework.
+	</para>
+	<figure id="s1s1f1">
+	  <media id="idp1242528" alt=""><image src="../../media/NIDAQmxArch.png" mime-type="image/png"/></media>
+	</figure>
+	<para id="s1s1p4">
+	  When programming an NI measurement device, you can use NI
+	  application software such as LabVIEW,
+	  LabWindows™/CVI™, and Measurement Studio, or
+	  open ADEs that support calling dynamic link libraries (DLLs)
+	  through ANSI C interfaces. Using NI application software
+	  greatly reduces development time for data acquisition and
+	  control applications regardless of which programming
+	  environment you use:
+	  <list id="s1s1p4l1">
+	    <item>
+	      LabVIEW supports data acquisition with the LabVIEW DAQ
+	      VIs, a series of VIs for programming with NI measurement
+	      devices.
+	    </item>
+	    <item>
+	      For C developers, LabWindows/CVI is a fully integrated
+	      ANSI C environment that provides the LabWindows/CVI Data
+	      Acquisition library for programming NI measurement
+	      devices.
+	    </item>
+	    <item>
+	      Measurement Studio development tools are for designing
+	      your test and measurement software in Microsoft Visual
+	      Studio .NET. Measurement Studio includes tools for
+	      Visual C#, Visual Basic .NET, and Visual C++ .NET.
+	    </item>
+	  </list>
+	</para>
+      </section>
+    </section>
+    <section id="s2">
+      <title>DAQ Hardware Configuration</title>
+      <para id="s2p1">
+	You must complete several steps before you can use the Data
+	Acquisition VIs. The devices are configured for the computers
+	in this class.
+      </para>
+      <section id="s2s1">
+	<title>Windows</title>
+	<para id="s2s1p1">
+	  The Windows Configuration Manager keeps track of all the
+	  hardware installed in the computer, including National
+	  Instruments DAQ devices. If you have a Plug &amp; Play (PnP)
+	  device, such as an E Series MIO device, the Windows
+	  Configuration Manager automatically detects and configures
+	  the device. If you have a non-PnP device, or legacy device,
+	  you must configure the device manually using the <code>Add New
+	  Hardware</code> option in the Control Panel.
+	</para>
+	<para id="s2s1p2">
+	  You can verify the Windows Configuration by accessing the
+	  Device Manager. You can see <code>Data Acquisition
+	  Devices</code>, which lists all DAQ devices installed in the
+	  computer. Double-click a DAQ device to display a dialog box
+	  with tabbed pages. The <code>General</code> tab displays
+	  overall information regarding the device. The
+	  <code>Resources</code> tab specifies the system resources to
+	  the device such as interrupt levels, DMA, and base address
+	  for software-configurable devices. The <code>NI-DAQ
+	  Information</code> tab specifies the bus type of the DAQ
+	  device. The <code>Driver</code> tab specifies the driver
+	  version and location for the DAQ device.
+	</para>
+	<para id="s2s1p3">
+	  LabVIEW installs Measurement &amp; Automation Explorer (MAX),
+	  which establishes all device and channel configuration
+	  parameters. After installing a DAQ device in the computer,
+	  you must run this configuration utility. MAX reads the
+	  information the Device Manager records in the Windows
+	  Registry and assigns a logical device number to each DAQ
+	  device. Use the device number to refer to the device in
+	  LabVIEW. Access MAX either by double-clicking the icon on
+	  the desktop or selecting <code>Tools&gt;&gt;Measurement &amp;
+	  Automation Explorer</code> in LabVIEW. The window in <link target-id="s2s1f1"/> is the primary MAX window. MAX is also the
+	  means for SCXI and SCC configuration.
+	</para>
+	<figure id="s2s1f1">
+	  <media id="idm206448" alt=""><image src="../../media/max.png" mime-type="image/png"/></media>
+	</figure>
+	<para id="s2s1p4">
+	  MAX detects all the National Instruments hardware including
+	  the GPIB interface. Refer to <link document="m12283">Instrument
+	  Control</link>, for more information about GPIB.
+	</para>
+	<para id="s2s1p5">
+	  The device parameters that you can set using the
+	  configuration utility depend on the device. MAX saves the
+	  logical device number and the configuration parameters in
+	  the Windows Registry.
+	</para>
+	<para id="s2s1p6">
+	  The plug and play capability of Windows automatically
+	  detects and configures switchless DAQ devices, such as the
+	  PCI-6024E. When you install a device in the computer, the
+	  device is automatically detected.
+	</para>
+      </section>
+    </section>
+    <section id="s3">
+      <title>Channel and Task Configuration</title>
+      <para id="s3p1">
+	In Traditional NI-DAQ you can configure a set of <term target-id="virtualchannels">virtual channels</term>, or a collection
+	of property settings that include a physical channel, the type
+	of measurement or generation specified in the channel name,
+	and scaling information. In Traditional NI-DAQ and earlier
+	versions, virtual channels are a simple method to remember
+	which channels are used for different measurements. NI-DAQmx
+	<term>channels</term> are similar to the virtual channels of
+	Traditional NI-DAQ.
+      </para>
+      <para id="s3p2">
+	NI-DAQmx also includes <term>tasks</term> that are integral to
+	the API. A <term target-id="task">task</term> is a collection of
+	one or more channels and the timing, triggering, and other
+	properties that apply to the task itself. A task represents a
+	measurement or generation you want to perform.
+      </para>
+      <para id="s3p3">
+	Channels created only inside a task are local. Channels
+	defined outside a task are global and can be used
+	separately. Configuring virtual channels is optional in
+	Traditional NI-DAQ and earlier versions but is integral to
+	every measurement you take in NI-DAQmx. In Traditional NI-DAQ,
+	you configure virtual channels in MAX. In NI-DAQmx, you can
+	configure virtual channels either in MAX or in a program, and
+	you can configure channels as part of a task or separately.
+      </para>
+    </section>
+  </content>
+  <glossary>
+    <definition id="virtualchannels">
+      <term>virtual channels</term>
+      <meaning id="idp937024">
+	A collection of property settings that include a physical
+	channel, the type of measurement or generation specified in
+	the channel name, and scaling information
+      </meaning>
+    </definition>
+    <definition id="task">
+      <term>task</term>
+      <meaning id="idp2189504">
+	A collection of one or more channels and the timing,
+	triggering, and other properties that apply to the task
+	itself. A task represents a measurement or generation you want
+	to perform.
+      </meaning>
+    </definition>
+  </glossary>
+  
+</document>

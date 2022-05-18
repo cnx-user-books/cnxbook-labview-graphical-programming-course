@@ -1,0 +1,52 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Making Decisions with the Select Function</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>5f2ae509-06d2-4a65-945a-81bdd1bc46c6</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Every VI described in this course so far has executed in an
+      order dependent on the flow of data. There are cases when a
+      decision must be made in a program. For example, if
+      <emphasis>a</emphasis> happens, do <emphasis>b</emphasis>; else
+      if <emphasis>c</emphasis> happens, do <emphasis>d</emphasis>.
+    </para>
+    <para id="p2">
+      In text-based programs, this can be accomplished with if-else
+      statements, case statements, switch statements, and so
+      on. LabVIEW includes many different ways of making
+      decisions. The simplest of these methods is the
+      <code>Select</code> function.
+    </para>
+    <section id="s1">
+      <title>Select Function</title>
+      
+      <para id="s1p1">
+      
+	<media id="idm6474000" alt=""><image src="../../media/selecttherm-e5bd.png" mime-type="image/png"/></media>
+	The <code>Select</code> function, located on the
+	<code>Functions&gt;&gt;Express Comparison</code> palette, selects
+	between two values dependent on a Boolean input. If the
+	Boolean input <code>s</code> is <code>True</code>, this
+	function returns the value wired to the <code>t</code>
+	input. If the Boolean input is <code>False</code>, this
+	function returns the value wired to the <code>f</code> input.
+      </para>
+      <para id="s1p2">
+	You used the <code>Select</code> function in the <link document="m12209">Thermometer VI</link> exercise to determine
+	whether to output a Fahrenheit value or a Celsius value, as
+	shown in the block diagram in <link target-id="s1f2"/>.
+      </para>
+      <figure id="s1f2">
+	<media id="idp3084496" alt=""><image src="../../media/thermbd-13fc.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s1p3">
+	If the decision to be made is more complex than a
+	<code>Select</code> function can execute, a <code>Case</code>
+	structure may be required.
+      </para>
+    </section>
+
+  </content>
+  
+</document>

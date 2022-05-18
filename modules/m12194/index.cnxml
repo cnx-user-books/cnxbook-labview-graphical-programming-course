@@ -1,0 +1,110 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Front Panel</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>d37a9faa-1131-453d-8226-baecaedcb72d</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      The front panel is the user interface of the VI. <link target-id="f1"/> shows an example of a front panel.
+    </para>
+    <figure id="f1">
+      <media id="idm268352" alt=""><image src="../../media/fpexample.png" mime-type="image/png"/></media>
+      <caption>Example of a Front Panel</caption>
+    </figure>
+    <section id="section1">
+      <title>Controls and Indicators</title>
+      <para id="para2">
+	You build the front panel with controls and indicators, which
+	are the interactive input and output terminals of the VI,
+	respectively. Controls are knobs, push buttons, dials, and
+	other input devices. Indicators are graphs, LEDs, and other
+	displays. Controls simulate instrument input devices and
+	supply data to the block diagram of the VI. Indicators
+	simulate instrument output devices and display data the block
+	diagram acquires or generates.
+      </para>
+      <section id="section2">
+	<title>Controls Palette</title>
+	<para id="para3">
+	  The <code>Controls</code> palette is available only on the
+	  front panel. The <code>Controls</code> palette contains the
+	  controls and indicators you use to create the front
+	  panel. Select <code>Window&gt;&gt;Show Controls Palette</code> or
+	  right-click the front panel workspace to display the
+	  <code>Controls</code> palette. Tack down the
+	  <code>Controls</code> palette by clicking the thumbtack on
+	  the top left corner of the palette. By default, the
+	  <code>Controls</code> palette starts in the Express view.
+	</para>
+	<para id="para4">
+	  The Express palette view includes subpalettes on the top
+	  level of the <code>Controls</code> and
+	  <code>Functions</code> palettes that contain Express VIs and
+	  other objects you need to build common measurement
+	  applications. The <code>All Controls</code> and <code>All
+	  Functions</code> subpalettes contain the complete set of
+	  built-in controls, indicators, VIs, and functions.
+	</para>
+	<para id="para5">
+	  The <code>Advanced</code> palette view includes subpalettes
+	  on the top level of the <code>Controls</code> and
+	  <code>Functions</code> palettes that contain the complete
+	  set of built-in controls, indicators, VIs, and
+	  functions. The <code>Express</code> subpalettes contain
+	  Express VIs and other objects you need to build common
+	  measurement applications.  </para>
+	<note type="note" id="idm759344">
+	  In the <code>Express</code> palette view, toolsets and
+	  modules do not install subpalettes on the top level of the
+	  <code>Controls</code> and <code>Functions</code>
+	  palettes. Instead, toolsets and modules install on the
+	  <code>All Controls</code> and <code>All Functions</code>
+	  subpalettes. In the <code>Advanced</code> palette view,
+	  toolsets and modules install subpalettes on the top level.
+	</note>
+	<para id="para6">
+	  Click the <code>Options</code> button on the
+	  <code>Controls</code> or <code>Functions</code> palette to
+	  change to another palette view or format.
+	</para>
+	<section id="section3">
+	  <title>Numeric Controls and Indicators</title>
+	  <para id="para7">
+	    The two most commonly used numeric objects are the numeric
+	    control and the numeric indicator, as shown in <link target-id="f2"/>.
+	  </para>
+	  <figure id="f2">
+	    <media id="idm6542672" alt=""><image src="../../media/numci.png" mime-type="image/png"/></media>
+	    <caption>
+	      1. Increment and Decrement Buttons, 
+	      2. Numeric Control, 
+	      3. Numeric Indicator
+	    </caption>
+	  </figure>
+	  <para id="para8">
+	    To enter or change values in a numeric control, click the
+	    <code>increment</code> and <code>decrement</code> buttons
+	    with the <code>Operating</code> tool or double-click the
+	    number with either the <code>Labeling</code> tool or the
+	    <code>Operating</code> tool, type a new number, and press
+	    the <code>Enter</code> key.
+	  </para>
+	</section>
+	<section id="section4">
+	  <title>Boolean Controls and Indicators</title>
+	  <para id="para9">
+	    Use Boolean controls and indicators to enter and display
+	    Boolean (<code>True</code> or <code>False</code>)
+	    values. Boolean objects simulate switches, push buttons,
+	    and LEDs. The most common Boolean objects are the vertical
+	    toggle switch and the round LED, as shown in <link target-id="f3"/>.
+	  </para>
+	  <figure id="f3">
+	    <media id="idp158800" alt=""><image src="../../media/boolean.png" mime-type="image/png"/></media>
+	  </figure>
+	</section>
+      </section>
+    </section>
+  </content>
+  
+</document>

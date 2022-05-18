@@ -1,0 +1,417 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Block Diagram</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>03fb5793-e966-45ef-bd14-4edd27354821</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      After you build the front panel, you add code using graphical
+      representations of functions to control the front panel
+      objects. The block diagram contains this graphical source
+      code. Front panel objects appear as terminals, on the block
+      diagram. Block diagram objects include terminals, subVIs,
+      functions, constants, structures, and wires, which transfer data
+      among other block diagram objects.
+    </para>
+    <para id="para2">
+      The VI in <link target-id="f1"/> shows several primary block
+      diagram objects-nodes, terminals, and wires.
+    </para>
+    <figure id="f1">
+      <media id="idm1842928" alt=""><image src="../../media/nodterm.png" mime-type="image/png"/></media>
+      <caption>
+	1. Nodes, 
+	2. Indicator Terminals, 
+	3. Wires, 
+	4. Control Terminals
+      </caption>
+    </figure>
+    <section id="section1">
+      <title>Functions Palette</title>
+      <para id="para3">
+	The <code>Functions</code> palette is available only on the
+	block diagram. The <code>Functions</code> palette contains
+	the VIs and functions you use to build the block diagram. Select
+	<code>Window&gt;&gt;Show Functions Palette</code> or right-click
+	the block diagram workspace to display the
+	<code>Functions</code> palette. Tack down the <code>Functions</code>
+	palette by clicking the thumbtack on the top left corner of
+	the palette. By default, the <code>Functions</code> palette
+	starts in the Express view. 
+      </para>
+    </section>
+    <section id="section2">
+      <title>Express VIs, VIs, and Functions</title>
+      <para id="para4">
+	LabVIEW uses colored icons to distinguish between Express VIs,
+	VIs, and functions on the block diagram. By default, icons for
+	Express VIs appear on the block diagram as expandable nodes
+	with icons surrounded by a blue field. Icons for VIs have
+	white backgrounds, and icons for functions have pale yellow
+	backgrounds.
+      </para>
+      <para id="para5">
+	By default, most functions and VIs on the block diagram appear
+	as icons that are not expandable, unlike Express VIs.
+      </para>
+      <section id="section3">
+	<title>Express VIs</title>
+	<para id="para6">
+	  Use Express VIs for common measurement tasks. Express VIs
+	  are nodes that require minimal wiring because you configure
+	  them with dialog boxes. You can save the configuration of an
+	  Express VI as a subVI. Refer to <cite><cite-title>Building the Block
+	  Diagram</cite-title></cite>, of the <cite><cite-title>LabVIEW User Manual</cite-title></cite> for
+	  more information about creating subVIs from Express VIs.
+	</para>
+      </section>
+      <section id="section4">
+	<title>VIs</title>
+	<para id="para7">
+	  When you place a VI on the block diagram, LabVIEW considers
+	  the VI to be a subVI. When you double-click a subVI, its
+	  front panel and block diagram appear, rather than a dialog
+	  box in which you can configure options. The front panel
+	  includes controls and indicators. The block diagram includes
+	  wires, front panel icons, functions, possibly subVIs, and
+	  other LabVIEW objects.
+	</para>
+	<para id="para8"> The upper right corner of the front panel
+	  and block diagram displays the icon for the VI. This is the
+	  icon that appears when you place the VI on the block
+	  diagram.
+	</para>
+	<para id="para9">
+	  You can create a VI to use as a subVI. Refer to <link document="m12204">Modular Programming</link> for more information
+	  about creating VIs and configuring them as subVIs.
+	</para>
+      </section>
+      <section id="section5">
+	<title>Functions</title>
+	<para id="para10">
+	  Functions are the fundamental operating elements of
+	  LabVIEW. Functions do not have front panels or block
+	  diagrams but do have connector panes. Double-clicking a
+	  function only selects the function.
+	</para>
+      </section>
+    </section>
+    <section id="section6">
+      <title>Nodes</title>
+      <para id="para11">
+	Nodes are objects on the block diagram that have inputs and/or
+	outputs and perform operations when a VI runs. They are
+	analogous to statements, operators, functions, and subroutines
+	in text-based programming languages. Nodes can be functions,
+	subVIs, or structures. Structures are process control
+	elements, such as <code>Case</code> structures, <code>For
+	Loops</code>, or <code>While Loops</code>. The
+	<code>Add</code> and <code>Subtract</code> functions in <link target-id="f1"/> are function nodes.
+      </para>
+      <section id="section7">
+	<title>Expandable Nodes versus Icons</title>
+	<para id="para12">
+	  You can display VIs and Express VIs as icons or as
+	  expandable nodes. Expandable nodes appear as icons
+	  surrounded by a colored field. SubVIs appear with a yellow
+	  field, and Express VIs appear with a blue field. Use icons,
+	  such as the <code>Basic Function Generator</code> VI icon if
+	  you want to conserve space on the block diagram. Use
+	  expandable nodes, such as the <code>Basic Function
+	  Generator</code> VI expandable node to make wiring easier
+	  and to aid in documenting block diagrams. By default, subVIs
+	  appear as icons on the block diagram, and Express VIs appear
+	  as expandable nodes.
+	</para>
+	<para id="para13">
+	  To display a subVI or Express VI as an expandable node,
+	  right-click the subVI or Express VI and select <code>View As
+	  Icon</code> from the shortcut menu to remove the checkmark.
+	</para>
+	<para id="para14">
+	  You can resize the expandable node to make wiring even
+	  easier, but it also takes a large amount of space on the
+	  block diagram. Complete the following steps to resize a node
+	  on the block diagram.
+	</para>
+	<list id="list1" list-type="enumerated">
+	  <item>
+	    Move the <code>Positioning</code> tool over the
+	    node. Resizing handles appear at the top and bottom of the
+	    node.
+	  </item>
+	  <item>
+	    Move the cursor over a resizing handle to change the
+	    cursor to the resizing cursor.
+	  </item>
+	  <item>
+	    Use the resizing cursor to drag the border of the node
+	    down to display additional terminals.
+	  </item>
+	  <item>
+	    Release the mouse button.
+	  </item>
+	</list>
+	<para id="para15">
+	  To cancel a resizing operation, drag the node border past the block
+	  diagram window before you release the mouse button.
+	</para>
+	<para id="para16">
+	  <link target-id="f2"/> shows the <code>Basic Function
+	  Generator</code> VI as a resized expandable node.
+	</para>
+	<figure id="f2">
+	  <media id="idm1535376" alt=""><image src="../../media/funcgenexpnode2.png" mime-type="image/png"/></media>
+	</figure>
+	<note type="note" id="idm425152">If you display a subVI or Express VI as an
+	  expandable node, you cannot display the terminals for that
+	  node and you cannot enable database access for that
+	  node.</note>
+      </section>
+      <section id="section8">
+	<title>Terminals</title>
+	<para id="para17">
+	  <media id="idm130944" alt=""><image src="../../media/iconterminal.png" mime-type="image/png"/></media> <media id="idm9472512" alt=""><image src="../../media/cdbl.png" mime-type="image/png"/></media> Front panel objects
+	  appear as terminals on the block diagram. The terminals
+	  represent the data type of the control or indicator. You can
+	  configure front panel controls or indicators to appear as
+	  icon or data type terminals on the block diagram. By
+	  default, front panel objects appear as icon terminals. For
+	  example, a knob icon terminal, shown at left, represents a
+	  knob on the front panel. The DBL at the bottom of the
+	  terminal represents a data type of double-precision,
+	  floating-point numeric. To display a terminal as a data type
+	  on the block diagram, right-click the terminal and select
+	  <code>View As Icon</code> from the shortcut menu to remove
+	  the checkmark. A DBL data type terminal, shown above at
+	  left, represents a double-precision, floating-point numeric
+	  control or indicator.
+	</para>
+	<para id="para18">
+	  <media id="idm1838784" alt=""><image src="../../media/addsubterm.png" id="m1" mime-type="image/png"/></media>
+	  Terminals are entry and exit ports that exchange information
+	  between the front panel and block diagram. Terminals are
+	  analogous to parameters and constants in text-based
+	  programming languages. Types of terminals include control or
+	  indicator terminals and node terminals. Control and
+	  indicator terminals belong to front panel controls and
+	  indicators. Data you enter into the front panel controls
+	  (<m:math><m:ci>a</m:ci> </m:math> and <m:math><m:ci>b</m:ci>
+	  </m:math> in <link target-id="f1"/>) enter the block diagram
+	  through the control terminals. The data then enter the
+	  <code>Add</code> and <code>Subtract</code> functions. When
+	  the <code>Add</code> and <code>Subtract</code> functions
+	  complete their internal calculations, they produce new data
+	  values. The data flow to the indicator terminals, where they
+	  exit the block diagram, reenter the front panel, and appear
+	  in front panel indicators (
+	  <m:math>
+	    <m:apply>
+	      <m:plus/>
+	      <m:ci>a</m:ci>
+	      <m:ci>b</m:ci>
+	    </m:apply>
+	  </m:math>
+	  and 
+	  <m:math>
+	    <m:apply>
+	      <m:minus/>
+	      <m:ci>a</m:ci>
+	      <m:ci>b</m:ci>
+	    </m:apply>
+	  </m:math>
+	  in <link target-id="f1"/>). The terminals in <link target-id="f1"/> belong to four front panel controls and
+	  indicators. The connector panes of the <code>Add</code> and
+	  <code>Subtract</code> functions, shown in <link target-id="m1"/>, have three node terminals. To display the
+	  terminals of the function on the block diagram, right-click
+	  the function node and select <code>Visible
+	  Items&gt;&gt;Terminals</code> from the shortcut menu.
+	</para>
+      </section>
+      <section id="section9">
+	<title>Wires</title>
+	<para id="para19">
+	  You transfer data among block diagram objects through
+	  wires. Wires are analogous to variables in text-based
+	  programming languages. In <link target-id="f1"/>, wires connect
+	  the control and indicator terminals to the <code>Add</code>
+	  and <code>Subtract</code> functions. Each wire has a single
+	  data source, but you can wire it to many VIs and functions
+	  that read the data. Wires are different colors, styles, and
+	  thicknesses, depending on their data types. A broken wire
+	  appears as a dashed black line with a red X in the
+	  middle. The examples in <link target-id="table1"/> are the most
+	  common wire types.
+	</para>
+	<table frame="all" id="table1" summary="">
+	  <tgroup cols="5" align="center">
+	    <thead valign="top">
+	      <row>
+	        <entry align="center">Wire Type</entry>
+	        <entry align="center">Scalar</entry>
+	        <entry align="center">1D Array</entry>
+		<entry align="center">2D Array</entry>
+		<entry align="center">Color</entry>
+	      </row>
+	    </thead>
+	    <tbody valign="top">
+	      <row>
+	        <entry>Numeric</entry>
+	        <entry>
+		  <media id="idp231984" alt=""><image src="../../media/wirenum.png" mime-type="image/png"/></media>
+		  <media id="idm667088" alt=""><image src="../../media/wireintnum.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idm515776" alt=""><image src="../../media/wirenumary.png" mime-type="image/png"/></media>
+		  <media id="idm514816" alt=""><image src="../../media/wireintary.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idm8446288" alt=""><image src="../../media/wirenumary2.png" mime-type="image/png"/></media>
+		  <media id="idm1399824" alt=""><image src="../../media/wireintary2.png" mime-type="image/png"/></media>
+		</entry>
+		<entry>Orange (floating-point), Blue (integer)</entry>
+	      </row>
+	      <row>
+	        <entry>Boolean</entry>
+	        <entry>
+		  <media id="idm9436000" alt=""><image src="../../media/wirebool.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idp4415456" alt=""><image src="../../media/wireboolary.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idm8914752" alt=""><image src="../../media/wireboolary2.png" mime-type="image/png"/></media>
+		</entry>
+		<entry>Green</entry>
+	      </row>
+	      <row>
+	        <entry>String</entry>
+	        <entry>
+		  <media id="idp300096" alt=""><image src="../../media/wirestrg.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idp575360" alt=""><image src="../../media/wirestrgary.png" mime-type="image/png"/></media>
+		</entry>
+	        <entry>
+		  <media id="idm216208" alt=""><image src="../../media/wirestrgary2.png" mime-type="image/png"/></media>
+		</entry>
+		<entry>Pink</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+	<para id="para20">
+	  In LabVIEW, you use wires to connect multiple terminals
+	  together to pass data in a VI. The wires must be connected
+	  to inputs and outputs that are compatible with the data that
+	  is transferred with the wire. For example, you cannot wire
+	  an array output to a numeric input. In addition the
+	  direction of the wires must be correct. The wires must be
+	  connected to only one input and at least one output. For
+	  example, you cannot wire two indicators together. The
+	  components that determine wiring compatibility include the
+	  data type of the control and/or indicator and the data type
+	  of the terminal.
+	</para>
+	<section id="section10">
+	  <title>Data Types</title>
+	  <para id="para21">
+	    Data types indicate what objects, inputs, and outputs you
+	    can wire together. For example, a switch has a green
+	    border so you can wire a switch to any input with a green
+	    label on an Express VI. A knob has an orange border so you
+	    can wire a knob to any input with an orange
+	    label. However, you cannot wire an orange knob to an input
+	    with a green label. Notice the wires are the same color as
+	    the terminal.
+	  </para>
+	  <para id="para22">
+	    <media id="idm202528" alt=""><image src="../../media/dynamicdt.png" mime-type="image/png"/></media> The
+	    dynamic data type stores the information generated or
+	    acquired by an Express VI. The dynamic data type appears
+	    as a dark blue terminal, shown at left. Most Express VIs
+	    accept and/or return the dynamic data type. You can wire
+	    the dynamic data type to any indicator or input that
+	    accepts numeric, waveform, or Boolean data. Wire the
+	    dynamic data type to an indicator that can best present
+	    the data. Indicators include a graph, chart, or numeric
+	    indicator.
+	  </para>
+	  <para id="para23">
+	    Most other VIs and functions in LabVIEW do not accept the
+	    dynamic data type. To use a built-in VI or function to
+	    analyze or process the data the dynamic data type
+	    includes, you must convert the dynamic data type.
+	  </para>
+	  <para id="para24">
+	    <media id="idm9836976" alt=""><image src="../../media/cddt-08b0.png" mime-type="image/png"/></media> <code>Use the
+	    Convert from Dynamic Data</code> Express VI, shown at
+	    left, to convert the dynamic data type to numeric,
+	    Boolean, waveform, and array data types for use with other
+	    VIs and functions. When you place the <code>Convert from
+	    Dynamic Data</code> Express VI on the block diagram, the
+	    <code>Configure Convert from Dynamic Data</code> dialog
+	    box appears. The <code>Configure Convert from Dynamic
+	    Data</code> dialog box displays options that let you
+	    specify how you want to format the data that the
+	    <code>Convert from Dynamic Data</code> Express VI returns.
+	  </para>
+	  <para id="para25">
+	    When you wire a dynamic data type to an array indicator,
+	    LabVIEW automatically places the <code>Convert from
+	    Dynamic Data</code> Express VI on the block
+	    diagram. Double-click the <code>Convert from Dynamic
+	    Data</code> Express VI to open the <code>Configure Convert
+	    from Dynamic Data</code> dialog box to control how the
+	    data appears in the array.
+	  </para>
+	  <para id="para26">
+	    Use the <code>Convert to Dynamic Data</code> Express VI to
+	    convert numeric, Boolean, waveform, and array data types
+	    to the dynamic data type for use with Express VIs. When
+	    you place the <code>Convert to Dynamic Data</code> Express
+	    VI on the block diagram, the <code>Configure Convert to
+	    Dynamic Data</code> dialog box appears. Use this dialog
+	    box to select the kind of data to convert to the dynamic
+	    data type.
+	  </para>
+	</section>
+	<section id="section11">
+	  <title>Automatically Wiring Objects</title>
+	  <para id="para27">
+	    LabVIEW automatically wires objects as you place them on
+	    the block diagram. You also can automatically wire objects
+	    already on the block diagram. LabVIEW connects the
+	    terminals that best match and leaves terminals that do not
+	    match unconnected.
+	  </para>
+	  <para id="para28">
+	    As you move a selected object close to other objects on
+	    the block diagram, LabVIEW draws temporary wires to show
+	    you valid connections. When you release the mouse button
+	    to place the object on the block diagram, LabVIEW
+	    automatically connects the wires.
+	  </para>
+	  <para id="para29">
+	    Toggle automatic wiring by pressing the spacebar while you
+	    move an object using the <code>Positioning</code>
+	    tool. You can adjust the automatic wiring settings by
+	    selecting <code>Tools&gt;&gt;Options</code> and selecting
+	    <code>Block Diagram</code> from the top pull-down menu.
+	  </para>
+	</section>
+	<section id="section12">
+	  <title>Manually Wiring Objects</title>
+	  <para id="para30">
+	    When you pass the <code>Wiring</code> tool over a
+	    terminal, a tip strip appears with the name of the
+	    terminal. In addition, the terminal blinks in the
+	    <code>Context Help</code> window and on the icon to help
+	    you verify that you are wiring to the correct terminal.
+	  </para>
+	</section>
+      </section>
+    </section>	  
+  </content>
+  
+</document>

@@ -1,0 +1,269 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Temperature Logger VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8749bb50-11bf-41a0-b3fb-f4074556caf6</md:uuid>
+</metadata>
+  <!--When CNXML 0.6 arrives, this module will need to be revised to
+  include para in the items indicated.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm524672">
+	<section id="s1">
+	  <title>Block Diagram</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open the <link document="m12247">Temperature Control VI</link>
+	      and save it as <code>Temperature Logger.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code>
+	      directory. You do not need to modify the front panel.
+	    </item>
+	    <item>
+	      Open and modify the block diagram as shown in <link target-id="s1l1f1"/>. Resize the <code>While Loop</code> to
+	      add space at the top for the file I/O operations.
+	      <figure id="s1l1f1">
+		<media id="idm748544" alt=""><image src="../../media/templogbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s1l1l1" list-type="enumerated">
+		<item><!--needs para-->
+		    <media id="idm640240" alt=""><image src="../../media/OpenFileIcon-f08a.png" mime-type="image/png"/></media>
+		  <!--para-->
+		  Place the <code>Open/Create/Replace File</code>
+		  VI, located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;File I/O</code> palette, on the block
+		  diagram.
+		  <!--para-->
+		  Right-click the <code>prompt</code> input, select
+		  <code>Create Constant</code> from the shortcut menu
+		  and type <code>Enter File Name</code> in the
+		  constant.
+		  <!--para-->
+		  Right-click the <code>function</code> input, select
+		  <code>Create Constant</code> from the shortcut menu,
+		  and click the constant with the <code>Operating</code> tool to
+		  select <code>create or replace</code>.
+		</item>
+		<item><!--needs para-->
+		    <media id="idp833616" alt=""><image src="../../media/gettmdtstrgicon.png" mime-type="image/png"/></media>
+		  <!--para-->
+		  Place the <code>Get Date/Time
+		  String</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Time &amp;
+		  Dialog</code> palette, on the block diagram. This
+		  function returns the time, in string format, when
+		  the temperature measurement was taken.
+		  <!--para-->
+		  Right-click the <code>want seconds?</code> input,
+		  select <code>Create&gt;&gt;Constant</code> from the
+		  shortcut menu, and click the constant with the
+		  Operating tool to change the constant from
+		  <code>False</code> to <code>True</code>. The <code>True</code>
+		  Boolean constant sets the function to include
+		  seconds in the string.
+		</item>
+		<item>
+		    <media id="idp9361488" alt=""><image src="../../media/BuildIcon-13e1.png" mime-type="image/png"/></media>
+		  Place the <code>Build Text</code> Express
+		  VI, located on the
+		  <code>Functions&gt;&gt;Output</code> palette, on the block
+		  diagram. This Express VI converts the inputs to one
+		  string. The <code>Configure Build Text</code> dialog
+		  box appears.
+		  <list id="s1l1l1l1" list-type="enumerated">
+		    <item>
+		      Type <code>%tab%%temp%%end%</code> in the
+		      <code>Text with Variables in Percents</code>
+		      text box to set up three variables; one for the
+		      tab constant, one for the temperature and one
+		      for the end of line constant. Because time uses
+		      the <code>Beginning Text</code> input of the
+		      <code>Build Text</code> Express VI, it does not
+		      need a variable.
+		    </item>
+		    <item>
+		      Select <code>temp</code> in the <code>Configure
+		      Variables</code> section. Select the
+		      <code>Number</code> option, and a format of
+		      <code>Format fractional number</code>. The
+		      <code>tab</code> and <code>end</code> variables
+		      do not need to be formatted. You can leave them
+		      in the default state.
+		    </item>
+		    <item>
+		      Click the <code>OK</code> button to close the
+		      configuration dialog box.
+		    </item>
+		    <item>
+		      Right-click the <code>Build Text Express
+		      VI</code> and select <code>View As Icon</code>
+		      to conserve block diagram space.
+		    </item>
+		  </list>
+		</item>
+		<item>
+		      <media id="idm687728" alt=""><image src="../../media/tabicon.png" mime-type="image/png"/></media>
+		      <media id="idp8911408" alt=""><image src="../../media/eolicon.png" mime-type="image/png"/></media>
+		  Place a <code>Tab
+		  constant</code> and an <code>End
+		  of Line constant</code>, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;String</code>
+		  palette, on the block diagram.
+		</item>
+		<item>
+		    <media id="idp8018096" alt=""><image src="../../media/WriteFileIcon-4c18.png" mime-type="image/png"/></media>
+		  Place the <code>Write File</code>
+		  function, located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;File I/O</code> palette, on the block
+		  diagram. This function writes to the file specified
+		  by <code>refnum</code>.
+		</item>
+		<item>
+		    <media id="idp8525584" alt=""><image src="../../media/CloseFileIcon-6f44.png" mime-type="image/png"/></media>
+		  Place the <code>Close File</code>
+		  function, located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;File I/O</code> palette, on the block
+		  diagram. This function closes the file.
+		</item>
+		<item>
+		    <media id="idp8851136" alt=""><image src="../../media/Error-f276.png" mime-type="image/png"/></media>
+		  Place the <code>Simple Error
+		  Handler</code> VI, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Time &amp;
+		  Dialog</code> palette, on the block diagram. This VI
+		  checks the error cluster and displays a dialog box
+		  if an error occurs.
+		</item>
+		<item>
+		  Complete the block diagram as shown in <link target-id="s1l1f1"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI. You will use this VI later in the course.
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Run the VI</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Display the front panel and run the VI. The <code>Enter
+	      File Name</code> dialog box appears.
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      Type <code>temp.txt</code> and click the
+	      <code>Save</code> or <code>OK</code> button.
+	      <!--para-->
+	      The VI creates a file called <code>temp.txt</code>. The
+	      VI takes readings every half-second and saves the time
+	      and temperature data to a file until you click the
+	      <code>Power</code> switch. When the VI finishes, it
+	      closes the file.
+	    </item>
+	    <item>
+	      Open a word processor or spreadsheet application, such
+	      as (<emphasis>Windows</emphasis>) Notepad or WordPad,
+	      (<emphasis>Mac OS</emphasis>) SimpleText, or
+	      (<emphasis>UNIX</emphasis>) Text Editor.
+	    </item>
+	    <item>
+	      Open the <code>temp.txt</code> file in the word
+	      processing or spreadsheet application. The time appears
+	      in the first column, and the temperature data appears in
+	      the second column.
+	    </item>
+	    <item>
+	      Exit the word processor or spreadsheet application and
+	      return to LabVIEW.
+	    </item>
+	    <item>
+	      If time permits, complete the optional steps. Otherwise,
+	      close the VI.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Optional</title>
+	  <para id="s3p1">
+	    When using error handling in a VI, the <code>While
+	    Loop</code> should stop executing when an error
+	    occurs. Complete the following steps to modify the VI so
+	    it stops when the user clicks the <code>Power
+	    </code>switch or an error occurs.
+	  </para>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Edit the block diagram as shown in <link target-id="s3l1f1"/>.
+	      <figure id="s3l1f1">
+		<media id="idp9589376" alt=""><image src="../../media/templogoptbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s3l1l1" list-type="enumerated">
+		<item>
+		    <media id="idp9773648" alt=""><image src="../../media/unbundle-1187.png" mime-type="image/png"/></media>
+		  Place the <code>Unbundle by
+		  Name</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code>
+		  palette, on the block diagram. This function reads
+		  the status output from the error cluster.
+		</item>
+		<item>
+		      <media id="idp13930448" alt=""><image src="../../media/not-c2e2.png" mime-type="image/png"/></media>
+		      <media id="idp6357888" alt=""><image src="../../media/andicon.png" mime-type="image/png"/></media>
+		  Place the <code>Not</code>
+		  function and the <code>And</code> function, located on
+		  the <code>Functions&gt;&gt;Arithmetic &amp;
+		  Comparison&gt;&gt;Express Boolean</code> palette, on the
+		  block diagram. These functions set the conditional
+		  terminal to continue while <code>Power</code> is
+		  <code>True</code> and no error occurs.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save and run the VI. 
+	    </item>
+	    <item>
+	      Test the error handling by deleting the
+	      <code>refnum</code> wire between the <code>Write
+	      File</code> function and the left border of the
+	      <code>While Loop</code>. Right-click the
+	      <code>refnum</code> input of <code>Write File</code> and
+	      select <code>Create&gt;&gt;Constant</code>.
+	    </item>
+	    <item>
+	      Run the VI again. The VI should wait for a path, then
+	      stop immediately with an error. If error handling was
+	      not included in this VI, the VI would not report the
+	      error until the user stopped the VI.
+	    </item>
+	    <item>
+	      If time permits, complete the challenge
+	      steps. Otherwise, close the VI. Do not save changes.
+	    </item>
+	  </list>
+	</section>
+	<section id="s4">
+	  <title>Challenge</title>
+	  <list id="s4l1" list-type="enumerated">
+	    <item>
+	      Replace the <code>Build Text Express VI</code> and the
+	      <code>Write File</code> function with the <code>Format
+	      Into File</code> function.
+	    </item>
+	    <item>
+	      Run the VI.
+	    </item>
+	    <item>
+	      Close the VI. Do not save changes.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+	      
+		  
+
+		  
+
+  </content>
+  
+</document>

@@ -1,0 +1,134 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Formatting Spreadsheet Strings</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>7c2a2051-10f6-4447-a237-187c0c39d710</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      To write data to a spreadsheet file, you must format the string
+      as a spreadsheet string, which is a string that includes
+      delimiters, such as tabs. In many spreadsheet applications, the
+      tab character separates columns, and the end of line character
+      separates rows.
+    </para>
+    <note id="idm6907200">
+      Use the end of line constant located on the <code>Functions&gt;&gt;All
+      Functions&gt;&gt;String</code> palette to ensure portability of VIs
+      among platforms. (<emphasis>Windows</emphasis>) The constant
+      inserts a carriage return and a linefeed. (<emphasis>Mac
+      OS</emphasis>) The constant inserts a carriage
+      return. (<emphasis>UNIX</emphasis>) The constant inserts a
+      linefeed.
+    </note>
+    <para id="p2">
+      Use the <code>Write To Spreadsheet File</code> VI or the
+      <code>Array To Spreadsheet String</code> function to convert a
+      set of numbers from a graph, a chart, or an acquisition into a
+      spreadsheet string. If you want to write numbers and text to a
+      spreadsheet or word processing application, use the String
+      functions and the Array functions to format the data and to
+      combine the strings. Then write the data to a file.
+    </para>
+    <section id="s1">
+      <title>Format Into File</title>
+      <para id="s2p1">
+	Use the <code>Format Into File</code> function to format
+	string, numeric, path, and Boolean data as text and write the
+	text to a file. Often you can use this function instead of
+	separately formatting the string with the <code>Format Into
+	String</code> function or<code> Build Text Express VI</code>
+	and writing the resulting string with the <code>Write
+	Characters To File VI</code> or <code>Write File</code>
+	function.
+      </para>
+      <para id="s2p2">
+	Use the <code>Format Into File</code> function to determine
+	the order in which the data appears in the text file. However,
+	you cannot use this function to append data to a file or
+	overwrite existing data in a file. For these operations, use
+	the <code>Format Into String</code> function with the
+	<code>Write File</code> function. You can wire a
+	<code>refnum</code> or <code>path</code> to the <code>input
+	file</code> terminal of the <code>Format Into File</code>
+	function, or you can leave this input unwired for a dialog box
+	to prompt you for the filename.
+      </para>
+      <para id="s2p3">
+	In the block diagram shown in <link target-id="s2f1"/>, the
+	<code>Open/Create/Replace File</code> VI opens a file, and the
+	<code>For Loop</code> executes five times. The <code>Format
+	Into File</code> function converts the iteration count and the
+	random number to strings and places the tab and end of line
+	characters in the correct positions to create two columns and
+	one row in spreadsheet format. After the loop completes five
+	iterations, the file closes, and the VI checks the error
+	condition.
+      </para>
+      <figure id="s2f1">
+	<media id="idp6945296" alt=""><image src="../../media/frmtspreadstrg.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s2p4">
+	This VI creates this text file, where an arrow (→)
+	indicates a tab, and a paragraph symbol (¶) indicates an
+	end of line character.
+	<code display="block" id="idp2633568">
+	  0→ 0.798141¶
+	  1→ 0.659364¶
+	  2→ 0.581409¶
+	  3→ 0.526433¶
+	  4→ 0.171062¶
+	</code>
+      </para>
+      <para id="s2p5">
+	You can open the previous text file in a spreadsheet
+	application to display the spreadsheet shown in <link target-id="s2f2"/>.
+      </para>
+      <figure id="s2f2">
+	<media id="idm6742288" alt=""><image src="../../media/frmtspreadstrgxls.png" mime-type="image/png"/></media>
+      </figure>
+    </section>
+    <section id="s3">
+      <title>Write LabVIEW Measurement File</title>
+      <para id="s3p1">
+	In the block diagram shown in <link target-id="s3f1"/>, the
+	<code>Write LabVIEW Measurement File</code> Express VI
+	includes the open, write, close, and error handling
+	functions. It also handles formatting the string with either a
+	tab or comma delimiter. The <code>Merge Signals</code>
+	function combines the iteration count and the random number
+	into the dynamic data type.
+      </para>
+      <figure id="s3f1">
+	<media id="idm5921920" alt=""><image src="../../media/frmtspreadstrg2.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s3p2">
+	The dialog box in <link target-id="s3f2"/> shows the
+	configuration for the <code>Write LabVIEW Measurement File</code>
+	Express VI.
+      </para>
+      <figure id="s3f2">
+	<media id="idm99680" alt=""><image src="../../media/formatlvm.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s3p3">
+	This VI creates a <code>.lvm</code> file which you can open in
+	a spreadsheet application. <link target-id="s3f3"/> shows an
+	example of the spreadsheet created by the previous
+	configuration of the <code>Write LabVIEW Measurement File</code>
+	Express VI.
+      </para>
+      <figure id="s3f3">
+	<media id="idm286048" alt=""><image src="../../media/frmtspreadstrgxls2.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s3p4">
+	Refer to the lesson on <link document="m12258">Data Acquisition and
+	Waveforms</link>, for more information about the <code>Write
+	LabVIEW Measurement File</code> and <code>Read LabVIEW
+	Measurement File</code> Express VIs.
+      </para>
+    </section>
+
+
+
+  </content>
+  
+</document>

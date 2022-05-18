@@ -1,0 +1,42 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Instrument Control</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>256796d5-3f5b-4bc0-a3f3-a6734fa8772a</md:uuid>
+</metadata>
+
+  <content>
+    <list id="l1">
+      <item>
+	LabVIEW can communicate with an instrument that connects to
+	the computer as long as you know what kind of interface it is
+	and what cabling is required.
+      </item>
+      <item>
+	Use MAX to configure and test GPIB interface cards, connected
+	instruments, serial ports, and parallel ports.
+      </item>
+      <item>
+	LabVIEW instrument drivers eliminate the need to learn the
+	complex, low-level programming commands for each instrument.
+      </item>
+      <item>
+	The LabVIEW instrument driver library is located on the
+	LabVIEW CD. You also can download drivers from the NI Web site
+	at <link url="http://ni.com">ni.com</link>.
+      </item>
+      <item>
+	All instrument drivers in the library have the same basic VI
+	hierarchy.
+      </item>
+      <item>
+	Use the <code>Instrument I/O Assistant</code> to rapidly and
+	easily build a VI to communicate with an instrument. You can
+	control VXI, GPIB, RS-232, and other types of instruments.
+      </item>
+      <item>
+	Serial communication is a popular means of transmitting data
+	between a computer and a peripheral device such as a
+	programmable instrument or even another computer.
+      </item>
+    </list>
+  </content>
+</document>

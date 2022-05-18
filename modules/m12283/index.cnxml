@@ -1,0 +1,246 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>GPIB Communication and Configuration</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>44839c8b-5a1e-40af-b425-5d7635d858d6</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      The <term>ANSI/IEEE Standard 488.1-1987</term>, also known as
+      <term>General Purpose Interface Bus</term> (<term>GPIB</term>),
+      describes a standard interface for communication between
+      instruments and controllers from various vendors, such as
+      scanners and film recorders. It contains information about
+      electrical, mechanical, and functional specifications. GPIB is a
+      digital, 8-bit parallel communication interface with data
+      transfer rates of 1 Mbyte/s and higher, using a three-wire
+      handshake. The bus supports one System Controller, usually a
+      computer, and up to 14 additional instruments. The ANSI/IEEE
+      Standard 488.2-1992 extends IEEE 488.1 by defining a bus
+      communication protocol, a common set of data codes and formats,
+      and a generic set of common device commands.
+    </para>
+    <para id="p2">
+      GPIB instruments offer test and manufacturing engineers the
+      widest selection of vendors and instruments for general-purpose
+      to specialized vertical market test applications. GPIB
+      instruments have traditionally been used as stand-alone benchtop
+      instruments where measurements are taken by hand.
+    </para>
+    <para id="p3">
+      The GPIB is a 24-conductor parallel bus that consists of eight
+      data lines, five bus management lines (ATN, EOI, IFC, REN, and
+      SRQ), three handshake lines, and eight ground lines. The GPIB
+      uses a byte-serial, asynchronous data transfer scheme. This
+      means that whole bytes are sequentially handshaked across the
+      bus at a speed that the slowest participant in the transfer
+      determines. Because the unit of data on the GPIB is a byte, the
+      messages transferred are frequently encoded as ASCII character
+      strings.
+    </para>
+    <section id="s1">
+      <title>GPIB Addressing</title>
+      <para id="s1p1">
+	All GPIB devices and interfaces must have a unique GPIB
+	address between 0 and 30. Address 0 is normally assigned to
+	the GPIB interface. The instruments on the GPIB can use
+	addresses 1 through 30. GPIB devices can be talkers,
+	listeners, or controllers. A talker sends out data
+	messages. Listeners receive data messages. The controller,
+	usually a computer, manages the flow of information on the
+	bus. It defines the communication links and sends GPIB
+	commands to devices. The GPIB VIs automatically handle the
+	addressing and most other bus management functions.
+      </para>
+    </section>
+    <section id="s2">
+      <title>Data Transfer Termination</title>
+      <para id="s2p1">
+	You can terminate a GPIB data transfer in the following three
+	ways:
+	<list id="s2p1l1">
+	  <item>
+	    The GPIB includes a hardware line (EOI) that can be
+	    asserted with the last data byte. This is the preferred
+	    method.
+	  </item>
+	  <item>
+	    Place a specific end-of-string (EOS) character at the end
+	    of the data string itself. Some instruments use this
+	    method instead of or in addition to the EOI line
+	    assertion.
+	  </item>
+	  <item>
+	    The listener counts the bytes handshaked and stops reading
+	    when the listener reaches a byte count limit. This method
+	    is often used as a default termination method because the
+	    transfer stops on the logical OR of EOI, EOS (if used) in
+	    conjunction with the byte count. Thus, you typically set
+	    the byte count to equal or exceed the expected number of
+	    bytes to be read.
+	  </item>
+	</list>
+      </para>
+    </section>
+    <section id="s3">
+      <title>Restrictions</title>
+      <para id="s3p1">
+	To achieve the high data transfer rate that the GPIB was
+	designed for, you must limit the number of devices on the bus
+	and the physical distance between devices. The following
+	restrictions are typical:
+	<list id="s3p1l1">
+	  <item>
+	    A maximum separation of 4 m between any two devices and an
+	    average separation of 2 m over the entire bus
+	  </item>
+	  <item>
+	    A maximum total cable length of 20 m
+	  </item>
+	  <item>
+	    A maximum of 15 devices connected to each bus, with at
+	    least two-thirds powered on
+	  </item>
+	</list>
+      </para>
+      <para id="s3p2">
+	For high-speed operation, the following restrictions apply:
+	<list id="s3p2l1">
+	  <item>
+	    All devices in the system must be powered on
+	  </item>
+	  <item>
+	    Cable lengths must be as short as possible with up to a
+	    maximum of 15 m of cable for each system
+	  </item>
+	  <item>
+	    There must be at least one equivalent device load per
+	    meter of cable
+	  </item>
+	</list>
+      </para>
+      <para id="s3p3">
+	If you want to exceed these limitations, you can use a bus
+	extender to increase the cable length or a bus expander to
+	increase the number of device loads. You can order bus
+	extenders and expanders from National Instruments.
+      </para>
+      <note id="idm6524688">
+	Refer to the <link url="http://www.ni.com/support/gpibsupp.htm">National
+	 Instruments GPIB support Web site</link> for more information
+	 about GPIB.
+      </note>
+    </section>
+    <section id="s4">
+      <title>Software Architecture</title>
+      <para id="s4p1">
+	The software architecture for GPIB instrument control using
+	LabVIEW is similar to the architecture for DAQ. The GPIB
+	interface includes a set of drivers. These drivers also are
+	available on the LabVIEW CD and the majority of the drivers
+	are available for download at <link url="http://ni.com/support/gpib/versions.htm">http://ni.com/support/gpib/versions.htm</link>. Always
+	install the newest version of these drivers unless otherwise
+	instructed in the release notes for either the GPIB interface
+	or LabVIEW.
+      </para>
+      <para id="s4p2"><title>(Windows)</title>
+	 Use MAX to configure and test the GPIB
+	interface. MAX interacts with the various diagnostic and
+	configuration tools installed with the driver and also with
+	the Windows Registry and Device Manager. The driver-level
+	software is in the form of a DLL and contains all the
+	functions that directly communicate with the GPIB
+	interface. The Instrument I/O VIs and functions directly call
+	the driver software.
+      </para>
+      <section id="s4s1">
+	<title>Configuration Software (Windows)</title>
+	<note id="idm374032">
+	  <emphasis>(MAC OS and UNIX)</emphasis> Refer to the GPIB
+	  interface documentation for information about configuring
+	  and testing the interface.
+	</note>
+	<para id="s4s1p1">
+	  MAX is the configuration utility for National Instruments
+	  software and hardware. It also can execute system
+	  diagnostics, add new channels, interfaces, and virtual
+	  channels, and view devices and instruments connected to the
+	  system.
+	</para>
+	<para id="s4s1p2">
+	  Open MAX by double-clicking the icon on the desktop or by
+	  selecting <code>Tools&gt;&gt;Measurement &amp; Automation
+	  Explorer</code> in LabVIEW.
+	</para>
+	<para id="s4s1p3">
+	  The Configuration pane of MAX includes the following
+	  sections under My System:
+	  <list id="s4s1p3l1" list-type="labeled-item">
+	    <item><label>Data Neighborhood</label>
+	      
+	      
+	      Use this section to create and test virtual channels,
+	      aliases, and tags to channels or measurements configured
+	      in <code>Devices and Interfaces</code>.
+	    </item>
+	    <item><label>Devices and Interfaces</label>
+	      
+
+	      Use this section to configure resources and other
+	      physical properties of devices and interfaces and to
+	      view attributes of one or multiple devices, such as
+	      serial numbers.
+	    </item>
+	    <item><label>IVI Instruments</label>
+	      
+	      
+	      Use this section to name an IVI virtual instrument,
+	      modify its properties, and swap IVI instruments.
+	    </item>
+	    <item><label>Scales</label>
+	      
+
+	      Use this section to set up simple operations to perform
+	      on data, such as scaling the temperature reading from
+	      the DAQ Signal Accessory from volts to degrees Celsius.
+	    </item>
+	    <item><label>Historical Data</label>
+	      
+	      
+	      Use this section to access databases and logged data.
+	    </item>
+	    <item><label>Software</label>
+	      
+
+	      Use this section to determine which National Instruments
+	      drivers and application software are installed and their
+	      version numbers.
+	    </item>
+	    <item><label>VI Logger Tasks</label>
+	      
+
+	      Use this section to create, modify, run, and view VI
+	      Logger tasks.
+	    </item>
+	  </list>
+	</para>
+	<para id="s4s1p4">
+	  The <link target-id="s4s1f1">example</link> shows a GPIB
+	  interface in MAX after clicking the <code>Scan For Instruments</code>
+	  button on the toolbar.
+	</para>
+	<figure id="s4s1f1">
+	  <media id="idp2147920" alt=""><image src="../../media/maxgpib.png" mime-type="image/png"/></media>
+	</figure>
+	<para id="s4s1p5">
+	  The <code>Remote Systems</code> section in the <code>Configuration</code>
+	  pane allows you to view and configure remote systems, such
+	  as RT Series PXI Controllers. Configure the objects listed
+	  in MAX by right-clicking each item and selecting an option
+	  from the shortcut menu.
+	</para>
+      </section>
+    </section>
+	
+  
+  </content>
+</document>

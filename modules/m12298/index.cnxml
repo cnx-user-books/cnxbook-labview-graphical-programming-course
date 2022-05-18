@@ -1,0 +1,27 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Additional Exercises for Instrument Control</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8cb7c906-80dd-4456-b8cd-4033c68277ed</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idm13272128">
+	<para id="e1p1">
+	  Open the <link document="m12292">Voltage Monitor</link> VI. Modify
+	  the block diagram so that the data are written to a
+	  spreadsheet file named <code>voltage.txt</code> in the
+	  format shown in <link target-id="e1p1f1"/>.
+	</para>
+	<figure id="e1p1f1">
+	  <media id="idm6586640" alt=""><image src="../../media/voltdatafile.png" mime-type="image/png"/></media>
+	</figure>
+	<para id="e1p2">
+	  Select <code>File&gt;&gt;Save As</code> to save the VI as
+	  <code>Voltage Data to File.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

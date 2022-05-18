@@ -1,0 +1,97 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>LabVIEW Course Exercise Code</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8e623294-0444-4635-8abe-022e330c3ccd</md:uuid>
+</metadata>
+  <content>
+    <section id="id-679556338869">
+      <title>A. About This Course</title>
+      <para id="id16408672">This course teaches you how to use LabVIEW to develop test and measurement, data acquisition, instrument control, datalogging, measurement analysis, and report generation applications. This course assumes that you are familiar with Windows, Mac OS, or UNIX and that you have experience writing algorithms in the form of flowcharts or block diagrams.</para>
+      <para id="id12845980">The course is divided into lessons, each covering a topic or a set of topics. Each lesson consists of the following:</para>
+      <list list-type="bulleted" id="id14754908">
+        <item>An introduction that describes the purpose of the lesson and what you will learn</item>
+        <item>A description of the topics in the lesson</item>
+        <item>A set of exercises to reinforce those topics. Some lessons include optional and challenge exercise sections or a set of additional exercises to complete if time permits.</item>
+        <item>A summary that outlines important concepts and skills taught in the lesson</item>
+      </list>
+      <para id="id5333115">Several exercises in this manual use one of the following National Instruments hardware products:</para>
+      <list list-type="bulleted" id="id15100301">
+        <item>A plug-in multifunction data acquisition (DAQ) device connected to a DAQ Signal Accessory containing a temperature sensor, function generator, and LEDs</item>
+        <item>A GPIB interface connected to an NI Instrument Simulator</item>
+      </list><para id="element-273"><media id="idp5525408" alt=""><image src="../../media/graphics1.png" mime-type="image/png" height="23" width="52"/></media> </para>
+      <para id="id5769119">If you do not have this hardware, you still can complete most of the exercises. Be sure to use the demo versions of the VIs when you are working through exercises. Exercises that explicitly require hardware are indicated with an icon, shown in Figure 1. You also can substitute other hardware for those previously mentioned. For example, you can use a GPIB instrument in place of the NI Instrument Simulator, or another National Instruments DAQ device connected to a signal source, such as a function generator.</para>
+    </section>
+    <section id="id-368248239686">
+      <title>B. What You Need to Get Started</title>
+      <para id="id14540336">Before you use this course manual, ensure you have all the following items:</para>
+      <list list-type="bulleted" id="id5373862">
+        <item>(Windows) Windows 98 or later installed on your computer; (Mac OS) System 10.2 or later for Mac OS X, System 9.1 or later for OS 9.x or earlier; (UNIX) Sun workstation running Solaris 2.5.1 or later and X Window System server, such as OpenWindows, CDE, or X11R6, or a PC running Linux kernel 2.0.x or later for Intel x86 processors</item>
+        <item>(Windows) Multifunction DAQ device configured as device 1 using Measurement &amp; Automation Explorer (MAX)</item>
+        <item>DAQ Signal Accessory, wires, and cable</item>
+        <item>GPIB interface</item>
+        <item>NI Instrument Simulator and power supply</item>
+        <item>LabVIEW Full or Professional Development System 7.0 or later. </item>
+      </list>
+      <para id="id10213906">This course assumes you are using the default installation of LabVIEW. If you have changed the palette views from the default settings, some palette paths described in the course may not match your settings. To reset palette views to LabVIEW defaults, select Tools»Options and select Controls/Functions Palettes from the top pull-down menu. Set Palette View to Express and set Format to Standard. Click the OK button to apply the changes and close the dialog box.</para>
+      
+      <list list-type="bulleted" id="id14492703"><item>A serial cable</item><item>A GPIB cable</item>
+	<item>(Optional) A word processing application such as Notepad or WordPad</item>
+	<item>The following files provided</item>
+</list>
+      <table id="id14827254" summary="">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+	<colspec colnum="2" colname="c2"/>
+	<tbody>
+		<row>
+			<entry>Filename</entry>
+			<entry>Description</entry>
+		</row>
+		<row> 
+			<entry><link resource="Exercises.zip">Exercises</link></entry>
+			<entry>Folder for saving VIs created during the course and for completing certain course exercises; also includes subVIs necessary for some exercises</entry>
+		</row>
+		<row>
+			<entry>nidevsim.zip</entry>
+			<entry>Zip file containing the LabVIEW instrument driver for the NI Instrument Simulator (Contained in Exercises.zip)</entry>
+		</row>
+		<row>
+			<entry><link resource="Solutions.zip">Solutions</link></entry>
+			<entry>Folder containing the solutions to all the course exercises</entry>
+		</row>
+	</tbody>
+
+</tgroup>
+</table>
+    </section>
+    <section id="id-154256470631">
+      <title>C. Installing the Course Software</title>
+      <para id="id9656209">Complete the following steps to install the course software.</para>
+      <list list-type="enumerated" id="id15061990"><item>Copy the contents of the nidevsim directory to the labview\instr.lib directory. After you start LabVIEW, the NI DevSim instrument driver is located on the Functions»Input»Instrument Drivers palette.</item>
+	<item>Copy the <link resource="Exercises.zip">Exercises directory</link> to the top level of the C: directory.</item>
+	<item>Copy the <link resource="Solutions.zip">Solutions directory</link> to the top level of the C: directory.</item>
+</list>
+    </section>
+    <section id="id-908593413484">
+      <title>D. Course Goals and Non-Goals</title>
+      <para id="id16739349">This course prepares you to do the following:</para>
+      <list list-type="bulleted" id="id16463853">
+        <item>Understand front panels, block diagrams, icons, and connector panes</item>
+        <item>Use the programming structures and data types that exist in LabVIEW</item>
+        <item>Use various editing and debugging techniques</item>
+        <item>Create and save VIs so you can use them as subVIs</item>
+        <item>Display and log data</item>
+        <item>Create applications that use plug-in DAQ devices</item>
+        <item>Create applications that use serial port and GPIB instruments</item>
+      </list>
+      <para id="id15280134">This course does not describe any of the following:</para>
+      <list list-type="bulleted" id="id10856076">
+        <item>Every built-in VI, function, or object; refer to the LabVIEW Help for more information about LabVIEW features not described in this course</item>
+        <item>Analog-to-digital (A/D) theory</item>
+        <item>Operation of the serial port</item>
+        <item>Operation of the GPIB bus</item>
+        <item>Developing an instrument driver</item>
+        <item>Developing a complete application for any student in the class; refer to the NI Example Finder, available by selecting Help»Find Examples, for example VIs you can use and incorporate into VIs you create</item>
+      </list><note id="idp4707088">If you need assistance beyond that provided in this course, you can post a message to the National Instruments discussion forums at: http://forums.ni.com/</note>
+      
+    </section>
+  </content>
+</document>

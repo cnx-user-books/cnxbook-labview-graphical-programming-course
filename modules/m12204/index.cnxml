@@ -1,0 +1,153 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Modular Programming</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0adcde2f-1ed0-440c-8ac0-622e796f8ed2</md:uuid>
+</metadata>
+
+  <content>
+    <para id="intro">
+      The power of LabVIEW lies in the hierarchical nature of the
+      VI. After you create a VI, you can use it on the block diagram
+      of another VI. There is no limit on the number of layers in the
+      hierarchy. Using modular programming helps you manage changes
+      and debug the block diagram quickly.  
+    </para>
+    <para id="intro2">
+      A VI within another VI is called a subVI. A subVI corresponds to
+      a subroutine in text-based programming languages. When you
+      double-click a subVI, a front panel and block diagram appear,
+      rather than a dialog box in which you can configure options. The
+      front panel includes controls and indicators that might look
+      familiar. The block diagram includes wires, front panel icons,
+      functions, possibly subVIs, and other LabVIEW objects that also
+      might look familiar.
+    </para>
+
+    <para id="intro3">
+      The upper right corner of the front panel and block diagram
+      displays the icon for the VI. This icon is the same as the icon
+      that appears when you place the VI on the block diagram.
+    </para>
+    
+    <section id="idp961776">
+      <title>Icon and Connector Pane</title>
+      <para id="p1">
+	<media id="idp507584" alt=""><image src="../../media/vi_icon.png" id="m1" mime-type="image/png"/></media> After you build a
+	front panel and block diagram, build the icon and the
+	connector pane so you can use the VI as a subVI. Every VI
+	displays an icon, such as the one shown in <link target-id="m1"/>, in the upper right corner of the front panel
+	and block diagram windows. An icon is a graphical
+	representation of a VI. It can contain text, images, or a
+	combination of both. If you use a VI as a subVI, the icon
+	identifies the subVI on the block diagram of the VI. You can
+	double-click the icon to customize or edit it.
+      </para>
+
+      <para id="p2">
+	<media id="idp574960" alt=""><image src="../../media/conpane.png" id="m2" mime-type="image/png"/></media> 
+	You also need to build a connector pane, shown in <link target-id="m2"/>, to use the VI as a subVI. The connector pane is
+	a set of terminals that correspond to the controls and
+	indicators of that VI, similar to the parameter list of a
+	function call in text-based programming languages. The
+	connector pane defines the inputs and outputs you can wire to
+	the VI so you can use it as a subVI. A connector pane receives
+	data at its input terminals and passes the data to the block
+	diagram code through the front panel controls and receives the
+	results at its output terminals from the front panel
+	indicators.
+      </para>
+
+      <para id="p3">
+	As you create VIs, you might find that you perform a certain
+	operation frequently. Consider using subVIs or loops to
+	perform that operation repetitively. For example, the block
+	diagram in <link target-id="fig1"/> contains two identical
+	operations.
+	<figure id="fig1">
+	  <media id="idm6706544" alt=""><image src="../../media/SubVIEx1.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+
+      <para id="p4">
+	You can create a subVI that performs that operation and call
+	the subVI twice. The example in <link target-id="fig2"/> calls
+	the <code>Temperature</code> VI as a subVI twice on its block
+	diagram and functions the same as the previous block
+	diagram.You also can reuse the subVI in other VIs. Refer to
+	<link document="m12212">Repetition and Loops</link> for more
+	information about using loops to combine common operations.
+	<figure id="fig2">
+	  <media id="idm5940960" alt=""><image src="../../media/SubVIEx2.png" mime-type="image/png"/></media> 
+	</figure>
+      </para>
+
+      <para id="p5">
+	Refer to the <cite><cite-title>LabVIEW Basics II: Development Course
+	  Manual</cite-title></cite> for more information about application
+	development.  The following pseudo-code and block diagrams
+	demonstrate the analogy between subVIs and subroutines.
+	
+	<table id="danny" summary="">
+	  <tgroup cols="2">
+	    <thead> 
+	      <row>
+		<entry> Function Code </entry>
+		<entry> Calling Program Code</entry>
+	      </row>
+	    </thead>
+	    
+	    <tbody> 
+	      <row>
+		<entrytbl cols="1" rowsep="0">
+		  <tbody>
+		    <row>
+		      <entry>
+			<code display="block" id="idm6434752">
+			  main
+			  {
+			  average (point1, point2,
+			  pointavg)
+			  }
+			</code>
+		      </entry>
+		    </row>
+		  </tbody>
+		</entrytbl>
+		<entrytbl cols="1" rowsep="0">
+		  <tbody>
+		    <row>
+		      <entry>
+			<code display="block" id="idm227280">
+			  function average (in1,
+			  in2, out)
+			  {
+			  out = (in1 + in2)/2.0;
+			  }
+			</code>
+		      </entry>
+		    </row>
+		  </tbody>
+		</entrytbl>
+	      </row>      
+	      
+	      <row>
+		<entry>SubVI Block Diagram </entry>
+		<entry> CallingVI Block Diagram </entry>
+	      </row>
+	      
+	      <row>
+		<entry align="center"> 
+		  <media id="idp880016" alt=""><image src="../../media/2ptavg.png" mime-type="image/png"/></media> </entry> 
+		<entry align="center"> 
+		  <media id="idm6627632" alt=""><image src="../../media/subvicall.png" mime-type="image/png"/></media> </entry>
+	      </row>
+	    </tbody>
+	    
+	  </tgroup>
+	</table>
+	
+      </para>
+      
+    </section>
+  </content>
+  
+</document>

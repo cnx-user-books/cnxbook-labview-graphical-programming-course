@@ -1,0 +1,107 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Debugging Techniques</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b630c898-699f-449f-8380-7a8baf72cc0b</md:uuid>
+</metadata>
+  
+  <content>
+      <para id="para1">
+	<media id="idp613536" alt=""><image src="../../media/brokrun.png" mime-type="image/png"/></media> If a VI does not
+	run, it is a broken, or nonexecutable, VI. The
+	<code>Run</code> button often appears broken, shown at left,
+	when you create or edit a VI. If it is still broken when you
+	finish wiring the block diagram, the VI is broken and will not
+	run. Generally, this means that a required input is not wired,
+	or a wire is broken.
+      </para>
+      <section id="section1">
+	<title>Finding Errors</title>
+	<para id="para2">
+	  Click the broken <code>Run</code> button or select
+	  <code>Windows&gt;&gt;Show Error List</code> to display the
+	  <code>Error list</code> window, which lists all the
+	  errors. Double-click an error description to display the
+	  relevant block diagram or front panel and highlight the
+	  object that contains the error.
+	</para>
+      </section>
+      <section id="section2">
+	<title>Execution Highlighting</title>
+	<para id="para3">
+	  <media id="idp2504176" alt=""><image src="../../media/exehilit-bc04.png" id="m1" mime-type="image/png"/></media> View
+	  an animation of the execution of the block diagram by
+	  clicking the <code>Highlight Execution</code> button, shown
+	  in <link target-id="m1"/>. Execution highlighting shows the
+	  flow of data on the block diagram from one node to another
+	  using bubbles that move along the wires. Use execution
+	  highlighting in conjunction with single-stepping to see how
+	  data move from node to node through a VI.
+	</para>
+	<note type="note" id="idp2158208">
+	  Execution highlighting greatly reduces the speed at which
+	  the VI runs.
+	</note>
+      </section>
+      <section id="section3">
+	<title>Single-Stepping</title>
+	<para id="para4">
+	  Single-step through a VI to view each action of the VI on
+	  the block diagram as the VI runs. The single-stepping
+	  buttons affect execution only in a VI or subVI in
+	  single-step mode. Enter single-step mode by clicking the
+	  <code>Step Over</code> or <code>Step Into</code>
+	  button. Move the cursor over the <code>Step Over</code>,
+	  <code>Step Into</code>, or <code>Step Out</code> button to
+	  view a tip strip that describes the next step if you click
+	  that button. You can single-step through subVIs or run them
+	  normally.
+	</para>
+	<para id="para5">
+	  <media id="idm5814496" alt=""><image src="../../media/glyphrun.png" id="m2" mime-type="image/png"/></media> If you
+	  single-step through a VI with execution highlighting on, an
+	  execution glyph, shown in <link target-id="m2"/>, appears on
+	  the icons of the subVIs that are currently running.
+	</para>
+      </section>
+      <section id="section4">
+	<title>Probes</title>
+	<para id="para6">
+	  <media id="idp2006672" alt=""><image src="../../media/probe.png" id="m3" mime-type="image/png"/></media> Use the
+	  <code>Probe</code> tool, shown in <link target-id="m3"/>, to
+	  check intermediate values on a wire as a VFI runs. When
+	  execution pauses at a node because of single-stepping or a
+	  breakpoint, you also can probe the wire that just executed
+	  to see the value that flowed through that wire.
+	</para>
+	<para id="para7">
+	  You also can create a custom probe to specify which
+	  indicator you use to view the probed data. For example, if
+	  you are viewing numeric data, you can choose to see that
+	  data in a chart within the probe. To create a custom probe,
+	  right-click a wire and select <code>Custom Probe&gt;&gt;New</code>
+	  from the shortcut menu.
+	</para>
+      </section>
+      <section id="section5">
+	<title>Breakpoints</title>
+	<para id="para8">
+	  <media id="idm6107152" alt=""><image src="../../media/brkpoint.png" id="m4" mime-type="image/png"/></media> Use
+	  the <code>Breakpoint</code> tool, shown in <link target-id="m4"/>, to place a breakpoint on a VI, node, or wire
+	  on the block diagram and pause execution at that
+	  locatiFon. When you set a breakpoint on a wire, execution
+	  pauses after data pass through the wire. Place a breakpoint
+	  on the block diagram workspace to pause execution after all
+	  nodes on the block diagram execute. When a VI pauses at a
+	  breakpoint, LabVIEW brings the block diagram to the front
+	  and uses a marquee to highlight the node or wire that
+	  contains the breakpoint. LabVIEW highlights breakpoints with
+	  red borders for nodes and block diagrams and red bullets for
+	  wires. When you move the cursor over an existing breakpoint,
+	  the black area of the <code>Breakpoint</code> tool cursor
+	  appears white. Use the <code>Breakpoint</code> tool to click
+	  an existing breakpoint to remove it.
+	</para>
+      </section>
+    
+  </content>
+  
+</document>

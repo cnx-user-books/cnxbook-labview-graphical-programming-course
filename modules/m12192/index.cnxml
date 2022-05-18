@@ -1,0 +1,47 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>LabVIEW</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>62f86114-2e3a-4901-bc68-61178047deb3</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      LabVIEW programs are called <term>virtual instruments</term>, or
+      <term>VIs</term>, because their appearance and operation imitate
+      physical instruments, such as oscilloscopes and
+      multimeters. LabVIEW contains a comprehensive set of tools for
+      acquiring analyzing, displaying, and storing data, as well as
+      tools to help you troubleshoot your code.  </para>
+    <para id="para2">
+      LabVIEW VIs contain three components-the <term>front
+      panel</term>, the <term>block diagram</term>, and the
+      <term>icon</term> and <term>connector pane</term>. This lesson
+      describes the front panel and the block diagram; refer to <link document="m12204">Modular Programming</link> for more information
+      about the icon and the connector pane.
+    </para>
+    <para id="para3">
+      In LabVIEW, you build a user interface, or front panel, with controls
+      and indicators. Controls are knobs, push buttons, dials, and
+      other input devices. Indicators are graphs, LEDs, and other
+      displays. After you build the user interface, you add code using
+      VIs and structures to control the front panel objects. The block
+      diagram contains this code. In some ways, the block diagram
+      resembles a flowchart.
+    </para>
+    <para id="para4">
+      Use LabVIEW to communicate with hardware such as data
+      acquisition, vision, and motion control devices, and GPIB, PXI,
+      VXI, RS-232, and RS-484 devices. LabVIEW also has built-in
+      features for connecting your application to the Web using the
+      LabVIEW Web Server and software standards such as TCP/IP
+      networking and ActiveX.
+    </para>
+    <para id="para5">
+      Using LabVIEW, you can create test and measurement, data
+      acquisitions, instrument control, datalogging, measurement
+      analysis, and report generation applications. You also can
+      create stand-alone executables and shared libraries, like DLLs,
+      because LabVIEW is a true 32-bit compiler.
+    </para>     
+  </content>
+  
+</document>

@@ -1,0 +1,142 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Accessing Previous Loop Data</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>22d568ce-79df-4908-8d97-1d07109ec357</md:uuid>
+</metadata>
+
+  <content>
+    <para id="intro">
+      When programming with loops, you often need to access data from
+      previous iterations of the loop. For example, you may have a VI
+      that reads the temperature and displays it on a graph. If you
+      want to display a running average of the temperature as well,
+      you need to use data generated in previous iterations. Two ways
+      of accessing this data include the <term>shift register</term>
+      and the <term>Feedback Node</term>.
+
+    </para>   
+
+    <section id="idp2367440">
+      <title>Shift Registers</title>
+
+      <para id="intro1">
+	Use <code>shift registers</code> on <code>For Loops</code> and
+	<code>While Loops</code> to transfer values from one loop
+	iteration to the next. <code>Shift registers</code> are
+	similar to static variables in text-based programming
+	languages.
+      </para>
+
+      <para id="intro2">
+	<media id="idp699520" alt=""><image src="../../media/shiftregs.png" id="m1" mime-type="image/png"/></media>
+	A <code>shift register</code> appears as a pair of terminals,
+	shown in <link target-id="m1"/>, directly opposite each other on
+	the vertical sides of the loop border. The right terminal
+	contains an up arrow and stores data on the completion of an
+	iteration. LabVIEW transfers the data connected to the right
+	side of the register to the next iteration. Create a
+	<code>shift register</code> by right-clicking the left or
+	right border of a loop and selecting <code>Add Shift
+	  Register</code> from the shortcut menu.
+      </para> 
+      <para id="intro3">
+	A <code>shift register</code> transfers any data type and
+	automatically changes to the data type of the first object
+	wired to the shift register. The data you wire to the
+	terminals of each shift register must be the same type.
+      </para>
+      <para id="intro4">
+	To initialize a <code>shift register</code>, wire any value
+	from outside the loop to the left terminal. If you do not
+	initialize the <code>shift register</code>, the loop uses the
+	value written to the <code>shift register</code> when the loop
+	last executed or the default value for the data type if the
+	loop has never executed.
+      </para>
+      <para id="intro5">
+	Use a loop with an uninitialized <code>shift register</code>
+	to run a VI repeatedly so that each time the VI runs, the
+	initial output of the <code>shift register</code> is the last
+	value from the previous execution. Use an uninitialized
+	<code>shift register</code> to preserve state information
+	between subsequent executions of a VI. After the loop
+	executes, the last value stored in the <code>shift
+	  register</code> remains at the right terminal. If you wire the
+	right terminal outside the loop, the wire transfers the last
+	value stored in the <code>shift register</code>.
+      </para>
+
+      <para id="intro6">
+	You can add more than one <code>shift register</code> to a
+	loop. If you have multiple operations within a loop, use
+	multiple <code>shift registers</code> to store the data values
+	from those different processes in the structure. The block
+	diagram in <link target-id="manage"/> uses two initialized
+	<code>shift registers</code>.
+	<figure id="manage">
+	  <media id="idp2444688" alt=""><image src="../../media/shiftregex.png" mime-type="image/png"/></media>
+	</figure>
+      </para> 
+    </section>
+    <section id="idp89984">
+      <title>Stacked Shift Registers</title>
+      <para id="shammie">
+	To create a stacked <code>shift register</code>, right-click
+	the left terminal and select <code>Add Element</code> from the
+	shortcut menu. Stacked <code>shift registers</code> let you
+	access data from previous loop iterations. Stacked <code>shift
+	  registers</code> remember values from previous iterations and
+	carry those values to the next iterations.
+      </para>
+      <para id="stacked">
+	Stacked <code>shift registers</code>, as shown in <link target-id="managed"/>, can only occur on the left side of the
+	loop because the right terminal only transfers the data
+	generated from the current iteration to the next iteration.
+	<figure id="managed">
+	  <media id="idp848624" alt=""><image src="../../media/stackshiftregex.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+      <para id="ramu">
+	If you add two more elements to the left terminal, values from
+	the last three iterations carry over to the next iteration,
+	with the most recent iteration value stored in the top
+	<code>shift register</code>. The second terminal stores the
+	data passed to it from the previous iteration, and the bottom
+	terminal stores data from two iterations ago.
+      </para>
+    </section>
+    <section id="idm6802672">
+      <title>Feedback Nodes</title>
+      <para id="datta">
+	<media id="idm576864" alt=""><image src="../../media/feedback.png" id="m2" mime-type="image/png"/></media>
+	The <code>Feedback Node</code>, shown in <link target-id="m2"/>,
+	appears automatically in a <code>For Loop</code> or
+	<code>While Loop</code> if you wire the output of a subVI,
+	function, or group of subVIs and functions to the input of
+	that same VI, function, or group. Like a <code>shift
+	  register</code>, the <code>Feedback Node</code> stores data
+	when the loop completes an iteration, sends that value to the
+	next iteration of the loop, and transfers any data type. Use
+	the <code>Feedback Node</code> to avoid unnecessarily long
+	wires in loops. The <code>Feedback Node</code> arrow indicates
+	in which direction the data flows along the wire.
+      </para>
+      <para id="guru">
+	You also can select the <code>Feedback Node</code> on the
+	<code>Structures</code> palette and place it inside a
+	<code>For Loop</code> or <code>While Loop</code>. If you place
+	the <code>Feedback Node</code> on the wire before you branch
+	the wire that connects the data to the tunnel, the
+	<code>Feedback Node</code> passes each value to the tunnel. If
+	you place the <code>Feedback Node</code> on the wire after you
+	branch the wire that connects data to the tunnel, the
+	<code>Feedback Node</code> passes each value back to the input
+	of the VI or function and then passes the last value to the
+	tunnel. The <link document="m12218">Accessing Previous Data
+	  VI</link> exercise contains an example of this behavior.
+      </para>
+
+    </section>
+
+  </content>
+  
+</document>

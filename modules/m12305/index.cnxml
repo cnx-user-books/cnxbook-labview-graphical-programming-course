@@ -1,0 +1,92 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Edit Me VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0aa24156-a442-4a00-b5db-a293a7275dc0</md:uuid>
+</metadata>
+<!--When CNXML 0.6 comes out, this module needs to be revised such
+  that the items indicated below have extra para's where noted.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm6822224">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1s1" list-type="enumerated">
+	    <item id="s1s1p1"><!--needs para-->
+	      <!--para-->
+	      Close any open VIs and open the <code>Edit Me</code> VI,
+	      located in the <code>C:\Exercises\LabVIEW Basics
+	      I</code> directory. The following front panel is already
+	      built.
+	    <figure id="s1s1f1">
+	      <media id="idm6610176" alt=""><image src="../../media/editme.png" mime-type="image/png"/></media>
+	    </figure>
+	      <!--para-->
+	      The VI is already running when it opens. While the VI
+	      runs, you cannot use the menu bar, toolbar, or keyboard
+	      shortcuts to edit or abort the VI.
+	    </item>
+	    <item>
+	      Click the <code>Start</code> button. After 10 seconds,
+	      the VI stops running and quits LabVIEW.
+	    </item>
+	    <item>
+	      Relaunch LabVIEW and open a blank VI.
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      If the VI you want to edit either does not have subVIs
+	      or you do not know what it contains, complete <link target-id="s1s5"/> through <link target-id="s1s13"/>.
+	      <!--para-->
+	      However, if the VI you want to edit has subVIs, open one
+	      of the subVIs and modify the block diagram to break the
+	      subVI. For example, place an <code>Add</code> function on the block
+	      diagram and do not wire the inputs. Open the VI you want
+	      to edit. Because its subVI is nonexecutable, the VI that
+	      calls it is also nonexecutable. It opens in edit mode
+	      and the <code>Run</code> button appears broken. Make
+	      sure to fix the subVI after you edit the calling VI.
+	    </item>
+	    <item id="s1s5">
+	      Display the block diagram of the new VI.
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      Place the <code>Edit Me</code> VI, which is already
+	      built, on the block diagram. The front panel for the
+	      <code>Edit Me</code> VI displays.
+	      <!--para-->
+	      Although you can display the block diagram of the
+	      <code>Edit Me</code> VI, you cannot edit it.
+	    </item>
+	    <item>
+	      Select <code>Operate&gt;&gt;Change to Edit Mode</code>. A
+	      dialog box informs you that the VI is locked.
+	    </item>
+	    <item>
+	      Click the <code>Unlock</code> button. You now can edit the VI. You
+	      also can unlock a VI by selecting <code>File&gt;&gt;VI
+	      Properties</code> and selecting <code>Security</code>
+	      from the <code>Category</code> pull-down menu.
+	    </item>
+	    <item>
+	      Select and delete the <code>Quit LabVIEW</code> function
+	      from the block diagram.
+	    </item><item>
+	      Save and close the <code>Edit Me</code> VI. Close the
+	      new VI and do not save changes.
+	    </item>
+	    <item>
+	      Open the <code>Edit Me</code> VI again.
+	    </item>
+	    <item>
+	      After the VI runs, try to edit it.
+	    </item>
+	    <item id="s1s13">
+	      Close the <code>Edit Me</code> VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

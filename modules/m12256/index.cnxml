@@ -1,0 +1,92 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>High-Level File I/O VIs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0bd59924-54b7-4258-b869-6da1544a605d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Most File I/O VIs and functions perform only one step in a file
+      I/O operation. However, some high-level File I/O VIs designed
+      for common file I/O operations perform all four steps. Although
+      these VIs are not always as efficient as the low-level
+      functions, you might find them easier to use.
+    </para>
+    <para id="p2">
+      Use the high-level File I/O VIs located on the top row of the
+      File I/O palette to perform common I/O operations,
+      such as writing to or reading from the following types of data:
+      <list id="p2l1">
+	<item>
+	  Characters to or from text files
+	</item>
+	<item>
+	  Lines from text files
+	</item>
+	<item>
+	  1D or 2D arrays of single-precision numeric values to or
+	  from spreadsheet text files
+	</item>
+	<item>
+	  1D or 2D arrays of single-precision numeric values or signed
+	  16-bit integers to or from binary files
+	</item>
+      </list>
+    </para>
+    <para id="p3">
+      High-level File I/O VIs include the following:
+      <list id="p3l1" list-type="labeled-item">
+	<item><label>Write to Spreadsheet File</label>
+	  
+
+	  Converts a 2D or 1D array of single-precision numbers to a
+	  text string and writes the string to a new byte stream file
+	  or appends the string to an existing file. You also can
+	  transpose the data. The VI opens or creates the file before
+	  writing to it and closes it afterwards. You can use this VI
+	  to create a text file readable by most spreadsheet
+	  applications.
+	</item>
+	<item><label>Read From Spreadsheet File</label>
+	  
+
+	  Reads a specified number of lines or rows from a numeric
+	  text file beginning at a specified character offset and
+	  converts the data to a 2D single-precision array of
+	  numbers. The VI opens the file before reading from it and
+	  closes it afterwards. You can use this VI to read a
+	  spreadsheet file saved in text format.
+	</item>
+	<item><label>Write Characters to File</label>
+	  
+	  
+	  Writes a <emphasis>character string</emphasis> to a new byte
+	  stream file or appends the string to an existing file. The
+	  VI opens or creates the file before writing to it and closes
+	  it afterwards.
+	</item>
+	<item><label>Read Characters From File</label>
+	  
+
+	  Reads a specified number of characters from a byte stream
+	  file beginning at <emphasis>start of read
+	  offset</emphasis>. The VI opens the file before reading from
+	  it and closes it afterwards.
+	</item>
+	<item><label>Read Lines From File</label>
+	  
+
+	  Reads a specified number of lines from a text or binary file
+	  beginning at a specified character offset. The VI opens the
+	  file before reading from it and closes it afterwards.
+	</item>
+	<item><label>Binary File VIs</label>
+	  
+
+	  These VIs read from and write to binary files. Data can be
+	  integers or single-precision numbers.
+	</item>
+      </list>
+    </para>
+  </content>
+  
+</document>

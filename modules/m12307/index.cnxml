@@ -1,0 +1,71 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Customizing VIs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>51e8bfde-d389-4d79-9bf4-4a7081a7e235</md:uuid>
+</metadata>
+
+  <content>
+    <list id="l1">
+      <item>
+	Select <code>File&gt;&gt;VI Properties</code> to configure the
+	appearance and behavior of a VI. You also can right-click the
+	VI icon on the front panel or block diagram and select
+	<code>VI Properties</code> from the shortcut menu.
+      </item>
+      <item>
+	If you want a single instance of the subVI to open its front
+	panel when called, right-click the subVI and select
+	<code>SubVI Node Setup</code> from the shortcut menu. Place
+	checkmarks in the <code>Show Front Panel when called</code>
+	and <code>Close afterwards if originally closed</code>
+	checkboxes.
+      </item>
+      <item>
+	If you want every instance of the subVI to open its front
+	panel when called, select <code>File&gt;&gt;VI Properties</code> and
+	select <code>Window Appearance</code> from the
+	<code>Category</code> pull-down menu. Click the
+	<code>Customize</code> button and place checkmarks in the
+	<code>Show Front Panel When Called</code> and <code>Close
+	Afterwards if Originally Closed</code> checkboxes.
+      </item>
+      <item>
+	Assign keyboard shortcuts to controls by right-clicking the
+	control and selecting <code>Advanced&gt;&gt;Key Navigation</code>
+	from the shortcut menu.
+      </item>
+      <item>
+	Before you change VI properties, save a backup of the VI to a
+	new location by selecting <code>File&gt;&gt;Save with Options</code>
+	to avoid making the VI difficult to edit.
+      </item>
+      <item>
+	To edit a VI with properties that make the VI difficult to
+	edit:
+	<list id="l1l1">
+	  <item>
+	    Break one of its subVIs. The VI opens in edit mode because
+	    it cannot run with a broken subVI.
+	  </item>
+	  <item>
+	    If the VI has no subVIs, place it on the block diagram of
+	    a new VI.
+	  </item>
+	</list>
+      </item>
+      <item>
+	The simplest method for adding VIs and controls to the
+	<code>Controls</code> and <code>Functions</code> palettes is
+	to save them in the <code>user.lib</code> directory.
+      </item>
+      <item>
+	To create or edit a custom palette view, select
+	<code>Tools&gt;&gt;Advanced&gt;&gt;Edit Palette Views</code>.
+      </item>
+      <item>
+	Change to an icon- or text-only palette view by selecting from
+	the <code>Format</code> pull-down menu.
+      </item>
+    </list>
+  </content>
+  
+</document>

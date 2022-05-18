@@ -1,0 +1,53 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>About Instrument Drivers</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>608ca8ff-fef5-42ee-9eab-2bb3c181554d</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      An instrument driver is a set of modular software functions that
+      use the instrument commands or protocol to perform common
+      operations with the instrument. The instrument driver also calls
+      the appropriate VIs and functions for the instrument. LabVIEW
+      instrument drivers eliminate the need to learn the complex,
+      low-level programming commands for each instrument
+    </para>
+    <para id="p2">
+      The LabVIEW instrument driver library contains instrument
+      drivers for a variety of programmable instruments that use the
+      GPIB, VXI, PXI, or serial interfaces.
+    </para>
+    <para id="p3">
+      Instrument drivers receive, parse, and scale the response
+      strings from instruments into scaled data that you can use in
+      test applications. Instrument drivers help make test
+      applications easier to maintain because the drivers contain all
+      the I/O for an instrument in one library, separate from other
+      code. When you upgrade hardware, it is easier to upgrade the
+      application because all the code specific to that instrument is
+      contained in the instrument driver.
+    </para>
+    <para id="p4">
+      The LabVIEW instrument driver library is located on the LabVIEW
+      CD. You also can download drivers from the National Instruments
+      Web site at <link url="http://www.ni.com/devzone/idnet/">ni.com/idnet</link>. To install the LabVIEW instrument
+      drivers, decompress the instrument driver file to get a
+      directory of instrument driver files. Place this directory in
+      the <code>\labview\instr.lib</code>. The next time you open
+      LabVIEW, you can access the instrument driver VIs on the
+      <code>Functions&gt;&gt;All Functions&gt;&gt;Instrument I/O&gt;&gt;Instrument
+      Drivers</code> palette.
+    </para>
+    <section id="s1">
+      <title>Getting Started Example</title>
+      <para id="s1p1">
+	All instrument drivers include an example that can be used to
+	test communication with the instrument. This example is
+	usually called the Getting Started Example. Specify the
+	correct GPIB address (or VISA Resource Name) for the
+	instrument as configured in MAX.
+      </para>
+    </section>
+  </content>
+  
+</document>

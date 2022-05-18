@@ -1,0 +1,140 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>LabVIEW Documentation Resources</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a438cc4b-e5f0-4972-8764-933a6574c41e</md:uuid>
+</metadata>
+  
+  <content>
+    <section id="section1">
+      <title>LabVIEW Documentation Resources</title>
+      <para id="para1">
+	Use the <code>Context Help</code> window, the <cite><cite-title>LabVIEW
+	Help</cite-title></cite>, and the NI Example Finder to help you build and
+	edit VIs. Refer to the <cite><cite-title>LabVIEW Help</cite-title></cite> and manuals
+	for more information about LabVIEW.
+      </para>
+      <section id="section2">
+	<title>Context Help Window</title>
+	<para id="para2">
+	  <media id="idm1221520" alt=""><image src="../../media/helpbutton.png" id="m1" mime-type="image/png"/></media> The
+	  <code>Context Help</code> window displays basic information
+	  about LabVIEW objects when you move the cursor over each
+	  object. The <code>Context Help</code> window is visible by
+	  default. To toggle display of the <code>Context Help</code>
+	  window, select <code>Help&gt;&gt;Show Context Help</code>, press
+	  the <code>Ctrl-H</code> keys, or click the <code>Show
+	  Context Help Window</code> button, shown in <link target-id="m1"/>, on the toolbar.
+	</para>
+	<para id="para3">
+	  When you move the cursor over front panel and block diagram
+	  objects, the <code>Context Help</code> window displays the
+	  icon for subVIs, functions, constants, controls, and
+	  indicators, with wires attached to each terminal. When you
+	  move the cursor over dialog box options, the <code>Context
+	  Help</code> window displays descriptions of those
+	  options. In the window, required connections are bold,
+	  recommended connections are plain text, and optional
+	  connections are dimmed or do not appear. <link target-id="f1"/>
+	  shows an example <code>Context Help</code> window.
+	</para>
+	<figure id="f1">
+	  <media id="idp1265520" alt=""><image src="../../media/conthlp.png" mime-type="image/png"/></media>
+	  <caption>Context Help Window</caption>
+	</figure>
+	<para id="para4">
+	  <media id="idp907584" alt=""><image src="../../media/simphlp.png" mime-type="image/png"/></media>
+	  Click the <code>Hide Optional Terminals and Full Path</code>
+	  button located on the lower left corner of the <code>Context
+	  Help</code> window to display the optional terminals of a
+	  connector pane and to display the full path to a
+	  VI. Optional terminals are shown by wire stubs, informing
+	  you that other connections exist. The detailed mode displays
+	  all terminals, as shown in <link target-id="f2"/>.
+	</para>
+	<figure id="f2">
+	  <media id="idm572800" alt=""><image src="../../media/dethlp.png" mime-type="image/png"/></media>
+	  <caption>Detailed Context Help Window</caption>
+	</figure>
+	<para id="para5">
+	  <media id="idp2514928" alt=""><image src="../../media/lckhlp.png" mime-type="image/png"/></media>
+	  Click the <code>Lock Context Help</code> button to lock the
+	  current contents of the <code>Context Help</code>
+	  window. When the contents are locked, moving the cursor over
+	  another object does not change the contents of the
+	  window. To unlock the window, click the button again. You
+	  also can access this option from the <code>Help</code> menu.
+	</para>
+	<para id="para6">
+	  <media id="idm8177872" alt=""><image src="../../media/morehlp.png" mime-type="image/png"/></media>
+	  If a corresponding <cite><cite-title>LabVIEW Help</cite-title></cite> topic exists
+	  for an object the <code>Context Help</code> window
+	  describes, a blue <code>Click here for more help.</code>
+	  link appears in the <code>Context Help</code> window. Also,
+	  the <code>More Help</code> button, shown at left, is
+	  enabled. Click the link or the button to display the
+	  <cite><cite-title>LabVIEW Help</cite-title></cite> for more information about the
+	  object.
+	</para>
+      </section>
+      <section id="section3">
+	<title>LabVIEW Help</title>
+	<para id="para7">
+	  You can access the <cite><cite-title>LabVIEW Help</cite-title></cite> either by
+	  clicking the <code>More Help</code> button in the
+	  <code>Context Help</code> window, selecting <code>Help&gt;&gt;VI,
+	  Function, &amp; How-To Help</code>, or clicking the blue
+	  <code>Click here for more help.</code> link in the
+	  <code>Context Help</code> window.
+	</para>
+	<para id="para8">
+	  The <cite><cite-title>LabVIEW Help</cite-title></cite> contains detailed descriptions
+	  of most palettes, menus, tools, VIs, and functions. The
+	  <cite><cite-title>LabVIEW Help</cite-title></cite> also includes step-by-step
+	  instructions for using LabVIEW features. The <cite><cite-title>LabVIEW
+	  Help</cite-title></cite> includes links to the following resources:
+	</para>
+	<list id="list1">
+	  <item>
+	    <cite><cite-title>LabVIEW Bookshelf</cite-title></cite>, which includes PDF
+	    versions of all the LabVIEW manuals and Application Notes.
+	  </item>
+	  <item>
+	    Technical support resources on the <link url="http://ni.com">National Instruments Web site</link>,
+	    such as the <link url="http://zone.ni.com/zone/jsp/zone.jsp">NI Developer
+	    Zone</link>, the <link url="http://digital.ni.com/public.nsf/MainPage?OpenForm&amp;node=133020_US">Knowledge
+	    Base</link>, and the <link url="http://digital.ni.com/manuals.nsf/MainPage?ReadForm&amp;node=132020_US">Product
+	    Manuals Library</link>.
+	  </item>
+	</list>
+      </section>
+      <section id="section4">
+	<title>NI Example Finder</title>
+	<para id="para9">
+	  The <code>New</code> dialog box contains many LabVIEW
+	  template VIs that you can use to start building
+	  VIs. However, these template VIs are only a subset of the
+	  hundreds of example VIs included with LabVIEW. You can
+	  modify any example VI to fit an application, or you can copy
+	  and paste from an example into a VI that you create.
+	</para>
+	<para id="para10">
+	  In addition to the example VIs that ship with LabVIEW, you
+	  also can access hundreds of example VIs on the <cite><cite-title>NI
+	  Developer Zone</cite-title></cite> at <link url="http://www.ni.com/zone">ni.com/zone</link>. To search
+	  all examples using LabVIEW VIs, use the <code>NI Example
+	  Finder</code>. The <code>NI Example Finder</code> is the
+	  gateway to all installed examples and the examples located
+	  on the <cite><cite-title>NI Developer Zone</cite-title></cite>.
+	</para>
+	<para id="para11">
+	  To launch the <code>NI Example Finder</code>, select
+	  <code>Help&gt;&gt;Find Examples</code> from the front panel or
+	  block diagram menu bar. You also can launch the <code>NI
+	  Example Finder</code> by clicking the arrow on the
+	  <code>Open</code> button on the LabVIEW dialog box and
+	  selecting <code>Examples</code> from the shortcut menu.
+	</para>
+      </section>
+    </section>
+  </content>
+  
+</document>

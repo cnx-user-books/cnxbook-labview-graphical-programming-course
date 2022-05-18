@@ -1,0 +1,70 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Temperature Application VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>bd85c3f6-f990-4276-96fe-d3101e81fcb7</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp755600">
+	<list id="l1" list-type="enumerated">
+	  <item>
+	    Build a VI that performs the following tasks.
+	    <list id="l1l1" list-type="enumerated">
+	      <item>
+		Takes a temperature measurement once every second
+		until you stop the VI or an error occurs.
+	      </item>
+	      <item>
+		Displays both the current temperature and the average
+		of the last three measurements on a waveform chart.
+	      </item>
+	      <item>
+		If the temperature exceeds a limit, turns on an LED.
+	      </item>
+	      <item>
+		After each measurement, logs the date, time including
+		seconds, temperature, average of the last three
+		measurements, and a one-word message describing
+		whether the temperature is normal or over the
+		limit. Logs data so each item appears in one column of
+		a spreadsheet, as shown in <link target-id="l1l1f1"/>.
+		<figure id="l1l1f1">
+		  <media id="idm6321392" alt=""><image src="../../media/tempappxls.png" mime-type="image/png"/></media>
+		</figure>
+	      </item>
+	      <item id="item5">
+		After you stop the acquisition, plots both the raw
+		temperature data and a best-fit curve in an XY graph
+		and displays the average, maximum, and minimum
+		temperatures.
+		<note type="tip" id="idp2260720">
+		  Start with the <link document="m12262">Temperature Logger
+		  VI</link>. To complete <link target-id="item5">this
+		  step</link>, use portions of the <link document="m12238">Temperature Analysis VI</link>.
+		</note>
+		<note type="tip" id="idp1935312">
+		  The <code>Build Text Express VI</code> is limited to
+		  eight inputs. Use multiple <code>Build Text</code>
+		  Express VIs or use the <code>Format into
+		  String</code> function. You can build the delimiters
+		  into the format string to require fewer inputs.
+		</note>
+		The front panel should be similar to <link target-id="l1l1f2"/>.
+		<figure id="l1l1f2">
+		  <media id="idp2729312" alt=""><image src="../../media/tempapp.png" mime-type="image/png"/></media>
+		</figure>
+	      </item>
+	    </list>
+	  </item>
+	  <item>
+	    Save the VI as <code>Temperature Application.vi</code> in
+	    the <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	  </item>
+	</list>
+      </problem>
+    </exercise>
+
+
+  </content>
+  
+</document>

@@ -1,0 +1,71 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Repetition and Loops</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>39569eed-5994-4ae9-8430-6eeb684881ed</md:uuid>
+</metadata>
+
+  <content>
+    <para id="delete_me">
+      <list id="hugme">
+	<item> 
+	  Use structures on the block diagram to repeat blocks of code
+	  and to execute code conditionally or in a specific order.
+	</item>
+	<item> 
+	  The <code>While Loop</code> executes the subdiagram until
+	  the <code>conditional</code> terminal receives a specific
+	  Boolean value. By default, the <code>While Loop</code>
+	  executes its subdiagram until the conditional terminal
+	  receives a <code>True</code> value.
+	</item>
+	<item> 
+	  The <code>For Loop</code> executes a subdiagram a set number
+	  of times.
+	</item>
+	<item> 
+	  You create loops by using the cursor to drag a selection
+	  rectangle around the section of the block diagram you want
+	  to repeat or by dragging and dropping block diagram objects
+	  inside the loop.
+	</item>
+	<item>
+	  The <code>Wait Until Next ms Multiple</code> function makes
+	  sure that each iteration occurs at certain intervals. Use
+	  this function to add timing to loops.
+	</item>
+	<item>
+	  The <code>Wait (ms)</code> function waits a set amount of
+	  time.
+	</item>
+	<item>
+	  Coercion dots appear where LabVIEW coerces a numeric
+	  representation of one terminal to match the numeric
+	  representation of another terminal.
+	</item>
+	<item> 
+	  Use <code>shift registers</code> on <code>For Loops</code>
+	  and <code>While Loops</code> to transfer values from one
+	  loop iteration to the next.
+	</item>
+	<item> Create a <code>shift register</code> by right-clicking
+	  the left or right border of a loop and selecting <code>Add
+	  Shift Register</code> from the shortcut menu.
+	</item>
+	<item>
+	  To configure a <code>shift register</code> to carry over
+	  values to the next iteration, right-click the left terminal
+	  and select <code>Add Element</code> from the shortcut menu.
+	</item>
+	<item>
+	  The <code>Feedback Node</code> stores data when the loop
+	  completes an iteration, sends that value to the next
+	  iteration of the loop, and transfers any data type.
+	</item>
+	<item>
+	  Use the <code>Feedback Node</code> to avoid unnecessarily
+	  long wires.
+	</item>
+      </list> 
+    </para>   
+  </content>
+  
+</document>

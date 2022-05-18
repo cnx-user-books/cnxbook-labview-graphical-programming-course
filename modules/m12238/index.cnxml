@@ -1,0 +1,254 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Temperature Analysis VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>ac952632-d88f-437b-bc36-e3c0604821c0</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp4292544">
+	<para id="delete_me">
+	  Complete the following steps to build a VI that measures
+	  temperature every 0.25 seconds for 10 seconds. During the
+	  acquisition, the VI displays the measurements in real time on a
+	  <code>waveform chart</code>. After the acquisition is complete,
+	  the VI plots the data on a graph and calculates the minimum,
+	  maximum, and average temperatures. The VI displays the best fit
+	  of the temperature graph.
+	</para>
+	
+	<section id="idp4294608">
+	  <title> Front Panel </title>
+	  <list id="enumer" list-type="enumerated">
+	    <item> Open a blank VI and build the front panel shown in
+	      <link target-id="real"/>.
+	      <figure id="real">
+		<media id="idm1714192" alt=""><image src="../../media/tempanaly.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="enur" list-type="enumerated">
+		<item>
+		  Set the point style of the <code>waveform chart</code> plot to a
+		  small <m:math><m:ci>x</m:ci></m:math>.
+		</item>
+		
+		<item>
+		  Hide the plot legend of the <code>waveform chart</code>.
+		</item>
+
+		<item>
+		  Change the label of the <code>waveform chart</code> to 
+		  <code>Temperature Chart</code>.
+		</item>
+		
+		<item>
+		  Change the label of the <code>waveform graph</code> to
+		  <code>Temperature Graph</code>.
+		</item>
+		
+		<item>
+		  Right-click <code>Temperature Chart</code> and select
+		  <code> Properties </code> from the shortcut menu. On the
+		  <code>Scales</code> tab, change the x-axis multiplier to
+		  <code>0.25</code>. On the <code> Format and
+		    Precision</code> tab, change the <code>Digits of
+		    Precision</code> to <code>2</code>.  <!--para--> The
+		  data for <code>Temperature Graph</code> will be
+		  formatted on the block diagram.
+		</item>
+		
+		<item>
+		  Resize the plot legend of the <code>waveform
+		    graph</code> to show two plots.
+		</item>
+
+		<item>
+		  Change the name of <code>Plot 0</code> to
+		  <code>Temp</code> and <code>Plot 1</code> to
+		  <code>Fitted</code>.
+		</item>
+		
+		<item>
+		  Set the point style of the <code>waveform graph</code>
+		  <code>Temp</code> plot to a small square.
+		</item>
+		
+		<item>
+		  Do not create the <code>Mean</code>, <code>Max</code>,
+		  and<code>Min</code>indicators yet. They will be created
+		  from the block diagram.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	
+	<section id="idm1938240">
+	  <title>Block Diagram </title>
+	  <list id="subb" list-type="enumerated">
+	    <item>
+	      Build the block diagram <link target-id="real2"/>.
+	      <figure id="real2">
+		<media id="idm9715840" alt=""><image src="../../media/tempanalybd-df9d.png" mime-type="image/png"/></media>
+	      </figure>
+
+	      <list id="subsubnana" list-type="enumerated">
+		<item> 
+		  <media id="idm8854304" alt=""><image src="../../media/tempicon-74e1.png" mime-type="image/png"/></media>
+		  Place the <code>Thermometer</code> VI on the block
+		  diagram. Select <code>Functions&gt;&gt;All Functions&gt;&gt;Select a
+		    VI</code> and navigate to <code>C:\Exercises\LabVIEW
+		    Basics I\Thermometer.vi</code>. This subVI returns one
+		  point of temperature data.
+		</item>
+		<item> 
+		  <media id="idm10033920" alt=""><image src="../../media/waitms-6dba.png" mime-type="image/png"/></media>
+		  Place the <code>Wait Until Next ms Multiple</code>
+		  function, located on the <code>Functions&gt;&gt;All
+		    Functions&gt;&gt;Time &amp; Dialog</code> palette, on the
+		  block diagram. This function causes the <code>For
+		    Loop</code> to execute every 
+		  <m:math>
+		    <m:apply>
+		      <m:times/>
+		      <m:cn>0.25</m:cn>
+		      <m:ci>seconds</m:ci>
+		    </m:apply>
+		  </m:math> (
+		  <m:math>
+		    <m:apply>
+		      <m:times/>
+		      <m:cn>250</m:cn>
+		      <m:ci>ms</m:ci>
+		    </m:apply>
+		  </m:math>).
+		</item>
+		<item>
+		  <media id="idm10362160" alt=""><image src="../../media/arymaxminicon.png" mime-type="image/png"/></media>
+		  Place the <code>Array Max &amp; Min</code> function,
+		  located on the <code>Functions&gt;&gt;All
+		    Functions&gt;&gt;Array</code> palette, on the block
+		  diagram. This function returns the maximum and minimum
+		  temperature.
+		</item>
+		<item>
+		  <media id="idm9468784" alt=""><image src="../../media/meanicon.png" mime-type="image/png"/></media>
+		  Place the <code>Mean</code> VI, located on the
+		  <code>Functions&gt;&gt;All
+		    Functions&gt;&gt;Analyze&gt;&gt;Mathematics&gt;&gt;Probability and
+		    Statistics</code> palette, on the block diagram. This
+		  subVI returns the average of the temperature
+		  measurements.
+		</item>
+		<item>
+		  Right-click the output terminals of the <code>Array Max
+		    &amp; Min</code> function and <code>Mean</code> VI and
+		  select <code> Create&gt;&gt;Indicator </code> from the
+		  shortcut menu to create the <code>Max</code>,
+		  <code>Min</code>, and <code>Mean</code> indicators.
+		</item>
+		<item>
+		  <media id="idm10383760" alt=""><image src="../../media/genpolyfit.png" mime-type="image/png"/></media>
+		  Place the <code>General Polynomial Fit</code> VI,
+		  located on the <code>Functions&gt;&gt;All
+		    Functions&gt;&gt;Analyze&gt;&gt;Mathematics&gt;&gt;Curve Fitting</code>
+		  palette, on the block diagram. This subVI returns an
+		  array that is a polynomial fit to the temperature array.
+		</item>
+		<item>
+		  <media id="idp121920" alt=""><image src="../../media/bundle-d963.png" mime-type="image/png"/></media>
+		  Place the <code>Bundle</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette,
+		  on the block diagram. This function assembles the plot
+		  elements into a single cluster. Press the
+		  <code>&lt;Ctrl&gt;</code> key while you drag the function
+		  to copy it. The elements include the initial
+		  <m:math><m:ci>x</m:ci></m:math> value (<code>0</code>),
+		  the 
+		  <m:math>
+		    <m:apply>
+		      <m:ci><m:mo>Δ</m:mo></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:math> value (<code>0.25</code>), and the
+		  <m:math><m:ci>y</m:ci></m:math> array of temperature
+		  data.  The
+		  <m:math>
+		    <m:apply>
+		      <m:ci><m:mo>Δ</m:mo></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:math> value of <code>0.25</code> is required so that
+		  the VI plots the temperature array points every
+		  <m:math><m:cn>0.25</m:cn></m:math> seconds on the
+		  <code>waveform graph</code>.
+		</item>
+		<item>
+		  <media id="idm9443888" alt=""><image src="../../media/BuildArrayicon-58b7.png" mime-type="image/png"/></media>
+		  Place the <code>Build Array</code> function, located on
+		  the <code> Functions&gt;&gt;All Functions&gt;&gt;Array</code>
+		  palette, on the block diagram. This function creates an
+		  array of clusters from the temperature cluster and the
+		  best fit cluster.
+		</item>
+		<item>
+		  Complete the block diagram as shown.
+		</item>
+	      </list>
+	    </item>
+
+	    <item> 
+	      Save the VI as <code>Temperature Analysis.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	  </list>
+
+	</section>
+
+	<section id="idp94656">
+	  <title>Run the VI</title> 
+	  <list id="subsub" list-type="enumerated">
+	    <item> 
+	      Display the front panel and run the VI.  
+	      <!--para-->
+	      The graph displays both the temperature data and best fit
+	      curve of the temperature waveform.
+	    </item>
+
+	    <item>
+	      Try different values for the polynomial order constant on
+	      the block diagram and run the VI again.
+	    </item>
+	    
+	    <item>
+	      Change the appearance of the plots by modifying the plot
+	      styles and fill styles.
+	      <list id="subsubladida" list-type="enumerated">
+		<item>
+		  Right-click the <code>Temp</code> plot display in the
+		  plot legend and select <code>Common Plots&gt;&gt;Scatter
+		    Plot</code> from the shortcut menu, the top middle
+		  option.
+		</item>
+		
+		<item>
+		  Right-click the <code>Fitted</code> plot display in the
+		  plot legend, select <code>Bar Plots</code> from the
+		  shortcut menu, and select the second option in the
+		  middle row. The <code>waveform graph</code> should
+		  appear similar to the front panel in <link target-id="real3"/>.
+		  <figure id="real3">
+		    <media id="idm10110048" alt=""><image src="../../media/tempanalyplots.png" mime-type="image/png"/></media>
+		  </figure>
+
+		</item>
+	      </list>
+	    </item>
+	    
+	    <item>Save and close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

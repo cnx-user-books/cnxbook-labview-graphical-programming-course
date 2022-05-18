@@ -1,0 +1,114 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Simple Event Counting VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>6f0750b5-cb52-42ba-a2a9-f61530c00e5a</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp540320">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idp1481920" alt=""><image src="../../media/counterfp.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item><!--para needed-->
+	      <!--para-->
+	      Build the block diagram shown in <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idp113888" alt=""><image src="../../media/counterbd.png" mime-type="image/png"/></media>
+	      </figure>
+		<media id="idp114848" alt=""><image src="../../media/DAQAssistantIcon-5d25.png" mime-type="image/png"/></media>
+	      <!--para-->
+	      Place the <code>DAQ Assistant</code> Express
+	      VI, located on the <code>Functions&gt;&gt;Input</code>
+	      palette, in a <code>While Loop</code>. Complete the
+	      following steps to configure the counter to perform
+	      event counting.
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		  Select <code>Counter Input&gt;&gt;Edge Count</code> for
+		  the measurement to make.
+		</item>
+		<item>
+		  Select <code>Dev1&gt;&gt;ctr0</code> for the physical
+		  channel.
+		</item>
+		<item>
+		  In the <code>Counter Input Edge Count Task
+		  Configuration</code> dialog box that appears, leave
+		  the settings as they are. The default settings
+		  define the source of the counter as being
+		  <code>Programmable Function Input</code> (<code>PFI</code>) 8, which is the
+		  default source for counter 0. The DAQ Signal
+		  Accessory connects counter 0 source input to <code>PFI</code> 8.
+		</item>
+		<item>
+		  Click the <code>OK</code> button to close the
+		  <code>Counter Input Edge Count Task
+		  Configuration</code> dialog box. This saves all the
+		  settings specified for the task in the <code>DAQ
+		  Assistant Express VI</code>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Simple Event Counting.vi</code> in
+	      the <code>C:\Exercises\LabVIEW Basics I</code>
+	      directory.
+	    </item>
+	    <item>
+	      On the DAQ Signal Accessory, wire the A output of the
+	      quadrature encoder to the SOURCE input of counter 0.
+	    </item>
+	    <item>
+	      Run the VI. Rotate the quadrature encoder knob on the
+	      DAQ Signal Accessory. Notice that the <code>Number of Events</code>
+	      indicator increments as you rotate the knob. The
+	      quadrature encoder knob produces pulses as you rotate
+	      the knob. The counter counts these pulses.
+	    </item>
+	    <item>
+	      Stop the VI.
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      Double-click the <code>DAQ Assistant</code> Express VI,
+	      and change the <code>Count Direction</code> pull-down
+	      menu to <code>Externally Controlled</code>. Click the
+	      <code>OK</code> button to close the configuration dialog
+	      box.
+	      <!--para-->
+	      The DAQ Signal Accessory internally connects phase B of
+	      the quadrature encoder to the Up/Down line for counter
+	      0. This can be used to determine the direction the knob
+	      has turned.
+	    </item>
+	    <item><!--needs para--> 
+	      <!--para--> 
+	      Run the VI. Rotate the quadrature encoder knob on the
+	      DAQ Signal Accessory.
+	      <!--para-->
+	      Notice that the <code>Number of Events</code> indicator decrements
+	      when you rotate the knob clockwise, and increments when
+	      you rotate the knob counterclockwise.
+	    </item>
+	    <item>
+	      Save and close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+	      
+  </content>
+  
+</document>

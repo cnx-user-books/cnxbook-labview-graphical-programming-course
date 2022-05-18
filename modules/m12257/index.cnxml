@@ -1,0 +1,188 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Spreadsheet Example VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>7c22133e-a49e-4786-8a44-d64eb64ce659</md:uuid>
+</metadata>
+  <!--When CNXML 0.6 comes out, this module will need to be revised to
+  include para in the items indicated.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idp302736">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open the <code>Spreadsheet Example</code> VI located in
+	      the <code>C:\Exercises\LabVIEW Basics I</code>
+	      directory. The front panel in <link target-id="s1l1f1"/> is
+	      already built.
+	      <figure id="s1l1f1">
+		<media id="idp7325536" alt=""><image src="../../media/spreadex.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Run the VI</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item><!--needs para-->
+	      <!--para-->
+	      Run the VI.
+	      <!--para-->
+	      The VI generates a 2D array of 
+	      <m:math>
+		<m:apply>
+		  <m:cartesianproduct/>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>128</m:cn>
+		    <m:ci>rows</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:times/>
+		    <m:cn>3</m:cn>
+		    <m:ci>columns</m:ci>
+		  </m:apply>
+		</m:apply>
+	      </m:math>. The first column contains data for a sine
+	      waveform, the second column contains data for a noise
+	      waveform, and the third column contains data for a
+	      cosine waveform. The VI plots each column in a graph and
+	      displays the data in a table.
+	    </item>
+	    <item>
+	      When the <code>Choose file to write</code> dialog box
+	      appears, save the file as <code>wave.txt</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory and
+	      click the <code>OK</code> button. Later, you will
+	      examine this file.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Block Diagram</title>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Display and examine the <link target-id="s3l1f1">block
+	      diagram</link> for this VI.
+	      <figure id="s3l1f1">
+		<media id="idp2401920" alt=""><image src="../../media/spreadexbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s3l1l1">
+		<item>
+		    <media id="idp2403920" alt=""><image src="../../media/sinepaticon.png" mime-type="image/png"/></media>
+		  The <code>Sine Pattern</code> VI
+		  located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;Analyze&gt;&gt;Signal Processing&gt;&gt;Signal
+		  Generation</code> palette returns a numeric array of
+		  128 elements containing a sine pattern. The constant
+		  <code>90.0</code>, in the second instance of the
+		  <code>Sine Pattern</code> VI, specifies the phase of
+		  the sine pattern or cosine pattern.
+		</item>
+		<item>
+		    <media id="idp2407488" alt=""><image src="../../media/uniform.png" mime-type="image/png"/></media>
+		  The <code>Uniform White Noise</code>
+		  VI located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;Analyze&gt;&gt;Signal Processing&gt;&gt;Signal
+		  Generation</code> palette returns a numeric array of
+		  128 elements containing a noise pattern.
+		</item>
+		<item>
+		    <media id="idp2409952" alt=""><image src="../../media/BuildArrayicon-4201.png" mime-type="image/png"/></media>
+		  The <code>Build Array</code>
+		  function located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;Array</code> palette builds the 2D array
+		  from the sine array, noise array, and cosine array,
+		  as shown in <link target-id="s3l1l1f4"/>.
+		  <figure id="s3l1l1f4">
+		    <media id="idm5869952" alt=""><image src="../../media/BuildArray-6782.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+		<item>
+		    <media id="idm5868480" alt=""><image src="../../media/trans2daryicon.png" mime-type="image/png"/></media>
+		  The <code>Transpose 2D
+		  Array</code> function located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Array</code> palette
+		  rearranges the elements of the 2D array so element
+		  <m:math>
+		    <m:set>
+		      <m:ci>i</m:ci>
+		      <m:ci>j</m:ci>
+		    </m:set>
+		  </m:math> becomes element 
+		  <m:math>
+		    <m:set>
+		      <m:ci>j</m:ci>
+		      <m:ci>i</m:ci>
+		    </m:set>
+		  </m:math>, as in <link target-id="s3l1l1f6"/>.
+		  <figure id="s3l1l1f6">
+		    <media id="idm5862112" alt=""><image src="../../media/transarry.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+		<item>
+		    <media id="idp3356896" alt=""><image src="../../media/wrtspreadfileicon.png" mime-type="image/png"/></media>
+		  The <code>Write To Spreadsheet
+		  File</code> VI located on the <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;File I/O</code> palette formats the 2D
+		  array into a spreadsheet string and writes the
+		  string to a file. The string has the format shown in
+		  <link target-id="s3l1l1f8"/>, where an arrow indicates
+		  a tab, and a paragraph symbol (¶) indicates an
+		  end of line character.  
+		  <figure id="s3l1l1f8">
+		    <media id="idp3360208" alt=""><image src="../../media/writespread.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+		<item>
+		    <media id="idp3361952" alt=""><image src="../../media/num2fracstrgicon.png" mime-type="image/png"/></media> The <code>Number To
+		  Fractional String</code> function located on the
+		  <code>Functions&gt;&gt;All
+		  Functions&gt;&gt;String&gt;&gt;String/Number Conversion</code>
+		  palette converts an array of numeric values to an
+		  array of strings that the table displays.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Close the VI. Do not save changes.
+	      <note id="idp3364896">
+		This example stores only three arrays in the file. To
+		include more arrays, increase the number of inputs to
+		the <code>Build Array</code> function.
+	      </note>
+	    </item>
+	  </list>
+	</section>
+	<section id="s4">
+	  <title>Optional</title>
+	  <para id="s4p1">
+	    Open the <code>wave.txt</code> file using a word processor
+	    or spreadsheet application and view its contents.
+	  </para>
+	  <list id="s4l1" list-type="enumerated">
+	    <item>
+	      Open a word processor or spreadsheet application, such
+	      as (<emphasis>Windows</emphasis>) Notepad or WordPad,
+	      (<emphasis>Mac OS</emphasis>) SimpleText, or
+	      (<emphasis>UNIX</emphasis>) Text Editor.
+	    </item>
+	    <item>
+	      Open <code>wave.txt</code>. The sine waveform data
+	      appear in the first column, the random waveform data
+	      appear in the second column, and the cosine waveform
+	      data appear in the third column.
+	    </item>
+	    <item>
+	      Exit the word processor or spreadsheet application and
+	      return to LabVIEW.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+
+
+  </content> 
+
+</document>

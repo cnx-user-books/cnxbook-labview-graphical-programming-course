@@ -1,0 +1,186 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Array Functions</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>36969335-33a6-48d7-992e-fb8aa03dc9ec</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      Use the <code>Array</code> functions located on the
+      <code>Functions&gt;&gt;All Functions&gt;&gt;Array</code> palette to create
+      and manipulate arrays. The more commonly used array functions
+      include the following:
+    </para>
+    <list id="list1" list-type="labeled-item"><item><label>
+	<media id="idp7446544" alt=""><image src="../../media/ArraySize.png" mime-type="image/png"/></media>
+	Array Size</label> 
+
+	Returns the number of elements in each dimension of an
+	array. If the array is
+	<m:math><m:ci>n</m:ci></m:math>-dimensional, the
+	<code>size</code> output is an array of
+	<m:math><m:ci>n</m:ci></m:math> elements. For example, the
+	<code>Array Size</code> function returns a <code>size</code>
+	of <m:math><m:cn>3</m:cn></m:math> for the <!-- <cnxn target="table1"> --> following array. <!--</cnxn>-->
+	<table frame="all" id="table1" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>7</entry>
+		<entry>4</entry>
+		<entry>2</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+      </item>
+      <item><label>
+	<media id="idp5023856" alt=""><image src="../../media/InitArray.png" mime-type="image/png"/></media>
+	Initialize Array</label> 
+
+	Creates an <m:math><m:ci>n</m:ci></m:math>-dimensional array
+	in which every element is initialized to the value of
+	<code>element</code>. Resize the function to increase the
+	number of dimensions of the output array. For example, the
+	<code>Initialize Array</code> function returns the <!--<cnxn target="table2">-->following array<!--</cnxn>--> for an
+	<code>element</code> of <m:math><m:cn>4</m:cn></m:math>, a
+	<code>dimension size</code> of
+	<m:math><m:cn>3</m:cn></m:math>, and one <code>dimension
+	size</code> terminal.
+	<table frame="all" id="table2" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>4</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+      </item>
+      <item><label>
+	<media id="idp6928032" alt=""><image src="../../media/BuildArray-2707.png" mime-type="image/png"/></media>
+	<!--should be corrected, needs to be seperate paragraphs-->
+	Build Array</label>
+
+	Concatenates multiple arrays or appends elements to an
+	<m:math><m:ci>n</m:ci></m:math>-dimensional array. Resize the
+	function to increase the number of elements in the output
+	array. For example, if you concatenate the two previous arrays
+	<!--(<cnxn target="table1"/> and <cnxn target="table2"/>)-->, the
+	<code>Build Array</code> function returns the <!--<cnxn target="table4">-->following array<!--</cnxn>-->.
+	<table frame="all" id="table4" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>7</entry>
+		<entry>4</entry>
+		<entry>2</entry>
+	      </row>
+	      <row>
+		<entry>4</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+	<!--different para-->
+	To concatenate the inputs into a longer array of the same
+	dimension as shown in the <!--<cnxn target="table5">-->following
+	array<!--</cnxn>-->, right-click the function node and select
+	<code>Concatenate Inputs</code> from the shortcut menu to
+	create the <!--<cnxn target="table5">-->following array<!--</cnxn>-->.
+	<table frame="all" id="table5" summary=""><tgroup cols="6" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>7</entry>
+		<entry>4</entry>
+		<entry>2</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+      </item>
+      <item><label>
+	<media id="idp6343504" alt=""><image src="../../media/ArraySubset.png" mime-type="image/png"/></media>
+	Array Subset</label>
+
+	Returns a portion of an array starting at <code>index</code>
+	and containing <code>length</code> elements. For example, if
+	you use the <!--<cnxn target="table1">-->previous array<!--</cnxn>--> as the
+	input, the <code>Array Subset</code> function returns the
+	<!--<cnxn target="table3">-->following array<!--</cnxn>--> for an
+	<code>index</code> of <m:math><m:cn>2</m:cn></m:math> and a
+	<code>length</code> of <m:math><m:cn>3</m:cn></m:math>.
+	<table frame="all" id="table3" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>2</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+      </item>
+      <item><label>
+	<media id="idp7297472" alt=""><image src="../../media/IndexArray.png" mime-type="image/png"/></media>
+	Index Array</label>
+	<!--para-->
+	Returns the <code>element</code> or <code>sub-array</code> of
+	<code>n-dimension array</code> at <code>index</code>. For
+	example, if you use the <!--<cnxn target="table1">-->previous
+	array<!--</cnxn>--> as the input, the <code>Index Array</code>
+	function returns <m:math><m:cn>2</m:cn></m:math> for an
+	<code>index</code> of <m:math><m:cn>0</m:cn></m:math>.
+	<!--para-->
+	You also can use the <code>Index Array</code> function to
+	extract a row or column of a 2D array to create a subarray of
+	the original. To do so, wire a 2D array to the input of the
+	function. Two <code>index</code> terminals are available. The
+	top <code>index</code> terminal indicates the row, and the
+	second terminal indicates the column. You can wire inputs to
+	both <code>index</code> terminals to index a single element,
+	or you can wire only one terminal to extract a row or column
+	of data. For example, wire the <!--<cnxn target="table6">-->following
+	array<!--</cnxn>--> to the input of the function.
+	<table frame="all" id="table6" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>7</entry>
+		<entry>4</entry>
+		<entry>2</entry>
+	      </row>
+	      <row>
+		<entry>4</entry>
+		<entry>4</entry>
+		<entry>4</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+	<!--para-->
+	The <code>Index Array</code> function returns the <!--<cnxn target="table7">-->following array<!--</cnxn>--> for an <code>index
+	(row)</code> of <m:math><m:cn>0</m:cn></m:math>:  
+	<table frame="all" id="table7" summary="">
+	  <tgroup cols="3" align="center">
+	    <tbody valign="top">
+	      <row>
+		<entry>7</entry>
+		<entry>4</entry>
+		<entry>2</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</table>
+      </item>
+    </list>
+  </content>
+  
+</document>

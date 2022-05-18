@@ -1,0 +1,49 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Clusters</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>892cb956-9f67-4671-afc3-773836b8319f</md:uuid>
+</metadata>
+  
+  <content>
+    <!--<section id="section1">
+      <name>Summary, Tips, and Tricks</name>-->
+      <list id="list1">
+	<item>
+	  <term>Clusters</term> group data elements of mixed types. A
+	  cluster cannot contain a mixture of controls and indicators.
+	</item>
+	<item>
+	  If a front panel contains more than
+	  <m:math><m:cn>28</m:cn></m:math> controls and indicators
+	  that you want to use programmatically, group some of them
+	  into a cluster and assign the cluster to a terminal on the
+	  connector pane to eliminate clutter on the block diagram.
+	</item>
+	<item>
+	  To create a cluster control or indicator, select a cluster
+	  on the <code>Functions&gt;&gt;All Functions&gt;&gt;Array &amp;
+	  Cluster</code> palette, place it on the front panel, and
+	  drag controls or indicators into the cluster shell.
+	</item>
+	<item>
+	  Use the <code>Cluster</code> functions located on the
+	  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette to
+	  create and manipulate clusters.
+	</item>
+	<item>
+	  Error checking tells you why and where errors occur.
+	</item>
+	<item>
+	  The error cluster reports the
+	  <term><code>status</code></term>,
+	  <term><code>code</code></term>, and
+	  <term><code>source</code></term> of the error.
+	</item>
+	<item>
+	  Use the error cluster controls and indicators to create
+	  error inputs and outputs in subVIs.
+	</item>
+      </list>
+    <!--</section>-->
+  </content>
+  
+</document>

@@ -1,0 +1,134 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Waveform Transfers</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3e962424-ae68-48f2-a376-ed2b87ee5fb5</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Many instruments return a waveform as an ASCII string or a
+      binary string. Assuming the same waveform, a binary string
+      transfer is faster and requires less memory than an ASCII string
+      transfer. Binary encoding requires fewer bytes than ASCII
+      encoding.
+    </para>
+    <section id="s1">
+      <title>ASCII Waveforms</title>
+      <para id="s1p1">
+	As an example, consider a waveform composed of 1,024 points,
+	each point having a value between 0 and 255. Using ASCII
+	encoding, you would need a maximum of 4 bytes to represent
+	each point (a maximum of 3 bytes for the value of the point
+	and 1 byte for the separator, such as a comma). You would need
+	a maximum of 4,096 (
+	<m:math>
+	  <m:apply>
+	    <m:cartesianproduct/>
+	    <m:cn>4</m:cn>
+	    <m:cn>1,024</m:cn>
+	  </m:apply>
+	</m:math>) bytes plus any header and trailer bytes to
+	represent the waveform as an ASCII string. <link target-id="s1f1"/> is an ASCII waveform string.
+      </para>
+      <figure id="s1f1">
+	<media id="idp7662032" alt=""><image src="../../media/wform.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s1p2">
+	You can use the <code>Extract Numbers</code> VI located in the
+	<code>C:\Exercises\LabVIEW Basics I</code> directory to
+	convert an ASCII waveform into a numeric array, as
+	follows. This VI outputs the waveform as a <link target-id="s1f2">double precision array</link>.
+      </para>
+      <figure id="s1f2">
+	<media id="idp7249536" alt=""><image src="../../media/extrnum.png" mime-type="image/png"/></media>
+      </figure>
+    </section>
+    <section id="s2">
+      <title>Binary Waveforms Encoded as 1-Byte Integers</title>
+      <para id="s2p1">
+	The same waveform using binary encoding requires only 1,024
+	bytes (
+	<m:math>
+	  <m:apply>
+	    <m:cartesianproduct/>
+	    <m:cn>1</m:cn>
+	    <m:cn>1,024</m:cn>
+	  </m:apply>
+	</m:math>) plus any header and trailer bytes to be represented
+	as a binary string. Using binary encoding, you need only 1
+	byte to represent the point, assuming each point is an
+	unsigned 8-bit integer. <link target-id="s2f1"/> is a binary
+	waveform string.
+      </para>
+      <figure id="s2f1">
+	<media id="idm214928" alt=""><image src="../../media/bwform.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s2p2">
+	Converting the binary string to a numeric array is a little
+	more complex. You must convert the string to an integer
+	array. You can do this by using the <link target-id="s2f2">String
+	To Byte Array</link> function located on the
+	<code>Functions&gt;&gt;All Functions&gt;&gt;String&gt;&gt;String/Array/Path
+	Conversion</code> palette. You must remove all header and
+	trailer information from the string before you can convert it
+	to an array. Otherwise, this information also is converted.
+      </para>
+      <figure id="s2f2">
+	<media id="idm364816" alt=""><image src="../../media/bwstring.png" mime-type="image/png"/></media>
+      </figure>
+    </section>
+    <section id="s3">
+      <title>Binary Waveforms Encoded as 2-Byte Integers</title>
+      <para id="s3p1">
+	If each point in the binary waveform string is encoded as a
+	2-byte integer, it is easier and much faster to use the
+	<code>Type Cast</code> function located on the
+	<code>Functions&gt;&gt;All Functions&gt;&gt;Advanced&gt;&gt;Data
+	Manipulation</code> palette. Refer to the <cite><cite-title>LabVIEW Basics
+	II: Development Course Manual</cite-title></cite> for more information
+	about type casting.
+      </para>
+      <para id="s3p2">
+	For example, consider a GPIB oscilloscope that transfers
+	waveform data in binary notation. The waveform is composed of
+	1,024 data points. Each data point is a 2-byte signed
+	integer. Therefore, the entire waveform is composed of 2,048
+	bytes. In <link target-id="s3f1"/>, the waveform has a 4-byte
+	header DATA and a 2-byte trailer--a carriage return followed
+	by a linefeed.
+      </para>
+      <figure id="s3f1">
+	<media id="idp9153216" alt=""><image src="../../media/bwencd.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s3p3">
+	The block diagram in <link target-id="s3f2"/> shows how you can
+	use the <code>Type Cast</code> function to cast the binary
+	waveform string into an array of 16-bit integers.
+      </para>
+      <figure id="s3f2">
+	<media id="idp701808" alt=""><image src="../../media/typcst.png" mime-type="image/png"/></media>
+      </figure>
+      <para id="s3p4">
+	You might need to use the <link target-id="s3f3">Swap Bytes</link> function located on the
+	<code>Functions&gt;&gt;All Functions&gt;&gt;Advanced&gt;&gt;Data
+	Manipulation</code> palette to swap the most significant 8
+	bits and the least significant 8 bits for every
+	element. Remember, the GPIB is an 8-bit bus. It can transfer
+	only one byte at a time. If the instrument first sends the low
+	byte and then the high byte, you do not need to use the
+	<code>Swap Bytes</code> function.
+      </para>
+      <para id="s3p5">
+	In the <link target-id="s3f2">example</link>, you needed to use the <link target-id="s3f3">Swap Bytes</link>
+	function because the instrument sent the most significant byte
+	first. Because the most significant byte is received first, it
+	is placed in a lower memory location than the least
+	significant byte sent after the most significant byte.
+      </para>
+      <figure id="s3f3">
+	<media id="idp8757392" alt=""><image src="../../media/swpbyts.png" mime-type="image/png"/></media>
+      </figure>
+    </section>
+
+  </content>
+  
+</document>

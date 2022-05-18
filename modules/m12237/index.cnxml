@@ -1,0 +1,408 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Graph Waveform Array VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>37fe9733-57b2-47ef-a1cc-2583e85cae0f</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idm7231376">
+	<para id="delete_me">
+	  Complete the following steps to build a VI that generates and
+	  plots an array on a <code>waveform graph</code> and modify the
+	  VI to graph multiple plots.
+	</para>
+	
+	<section id="idm7109360">
+	  <title>Front Panel</title>
+
+	  <list id="banta1" list-type="enumerated">
+	    <item> Open a blank VI and build the front panel shown in
+	      <link target-id="van"/>.
+	      <figure id="van">
+		<media id="idp893168" alt=""><image src="../../media/graphwavaryfp.png" mime-type="image/png"/></media>
+	      </figure>
+
+	      <list id="banta2" list-type="enumerated">
+		<item>
+		  Place an <code>array</code>, located on the
+		  <code>Controls&gt;&gt;All Controls&gt;&gt;Array &amp;Cluster</code>
+		  palette, on the front panel.
+		</item>
+		<item>
+		  Label the array <code>Waveform Array</code>.
+		</item>
+		<item>
+		  Place a <code>numeric indicator</code>, located on the
+		  <code> Controls&gt;&gt;Numeric Indicators </code> palette, in
+		  the <code>array</code> shell.
+		</item>
+		<item>
+		  Place a <code>waveform graph</code>, located on the
+		  <code> Controls&gt;&gt;Graph Indicators </code> palette, on
+		  the front panel.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	
+	<section id="idm6259376">
+	  <title>Block Diagram</title>
+	  <list id="banta3" list-type="enumerated">
+	    <item> Build the block diagram shown in <link target-id="van2"/>.
+	      <figure id="van2">
+		<media id="idm5619136" alt=""><image src="../../media/graphwavarybd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="banta4" list-type="enumerated">
+		<item>
+		  <media id="idm5837696" alt=""><image src="../../media/tempicon-74e1.png" mime-type="image/png"/></media>
+		  Place the <code>Thermometer</code> VI on the block
+		  diagram.  Select <code>Functions&gt;&gt;All Functions&gt;&gt;Select
+		    a VI</code> and navigate to <code>C:\Exercises\ LabVIEW
+		    Basics I\Thermometer.vi</code>. This subVI returns one
+		  temperature reading during each <code>For Loop</code>
+		  iteration.  
+		  <note id="idp3481856"> 
+		    Use the <code>(Demo) Thermometer</code> VI if you do
+		    not have a DAQ device available.
+		  </note>
+		</item>
+		<item>
+		  <media id="idp1054704" alt=""><image src="../../media/forloop-4604.png" mime-type="image/png"/></media>
+		  Place a <code>For Loop</code>, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Structures</code>
+		  palette, on the block diagram. In this exercise, each
+		  <code>For Loop</code> iteration generates a temperature
+		  value and stores it in the indexed tunnel. Create a
+		  constant of <code>100</code> for the count terminal.
+		</item>
+		<item>
+		  Wire the block diagram as shown in <link target-id="van2"/>.
+		  <note id="idm558400"> 
+		    When you wire data to charts and graphs, refer to the
+		    <code>Context Help</code> window for more information
+		    about wiring the objects, including whether to use a
+		    <code>Build Array</code> or <code>Bundle</code>
+		    function, the order of the input terminals, and so
+		    on. In general, use a <code>waveform chart</code> for
+		    single scalar points, a <code>waveform graph</code>
+		    for an array of y values, and an <code>XY graph</code>
+		    for an <code>array</code> of
+		    <m:math><m:ci>x</m:ci></m:math> values and an array of
+		    <m:math><m:ci>y</m:ci></m:math> values. For example,
+		    if you move the cursor over a <code>waveform
+		      graph</code> terminal on the block diagram, the
+		    information shown in <link target-id="van3"/> appears in
+		    the <code>Context Help</code> window. Select
+		    <code>Help&gt;&gt;Find Examples</code> to launch the
+		    <code>NI Example Finder</code>, double-click
+		    <code>Fundamentals</code>, double-click <code>Graphs
+		      and Charts</code>, and double-click the <code>Waveform
+		      Graph</code> VI to open the example.  Refer to the
+		    lesson on Data Acquisition and
+		      Waveforms for more information about the
+		    waveform data type.
+		  </note>
+		  <figure id="van3">
+		    <media id="idm6465776" alt=""><image src="../../media/graphchelp.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+	      </list>
+	    </item>
+	    
+	    <item>
+	      Save the VI as <code>Graph Waveform Array.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	    
+	  </list>
+	</section>
+
+	<section id="idp2469472">
+	  <title>Run the VI</title>
+	  <list id="banta6" list-type="enumerated">
+	    <item> 
+	      Display the front panel and run the VI. The VI plots the
+	      auto-indexed waveform array on the <code>waveform
+		graph</code>.
+	    </item> 
+	    <item> 
+	      Enter the index of any element in the <code>Waveform
+		Array</code> index display to view the value of that
+	      element. If you enter a number greater than the array size
+	      of 100, the display dims.
+	    </item> 
+	    <item> 
+	      Use the <code>Positioning</code> tool to resize
+	      <code>Waveform Array</code> to view more than one
+	      element. The indicator displays elements in ascending index
+	      order, beginning with the index you entered.
+	    </item> 
+	  </list>
+	</section>
+	<section id="idp553232">
+	  <title>Block Diagram</title>
+	  <para id="natalie">
+	    In this block diagram, you use the default value of the
+	    initial <m:math><m:ci>x</m:ci></m:math> and 
+	    <m:math>
+	      <m:apply>
+		<m:ci><m:mo>Δ</m:mo></m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:math> value for the waveform. In cases where the initial
+	    <m:math><m:ci>x</m:ci></m:math> and
+	    <m:math>
+	      <m:apply>
+		<m:ci><m:mo>Δ</m:mo></m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:math> value are a specific value, use the
+	    <code>Bundle</code> function to specify an initial
+	    <m:math><m:ci>x</m:ci></m:math> and
+	    <m:math>
+	      <m:apply>
+		<m:ci><m:mo>Δ</m:mo></m:ci>
+		<m:ci>x</m:ci>
+	      </m:apply>
+	    </m:math> value for a <code>waveform array</code>.
+	  </para>
+	  <list id="banta7" list-type="enumerated">
+	    <item> 
+
+	      Modify the block diagram as shown in <link target-id="vanhelfin"/>.
+	      <figure id="vanhelfin">
+		<media id="idp1261472" alt=""><image src="../../media/graphwavaryclusbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="banta8" list-type="enumerated">
+
+		<item>  
+		  <media id="idm6536320" alt=""><image src="../../media/bundle-d963.png" mime-type="image/png"/></media>
+		  Place the <code>Bundle</code> function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette,
+		  on the block diagram. This function assembles the plot
+		  elements into a single cluster. The elements include the
+		  initial <m:math><m:ci>x</m:ci></m:math> value
+		  (<m:math><m:cn>20</m:cn></m:math>), the 
+		  <m:math>
+		    <m:apply>
+		      <m:ci><m:mo>Δ</m:mo></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:math> value (<m:math><m:cn>0.5</m:cn></m:math>), and
+		  the <m:math><m:ci>y</m:ci></m:math> array of waveform
+		  data.
+
+		</item> 
+		<item> 
+		  Create two numeric constants for the initial
+		  <m:math><m:ci>x</m:ci></m:math> value and 
+		  <m:math>
+		    <m:apply>
+		      <m:ci><m:mo>Δ</m:mo></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:math> value.
+		</item> 
+		<item> 
+		  Label the 
+		  <m:math>
+		    <m:apply>
+		      <m:ci><m:mo>Δ</m:mo></m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:math> constant by typing <code>Dx</code>. Use the
+		  <code>Labeling</code> tool to select the <code>D</code>
+		  and select the <code>Symbol</code> font from the
+		  <code>Text Settings</code> pull-down menu on the
+		  toolbar. <code>D</code> converts to the delta symbol
+		  (Δ).  </item> 
+
+		<item> 
+
+		  Wire the block diagram as shown in <link target-id="vanhelfin"/>.
+
+		</item> 
+	      </list>
+	    </item>
+	    <item> Save the VI.
+	    </item> 
+	  </list>
+	</section>
+
+	<section id="idp1469456">
+	  <title>Run the VI</title>
+	  <list id="banta22" list-type="enumerated">
+	    <item> 
+
+	      Display the front panel and run the VI.  The graph displays
+	      the same <m:math><m:cn>100</m:cn></m:math> points of data
+	      with a starting value of <m:math><m:cn>20</m:cn></m:math>
+	      and a 
+	      <m:math>
+		<m:apply>
+		  <m:ci><m:mo>Δ</m:mo></m:ci>
+		  <m:ci>x</m:ci>
+		</m:apply>
+	      </m:math>
+	      of <m:math><m:cn>0.5</m:cn></m:math> for each point on the
+	      x-axis. In a timed test, this graph would correspond to
+	      <m:math><m:cn>50</m:cn></m:math> seconds worth of data
+	      starting at <m:math><m:cn>20</m:cn></m:math> seconds.
+	      <note id="idm6741904">
+
+		Change the initial <m:math><m:ci>x</m:ci></m:math> and
+		<m:math>
+		  <m:apply>
+		    <m:ci><m:mo>Δ</m:mo></m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		</m:math>
+		values in only one location, either the
+		<code>Bundle</code> function or in the <code>Waveform
+		  Graph Properties</code> dialog box.</note>
+	    </item>
+	    <item>
+	      If time permits, complete the optional steps. Otherwise,
+	      close the VI.
+	    </item>
+	  </list>
+	</section>
+
+
+	<section id="idp3389120">
+	  <title>Optional</title>
+	  <list id="banta11" list-type="enumerated">
+
+	    <item> 
+
+	      Right-click the <code>waveform graph</code> and select
+	      <code>Visible Items&gt;&gt;Graph Palette</code> from the shortcut
+	      menu to display the graph palette. Click the
+	      <code>Zoom</code> button to see the data on the graph in
+	      more detail.
+	    </item>
+	    <item>
+	      Right-click the graph and select <code> Visible Items&gt;&gt;Scale
+		Legend </code> from the shortcut menu to display the scale
+	      legend.
+	    </item>
+	    <item>
+	      Return to the block diagram. Create a multiple-plot waveform
+	      graph by building a 2D array of the data type normally
+	      passed to a single-plot graph. Modify the block diagram as
+	      shown in <link target-id="vanclick"/>.
+	      <figure id="vanclick">
+		<media id="idp890752" alt=""><image src=" tempanalybd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="banta12" list-type="enumerated">
+		<item>
+		  <media id="idp290096" alt=""><image src="../../media/sineicon.png" mime-type="image/png"/></media>
+		  Place the <code>Sine</code> function, located on the
+		  <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		    Numeric&gt;&gt;Express Trigonometric</code> palette, on the
+		  block diagram. Use this function to build an array of
+		  points that represents one cycle of a sine wave.
+		</item>
+		<item>
+		  <media id="idp1345408" alt=""><image src="../../media/BuildArrayicon-58b7.png" mime-type="image/png"/></media>
+		  Place the <code>Build Array</code> function, located on
+		  the <code>Functions&gt;&gt;All Functions&gt;&gt;Array</code>
+		  palette, on the block diagram. This function creates the
+		  data structure to plot two arrays on a <code>waveform
+		    graph</code>.
+		</item>
+		<item>
+		  <media id="idp1668736" alt=""><image src="../../media/pi.png" mime-type="image/png"/></media>
+		  Place the <code>pi</code> constant, located on the
+		  <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		    Numeric&gt;&gt;Express Numeric Constants</code> palette, on
+		  the block diagram.
+		</item>
+		<item>
+		  Wire the block diagram as shown <link target-id="vanclick"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI.
+	    </item>
+	    <item> 
+	      Display the front panel and run the VI. The two waveforms
+	      plot on the same <code>waveform graph</code>.
+	    </item>
+	    <item>
+	      Display the block diagram.
+	    </item>
+	    <item>
+	      Right-click the wire to <code> Waveform Array </code>,
+	      select <code> Custom Probes&gt;&gt;Controls&gt;&gt;Graph
+		Indicators</code> from the shortcut menu, and select a
+	      waveform graph to place a graph probe on the wire.
+	    </item>
+	    <item>
+	      Display the front panel and run the VI. The probe shows only
+	      the data array. The sine wave is not present because you did
+	      not place the probe on the wire to which the sine wave is
+	      bundled.
+	    </item>
+	    <item>
+	      Close the <code> Probe </code> window.
+	    </item>
+	    <item>
+	      Zoom in on a portion of the graph. 
+	      <list id="banta32" list-type="enumerated">
+		<item> 
+		  <media id="idm94928" alt=""><image src="../../media/zoom.png" id="med1" mime-type="image/png"/></media>
+		  Click the <code>Zoom</code> button on the graph palette,
+		  shown in <link target-id="med1"/>, to display the
+		  <code>Zoom</code> pull-down menu.
+		</item>
+		<item>
+		  Select <code>Zoom by X Rectangle</code>, as shown in
+		  <link target-id="vanman"/>.
+		  <figure id="vanman">
+		    <media id="idm6045728" alt=""><image src="../../media/zoomxrect.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+		<item>
+		  Click and drag a selection rectangle on the graph. When
+		  you release the mouse button, the graph display zooms in
+		  on the selected area.
+		</item>
+		<item>
+		  You also can select <code>Zoom by Y Rectangle</code>
+		  or <code>Zoom by Selected Area</code>. Experiment with
+		  these options.
+		</item>
+		<item>
+		  <media id="idp2299408" alt=""><image src="../../media/xfit.png" id="med2" mime-type="image/png"/></media> 
+		  <media id="idp2388096" alt=""><image src="../../media/yfit.png" id="med21" mime-type="image/png"/></media> 
+		  Select <code>Undo Zoom</code> from the lower left corner
+		  of the pull-down menu to undo a zoom or click the x-axis
+		  single fit button and the y-axis single fit button on
+		  the scale legend, shown in <link target-id="med2"/> and
+		  <link target-id="med21"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      <media id="idp1988192" alt=""><image src="../../media/pan.png" id="med3" mime-type="image/png"/></media> 
+	      Use the <code>Panning</code> tool, shown in <link target-id="med3"/>, to click and drag the graph display. Click
+	      the x-axis and y-axis single fit buttons again to restore
+	      the display to its original position.
+	    </item>
+	    <item>
+	      <media id="idm5610032" alt=""><image src="../../media/standard.png" id="med4" mime-type="image/png"/></media> 
+	      Use the <code>Cursor Movement</code> tool, shown in <link target-id="med4"/>, to return the cursor to standard mode.
+	    </item>
+	    <item>
+	      Save and close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

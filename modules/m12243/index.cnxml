@@ -1,0 +1,86 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Additional Exercises for Plotting Data</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>120bdd52-5c7c-4670-9fa4-4f51f3a9db8a</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp6405200">
+	<para id="para1">
+	  Build a VI that displays two plots, a random plot and a
+	  running average of the last four points, on a <code>waveform
+	  chart</code> in <code>sweep update</code> mode. Use the
+	  following tips:
+	</para>
+	<list id="list1">
+	  <item>
+	    Use a <code>For Loop</code>
+	    (<m:math>
+	      <m:apply>
+		<m:eq/>
+		<m:ci>n</m:ci>
+		<m:cn>200</m:cn>
+	      </m:apply>
+	    </m:math>)
+	    instead of a <code>While Loop</code>.
+	  </item>
+	  <item>
+	    Use a <code>shift register</code> with three left
+	    terminals to average the last four data points.
+	  </item>
+	  <item>
+	    Use the <code>Random Number (0-1)</code> function located
+	    on the <code>Functions&gt;&gt;Arithmetic &amp;
+	    Comparison&gt;&gt;Express Numeric</code> palette to generate the
+	    data.
+	  </item>
+	  <item>
+	    Use the <code>Bundle</code> function located on the
+	    <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette to
+	    group the random data with the averaged data before
+	    plotting.
+	  </item>
+	</list>
+	<para id="para2">
+	  Save the VI as <code>Random Average.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+    <exercise id="e2">
+      <problem id="idp13777472">
+	<para id="para3">
+	  Build a VI that continuously measures the temperature once
+	  per second and displays the temperature on a scope chart. If
+	  the temperature goes above or below limits specified with
+	  front panel controls, the VI turns on a front panel LED. The
+	  chart plots the temperature and the upper and lower
+	  temperature limits. You should be able to set the limit from
+	  the following front panel.
+	</para>
+	<para id="para4">
+	  Save the VI as <code>Temperature Limit.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>	  
+      </problem>
+    </exercise>
+    <exercise id="e3">
+      <problem id="idp13206448">
+	<para id="para5">
+	  Modify the VI you created in <link target-id="e2"/> to display
+	  the maximum and minimum values of the temperature trace.
+	</para>
+	<note type="tip" id="idp13208096">
+	  Use <code>shift registers</code> and two <code>Max &amp;
+	  Min</code> functions located on the <code>Functions&gt;&gt;All
+	  Functions&gt;&gt;Comparison</code> palette.
+	</note>
+	<para id="para6">
+	  Select <code>File&gt;&gt;Save As</code> to save the VI as <code>Temp Limit (max-min).vi</code>
+	  in the <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

@@ -1,0 +1,167 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Error Clusters</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3b9fb9bd-b957-4793-a549-dd1bba86c7fd</md:uuid>
+</metadata>
+  
+  <content>
+      <para id="para1">
+	No matter how confident you are in the VI you create, you
+	cannot predict every problem a user might encounter. Without a
+	mechanism to check for errors, you know only that the VI does
+	not work properly. Error checking tells you why and where
+	errors occur.
+      </para>
+      <para id="para2">
+	When you perform any kind of I/O, consider the possibility
+	that errors will occur. Almost all I/O functions return error
+	information. Include error checking in VIs, especially for I/O
+	operations such as file, serial, instrumentation, data
+	acquisition, and communication operations, and provide a
+	mechanism to handle errors appropriately.
+      </para>
+      <para id="para3">
+	Checking for errors in VIs can help you identify the following
+	problems:
+      </para>
+      <list id="list1">
+	<item>
+	  You initialized communications incorrectly or wrote improper
+	  data to an external device.
+	</item>
+	<item>
+	  An external device lost power, is broken, or is not working
+	  properly.
+	</item>
+	<item>
+	  You upgraded the operating system software, which changed
+	  the path to a file or the functionality of a VI or
+	  library. You might notice a problem in a VI or a system
+	  program.
+	</item>
+      </list>
+      <section id="section1">
+	<title>Error Handling</title>
+	<para id="para4">
+	  By default, LabVIEW automatically handles any error that
+	  occurs when a VI runs by suspending execution, highlighting
+	  the subVI or function where the error occurred, and
+	  displaying a dialog box. You can choose other error handling
+	  methods. For example, if an I/O VI on the block diagram
+	  times out, you might not want the entire application to
+	  stop. You also might want the VI to retry for a certain
+	  period of time. In LabVIEW, you can make these error
+	  handling decisions on the block diagram of the VI.
+	</para>
+	<para id="para5">
+	  VIs and functions return errors in one of two ways-with
+	  numeric error codes or with an error cluster. Typically,
+	  functions use numeric error codes, and VIs use an error
+	  cluster, usually with error inputs and outputs.
+	</para>
+	<para id="para6">
+	  Error handling in LabVIEW follows the dataflow model. Just
+	  as data flow through a VI, so can error information. Wire
+	  the error information from the beginning of the VI to the
+	  end. Include an error handler VI at the end of the VI to
+	  determine if the VI ran without errors. Use the error in and
+	  error out clusters in each VI you use or build to pass error
+	  information through the VI.
+	</para>
+	<para id="para7">
+	  As the VI runs, LabVIEW tests for errors at each execution
+	  node. If LabVIEW does not find any errors, the node executes
+	  normally. If LabVIEW detects an error, the node passes the
+	  error to the next node without executing. The next node does
+	  the same thing, and so on. Use the <code>Simple Error
+	  Handler</code> VI, shown in <link target-id="f1"/>, to handle
+	  the error at the end of the execution flow. The <code>Simple
+	  Error Handler</code> VI is located on the
+	  <code>Functions&gt;&gt;All Functions&gt;&gt;Time &amp; Dialog</code>
+	  palette. Wire the error cluster to the <code>error</code> in
+	  input.
+	  <figure id="f1">
+	    <media id="idm9522064" alt=""><image src="../../media/SimErrorHand.png" mime-type="image/png"/></media>
+	  </figure>
+	</para>
+      </section>
+      <section id="section2">
+	<title>Error Clusters</title>
+	<para id="para8">
+	  The <code>error clusters</code> located on the
+	  <code>Functions&gt;&gt;All Functions&gt;&gt;Array &amp; Cluster</code>
+	  palette include the components of information shown in <link target-id="f2"/>.
+	<figure id="f2">
+	  <media id="idm970208" alt=""><image src="../../media/errorcluster.png" mime-type="image/png"/></media>
+	</figure>
+	</para>
+	<list id="list2">
+	  <item>
+	    <term><code>status</code></term> is a Boolean value that
+	    reports <code>True</code> if an error occurred. Most VIs,
+	    functions, and structures that accept Boolean data also
+	    recognize this parameter. For example, you can wire an
+	    error cluster to the Boolean inputs of the
+	    <code>Stop</code>, <code>Quit LabVIEW</code>, or
+	    <code>Select</code> functions. If an error occurs, the
+	    error cluster passes a <code>True</code> value to the
+	    function.
+	  </item>
+	  <item>
+	    <term><code>code</code></term> is a 32-bit signed integer
+	    that identifies the error numerically. A non-zero error
+	    code coupled with a <term>status</term> of
+	    <code>False</code> signals a warning rather than a fatal
+	    error.
+	  </item>
+	  <item>
+	    <term><code>source</code></term> is a string that
+	    identifies where the error occurred.
+	  </item>
+	</list>
+	<para id="para9">
+	  Use the error cluster controls and indicators to create
+	  error inputs and outputs in subVIs.
+	</para>
+      </section>
+      <section id="section3">
+	<title>Explain Error</title>
+	<para id="para10">
+	  When an error occurs, right-click within the cluster border
+	  and select <code>Explain Error</code> from the shortcut menu
+	  to open the <code>Explain Error</code> dialog box. The
+	  <code>Explain Error</code> dialog box contains information
+	  about the error. The shortcut menu includes an <code>Explain
+	  Warning</code> option if the VI contains warnings but no
+	  errors.
+	</para>
+	<para id="para11">
+	  You also can access the <code>Explain Error</code> dialog
+	  box from the <code>Help&gt;&gt;Explain Error</code> menu.
+	</para>
+      </section>
+      <section id="section4">
+	<title>Using While Loops for Error Handling</title>
+	<para id="para12">
+	  You can wire an error cluster to the conditional terminal of
+	  a <code>While Loop</code> to stop the iteration of the
+	  <code>While Loop</code> (<link target-id="f3"/>). When you wire
+	  the error cluster to the conditional terminal, only the
+	  <code>True</code> or <code>False</code> value of the status
+	  parameter of the error cluster is passed to the
+	  terminal. When an error occurs, the <code>While Loop</code>
+	  stops.
+	<figure id="f3">
+	  <media id="idm9754208" alt=""><image src="../../media/errorwhile.png" mime-type="image/png"/></media>
+	</figure>
+	</para>
+	<para id="para13">
+	  When an error cluster is wired to the conditional terminal,
+	  the shortcut menu items <code>Stop if True</code> and
+	  <code>Continue if True</code> change to <code>Stop on
+	  Error</code> and <code>Continue while Error</code>.
+	</para>
+      </section>
+
+  </content>
+  
+</document>

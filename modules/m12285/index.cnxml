@@ -1,0 +1,106 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>GPIB Configuration with MAX (Windows Only)</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>a85b1b8a-4f97-4c0b-b7b1-1a6399386f50</md:uuid>
+</metadata>
+
+  <content>
+    <list id="l1" list-type="enumerated">
+      <item>
+	Power off the NI Instrument Simulator and configure it to
+	communicate through GPIB by setting the following <link target-id="l1f1">left bank of switches</link> on the side of the
+	box.
+	<figure id="l1f1">
+	  <media id="idm5913328" alt=""><image src="../../media/simgpib-b557.png" mime-type="image/png"/></media>
+	</figure>
+      </item>
+      <item>
+	Power on the NI Instrument Simulator and verify that both the
+	Power and Ready LEDs are lit.
+      </item>
+      <item>
+	Launch MAX by either double-clicking the icon on the desktop
+	or by selecting <code>Tools&gt;&gt;Measurement &amp; Automation
+	Explorer</code> in LabVIEW.
+      </item>
+      <item>
+	Expand the <code>Devices and Interfaces</code> section to
+	display the installed interfaces. If a GPIB interface is
+	listed, the NI-488.2 software is correctly loaded on the
+	computer.
+      </item>
+      <item>
+	Select the GPIB interface and click the
+	<code>Properties</code> button on the toolbar to display the
+	<code>Properties</code> dialog box.
+      </item>
+      <item>
+	Examine but do not change the settings for the GPIB interface,
+	and click the <code>OK</code> button.
+      </item>
+      <item>
+	Make sure the GPIB interface is still selected in the
+	<code>Devices and Interfaces</code> section and click the
+	<code>Scan for Instruments</code> button on the toolbar.
+      </item>
+      <item>
+	Expand the GPIB board section. One instrument named
+	<code>Instrument0</code> appears.
+      </item>
+      <item>
+	Click <code>Instrument0</code> to display information about it
+	in the right pane of MAX.  The NI Instrument Simulator has a
+	GPIB <term>primary address</term> (<term>PAD</term>) of 2.
+      </item>
+      <item>
+	Click the <code>Communicate with Instrument</code> button on
+	the toolbar. An interactive window appears. You can use it to
+	query, write to, and read from that instrument.
+      </item>
+      <item>
+	Type <code>*IDN?</code> in <code>Send String</code> and click
+	the <code>Query</code> button. The instrument returns its make
+	and model number in <code>String Received</code>. You can use
+	<link target-id="l1f2">this window</link> to debug instrument
+	problems or to verify that specific commands work as described
+	in the instrument documentation.
+	<figure id="l1f2">
+	  <media id="idp1715792" alt=""><image src="../../media/querywindow.png" mime-type="image/png"/></media>
+	</figure>
+      </item>
+      <item>
+	Type <code>MEAS:DC?</code> in <code>Send String</code> and
+	click the <code>Query</code> button. The NI Instrument
+	Simulator returns a simulated voltage measurement.
+      </item>
+      <item>
+	Click the <code>Query</code> button again to return a
+	different value.
+      </item>
+      <item>
+	Click the <code>Exit</code> button.
+      </item>
+      <item>
+	Set a VISA alias for the NI Instrument Simulator so you can
+	use the alias instead of having to remember the primary
+	address.
+	<list id="l1l1" list-type="enumerated">
+	  <item>
+	    While <code>Instrument0</code> is selected in MAX, click
+	    the <code>VISA Properties</code> button to display the
+	    <code>Properties</code> dialog box.
+	  </item>
+	  <item>
+	    Type <code>devsim</code> in the <code>VISA Alias</code>
+	    field and click the <code>OK</code> button. You will use
+	    this alias throughout this lesson.
+	  </item>
+	</list>
+      </item>
+      <item>
+	Select <code>File&gt;&gt;Exit</code> to exit MAX.
+      </item>
+    </list>
+
+
+  </content>
+</document>

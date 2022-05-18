@@ -1,0 +1,181 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Temperature System VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>beff9c25-d11c-45d2-b84f-3051825e1a84</md:uuid>
+</metadata>
+
+<!--When CNXML 0.6 is released, this module needs to be revised using
+para in item in the places where noted.-->
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp6667184">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1s1" list-type="enumerated">
+	    <item id="s1s1p1"><!--needs para-->
+	      <!--para-->
+	      Open the <code>Temperature System</code> VI located in
+	      the <code>C:\Exercises\ LabVIEW Basics I</code>
+	      directory. The following front panel is already built.
+	      <figure id="s1s1p1f1">
+		<media id="idp6875520" alt=""><image src="../../media/tempsys.png" mime-type="image/png"/></media>
+	      </figure>
+	      <!--para--> 
+	      The front panel contains <link target-id="s1s1p1f1">four
+	      Boolean buttons</link>. The mechanical action of the
+	      first three buttons is <code>Latch When
+	      Pressed</code>. This setting changes the control value
+	      when you click it and retains the new value until the VI
+	      reads it once. At this point the control reverts to its
+	      default value, even if you keep pressing the mouse
+	      button. This action is similar to a circuit breaker and
+	      is useful for stopping <code>While Loops</code> or for
+	      getting the VI to perform an action only once each time
+	      you set the control.  
+	      <!--para--> 
+	      The mechanical action of the <code>Stop</code> button is
+	      <code>Latch When Released</code>. This setting changes
+	      the control value only after you release the mouse
+	      button within the graphical boundary of the
+	      control. When the VI reads it once, the control reverts
+	      to the old value. This action guarantees at least one
+	      new value. This action is similar to dialog box buttons
+	      and system buttons.
+	    </item>
+	    <item id="s1s2">
+	      Right-click a control and select <code>Advanced&gt;&gt;Key
+	      Navigation</code> from the shortcut menu to display the
+	      <code>Key Navigation</code> dialog box.
+	    </item>
+	    <item id="s1s3">
+	      In the <code>Key Assignment</code> section, assign the
+	      shortcut key shown in the <link target-id="s1s1p1f1"/>.
+	    </item>
+	    <item>
+	      Repeat <link target-id="s1s2"/> and <link target-id="s1s3"/> for each control.
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2s1" list-type="enumerated">
+	    <item>
+	      Examine the <link target-id="s2s1f1">block diagram</link>
+	      which is already built.
+	      <figure id="s2s1f1">
+		<media id="idm113584" alt=""><image src="../../media/tempsysbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="new">
+		<item>
+		  <media id="idm903520" alt=""><image src="../../media/disptempicon.png" mime-type="image/png"/></media>
+		  The <code>Display Temp</code> VI simulates a temperature
+		  measurement every 500 ms and plots it on a strip chart.
+		</item>
+		<item>
+		  <media id="idm843520" alt=""><image src="../../media/displogtempicon.png" mime-type="image/png"/></media>
+		  The <code>Display and Log Temp</code> VI simulates a
+		  temperature measurement every 500 ms, plots it on a
+		  strip chart, and logs it to a file.
+		</item>
+		<item>
+		  <media id="idp194464" alt=""><image src="../../media/disploggedtempicon.png" mime-type="image/png"/></media>
+		  The <code>Display Logged Temp</code> VI opens a file
+		  that you select, reads the logged data, and displays
+		  them on a graph.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Configure each subVI to display its front panel when
+	      called.
+	      <list id="s2s2p1l1" list-type="enumerated">
+		<item id="step1">
+		  Right-click the subVI and select <code>SubVI Node
+		  Setup</code> from the shortcut menu.
+		</item>
+		<item>
+		  Place checkmarks in the <code>Show Front Panel when
+		  called</code> and <code>Close afterwards if
+		  originally closed</code> checkboxes.
+		</item>
+		<item id="step3">
+		  Click <code>OK</code> to close the <code>SubVI Node
+		  Setup</code> dialog box.
+		</item>
+		<item>
+		  Repeat <link target-id="step1"/> through
+		  <link target-id="step3"/> for the remaining
+		  two subVIs.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI. Display the front panel and run the VI.
+	    </item>
+	    <item>
+	      Click each button and press the corresponding keyboard
+	      shortcuts. The three subVIs return to the <code>Temperature
+	      System</code> VI front panel when you press the
+	      <code>&lt;Enter&gt;</code> key. Try pressing the
+	      <code>&lt;Enter&gt;</code> key to do so.
+	    </item>
+	    <item>
+	      Stop the VI.
+	    </item>
+	    <item>
+	      Configure the <code>Temperature System</code> VI to run automatically
+	      when you open the VI.
+	      <list id="s2s6p1l1" list-type="enumerated">
+		<item>
+		  Select <code>File&gt;&gt;VI Properties</code>.
+		</item>
+		<item>
+		  Select <code>Execution</code> from the
+		  <code>Category</code> pull-down menu.
+		</item>
+		<item>
+		  Place a checkmark in the <code>Run When
+		  Opened</code> checkbox.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Configure the VI so the menu bar and toolbar are not
+	      visible while the VI runs.
+	      <list id="s2s7p1l1" list-type="enumerated">
+		<item>
+		  Select <code>Window Appearance</code> from the
+		  <code>Category</code> pull-down menu.
+		</item>
+		<item>
+		  Click the <code>Customize</code> button.
+		</item>
+		<item>
+		  Remove the checkmarks from the <code>Show Menu
+		  Bar</code> and <code>Show Toolbar When
+		  Running</code> checkboxes.
+		</item>
+		<item>
+		  Click the <code>OK</code> button twice.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save and close all VIs.
+	    </item>
+	    <item>
+	      Open the <code>Temperature System</code> VI again. The
+	      VI runs automatically when you open it. Click the
+	      buttons on the front panel or use the keyboard
+	      shortcuts.
+	    </item>
+	    <item>
+	      Stop and close all VIs.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

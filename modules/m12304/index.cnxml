@@ -1,0 +1,50 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Editing VI Properties</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>028ed5b4-9ce4-49f2-9743-73c6adc6ba0f</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Sometimes you can select VI properties that make it difficult to
+      edit a VI. For example, you might select the <code>Run When
+      Opened</code> option and disable the menu bar and toolbar. If
+      you set the VI to close and exit LabVIEW after it runs, you
+      cannot stop the VI and edit it without it closing and exiting
+      LabVIEW. This VI would be very difficult to edit.
+    </para>
+    <note id="idm592384">
+      To exit LabVIEW, you can use the Quit LabVIEW function located
+      on the <code>Functions&gt;&gt;All Functions&gt;&gt;Application
+      Control</code> palette. This function aborts all running VIs and
+      ends the current session of LabVIEW. The function has one
+      input. If it is wired, the end of the LabVIEW session occurs
+      only if that input is True. If the input is not wired, the end
+      of the session occurs when the node executes.
+    </note>
+    <para id="p2">
+      Before you change VI properties, save a backup of the VI to a
+      new location by selecting <code>File&gt;&gt;Save with Options</code>
+      to avoid situations like the previous examples.
+    </para>
+    <para id="p3">
+      Select the <code>Development Distribution</code> option to save
+      the VI to a new location along with its entire hierarchy. You
+      also can include the <code>vi.lib</code> files in the save. After you save
+      the backup VI, change the VI properties of the original VI. If
+      you encounter a problem, you can return to the backup VI.
+    </para>
+    <note type="caution" id="idp2065968"><label>Caution</label>
+      If you select the <code>Remove diagrams</code> option, you
+      remove the source code of the VI. Select this option only if you
+      never need to edit the VI again. Before you save a VI without
+      the block diagrams, save a backup of the VI with the block
+      diagrams.
+    </note>
+    <para id="p4">
+      If you already saved a development VI with properties that make
+      the VI difficult to edit, refer to the <link document="m12305">Edit Me
+      VI</link> exercise for more information about editing the VI.
+    </para>
+  </content>
+  
+</document>

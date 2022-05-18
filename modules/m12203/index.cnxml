@@ -1,0 +1,310 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Introduction to LabVIEW</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>e626cdf6-4c65-4308-8336-b24193ae7367</md:uuid>
+</metadata>
+  
+  <content>
+    <section id="section1">
+      <title>Summary</title>
+      <list id="list1">
+	<item>
+	  Virtual instruments (VIs) contain three main components-the
+	  front panel, the block diagram, and the icon and connector
+	  pane.
+	</item>
+	<item>
+	  The front panel is the user interface of a VI and specifies
+	  the inputs and displays the outputs of the VI.
+	</item>
+	<item>
+	  The block diagram contains the graphical source code
+	  composed of nodes, terminals, and wires.
+	</item>
+	<item>
+	  Use the <code>Tools</code> palette to create, modify, and
+	  debug VIs. Press the <code>Shift</code> key and right-click
+	  to display a temporary version of the <code>Tools</code>
+	  palette at the location of the cursor.
+	</item>
+	<item>
+	  Use the <code>Controls</code> palette to place controls and
+	  indicators on the front panel. Right-click an open space on
+	  the front panel to display the <code>Controls</code>
+	  palette.
+	</item>
+	<item>
+	  Use the <code>Functions</code> palette to place VIs and
+	  functions on the block diagram. Right-click an open space on
+	  the block diagram to display the <code>Functions</code>
+	  palette.
+	</item>
+	<item>
+	  Use the <code>Search</code> button on the
+	  <code>Controls</code> and <code>Functions</code> palettes to
+	  search for controls, VIs, and functions.
+	</item>
+	<item>
+	  All LabVIEW objects and empty space on the front panel and
+	  block diagram have associated shortcut menus, which you
+	  access by right-clicking an object, the front panel, or the
+	  block diagram.
+	</item>
+	<item>
+	  Use the <code>Help</code> menu to display the <code>Context
+	  Help</code> window and the <cite><cite-title>LabVIEW Help</cite-title></cite>, which
+	  describes most palettes, menus, tools, VIs, functions, and
+	  features.
+	</item>
+	<item>
+	  Select <code>Help&gt;&gt;Search the LabVIEW Bookshelf</code> to
+	  display the <cite><cite-title>LabVIEW Bookshelf</cite-title></cite>, which you can
+	  use to search PDF versions of all the LabVIEW manuals and
+	  <cite><cite-title>Application Notes</cite-title></cite>.
+	</item>
+	<item>
+	  You build the front panel with controls and indicators,
+	  which are the interactive input and output terminals of the
+	  VI, respectively.
+	</item>
+	<item>
+	  Control terminals have a thicker border than indicator
+	  terminals. To change a control to an indicator or to change
+	  an indicator to a control, right-click the object and select
+	  <code>Change to Indicator</code> or <code>Change to
+	  Control</code> from the shortcut menu.
+	</item>
+	<item>
+	  The block diagram is composed of nodes, terminals, and
+	  wires.
+	</item>
+	<item>
+	  The broken <code>Run</code> button appears on the toolbar to
+	  indicate the VI is broken. Click the broken <code>Run</code>
+	  button to display the <code>Error list</code> window, which
+	  lists all the errors.
+	</item>
+	<item>
+	  Use execution highlighting, single-stepping, probes, and
+	  breakpoints to debug VIs by animating the flow of data
+	  through the block diagram.
+	</item>
+      </list>
+    </section>
+    <section id="section2">
+      <title>Tips and Tricks</title>
+      <section id="section3">
+	<title>Operating</title>
+	<list id="list2">
+	  <item>
+	    Frequently used menu options have equivalent keyboard
+	    shortcuts. For example, to save a VI, you can select
+	    <code>File&gt;&gt;Save</code> or press the <code>Ctrl-S</code>
+	    keys. Common keyboard shortcuts include the following:
+	  </item>
+	</list>
+	<list id="list3" list-type="labeled-item">
+	  <item><label>Ctrl-R</label>
+	    
+	    Runs a VI.
+	  </item>
+	  <item><label>Ctrl-E</label>
+	    
+	    Toggles between the front panel and block diagram.
+	  </item>
+	  <item><label>Ctrl-H</label>
+	    
+	    Toggles display of the <code>Context Help</code> window.
+	  </item>
+	  <item><label>Ctrl-B</label>
+	    
+	    Removes all broken wires.
+	  </item>
+	  <item><label>Ctrl-F</label>
+	     Finds VIs, globals, functions, text,
+	    or other objects loaded in memory or in a specified list
+	    of VIs.
+	  </item>
+	</list>
+	<list id="list4">
+	  <item>
+	    To increment or decrement numeric controls faster, use the
+	    <code>Operating</code> or <code>Labeling</code> tools to
+	    place the cursor in the control and press the
+	    <code>Shift</code> key while pressing the up or down arrow
+	    keys.
+	  </item>
+	  <item>
+	    You can disable the debugging tools to reduce memory
+	    requirements and to increase performance slightly. Select
+	    <code>File&gt;&gt;VI Properties</code>, select
+	    <code>Execution</code> from the top pull-down menu, and
+	    remove the checkmark from the <code>Allow Debugging</code>
+	    checkbox.
+	  </item>
+	</list>
+      </section>
+      <section id="section4">
+	<title>Wiring</title>
+	<list id="list5">
+	  <item>
+	    Click the <code>Show Context Help Window</code> button on
+	    the toolbar to display the <code>Context Help</code>
+	    window. Use the <code>Context Help</code> window to
+	    determine which terminals are required. Required terminals
+	    are bold, recommended connections are plain text, and
+	    optional connections are dimmed.
+	  </item>
+	  <item>
+	    Press the spacebar to toggle the wire direction.
+	  </item>
+	  <item>
+	    To move objects one pixel, press the arrow keys. To move
+	    objects several pixels, press the <code>Shift</code> key
+	    while you press the arrow keys.
+	  </item>
+	  <item>
+	    To cancel a wire you started, press the <code>Esc</code>
+	    key, right-click, or click the terminal where you started
+	    the wire.
+	  </item>
+	  <item>
+	    Use the tip strips that appear as you move the
+	    <code>Wiring</code> tool over terminals.
+	  </item>
+	  <item>
+	    Display the connector pane by right-clicking the node and
+	    selecting <code>Visible Items&gt;&gt;Terminals</code> from the
+	    shortcut menu.
+	  </item>
+	  <item>
+	    You can bend a wire by clicking to tack the wire down and
+	    moving the cursor in a perpendicular direction. To tack
+	    down a wire and break it, double-click.
+	  </item>
+	</list>
+	<figure id="f1">
+	  <media id="idm2871216" alt=""><image src="../../media/wiretack.png" mime-type="image/png"/></media>
+	  <caption>
+	    1. Tack Down a Wire by Clicking, 
+	    2. Tack and Break the Wire by Double-clicking
+	  </caption>
+	</figure>
+      </section>
+      <section id="section5">
+	<title>Editing</title>
+	<list id="list6">
+	  <item>
+	    Use the following shortcuts to create constants, controls, and
+	    indicators:
+	    <list id="list7" list-type="labeled-item">
+	      <item> Right-click a function terminal and select
+		<code>Create&gt;&gt;Constant</code>,
+		<code>Create&gt;&gt;Control</code>, or
+		<code>Create&gt;&gt;Indicator</code> from the shortcut menu.
+	      </item>
+	      <item>
+		Drag controls and indicators from the front panel to
+		the block diagram to create a constant.
+	      </item>
+	      <item>
+		Drag constants from the block diagram to the front
+		panel to create a control.
+	      </item>
+	    </list>
+	  </item>
+	  <item>
+	    To duplicate an object, press the <code>Ctrl</code> key
+	    while using the Positioning tool to click and drag a
+	    selection.
+	  </item>
+	  <item>
+	    To restrict an object's direction of movement horizontally
+	    or vertically, use the <code>Positioning</code> tool to
+	    select the object and press the <code>Shift</code> key
+	    while you move the object.
+	  </item>
+	  <item>
+	    To keep an object proportional to its original size as you
+	    resize it, press the <code>Shift</code> key while you drag
+	    the resizing handles or circles.
+	  </item>
+	  <item>
+	    To resize an object as you place it on the front panel,
+	    press the <code>Ctrl</code> key while you click to place
+	    the object and drag the resizing handles or circles.
+	  </item>
+	  <item>
+	    To replace nodes, right-click the node and select
+	    <code>Replace</code> from the shortcut menu.
+	  </item>
+	  <item>
+	    To display the block diagram of a subVI from the calling
+	    VI, press the <code>Ctrl</code> key and use the
+	    <code>Operating</code> or <code>Positioning</code> tool to
+	    double-click the subVI on the block diagram.
+	  </item>
+	  <item>
+	    To display the front panel of a subVI from the calling VI,
+	    use the <code>Operating or Positioning</code> tool to
+	    double-click the subVI on the block diagram. You also can
+	    select <code>Browse&gt;&gt;This VI's SubVIs</code>.
+	  </item>
+	  <item>
+	    After you type a label, press the <code>Enter</code> key
+	    to end text entry.
+	  </item>
+	  <item>
+	    To add items quickly to ring controls and
+	    <code>Case</code> structures, press the
+	    <code>Shift-Enter</code> keys after each item. Pressing
+	    <code>Shift-Enter</code> accepts the item and positions
+	    the cursor to add the next item. Refer to <link document="m12245">Making Decisions in a VI</link> for more
+	    information about <code>Case</code> structures.
+	  </item>
+	  <item>
+	    To copy the color of one object and transfer it to a
+	    second object without using a color picker, use the
+	    <code>Color Copy</code> tool to click the object whose
+	    color you want to copy. Use the <code>Coloring</code> tool
+	    to click the object to which you want to apply the
+	    color. You also can copy the color of one object by using
+	    the <code>Coloring</code> tool and pressing the
+	    <code>Ctrl</code> key.
+	  </item>
+	  <item>
+	    Select <code>Edit&gt;&gt;Undo</code> if you make a mistake.
+	  </item>
+	  <item>
+	    To create more blank space on the block diagram, press the
+	    <code>Ctrl</code> key while you use the
+	    <code>Positioning</code> tool to draw a rectangle on the
+	    block diagram.
+	  </item>
+	</list>
+      </section>
+      <section id="section6">
+	<title>Debugging</title>
+	<list id="list8">
+	  <item>
+	    When single-stepping, use the following keyboard shortcuts:
+	  </item>
+	</list>
+	<list id="list9" list-type="labeled-item">
+	  <item><label>Ctrl-down arrow</label>
+	    
+	    Steps into a node.
+	  </item>
+	  <item><label>Ctrl-right arrow</label>
+	    
+	    Steps over a node.
+	  </item>
+	  <item><label>Ctrl-up arrow</label>
+	    
+	    Steps out of a node.
+	  </item>
+	</list>
+      </section>
+    </section>
+  </content>
+  
+</document>

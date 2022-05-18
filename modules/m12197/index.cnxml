@@ -1,0 +1,60 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Dataflow Programming</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3270351e-79bd-4541-81ab-50bcc4f41314</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      LabVIEW follows a dataflow model for running VIs. A block
+      diagram node executes when all its inputs are available. When a
+      node completes execution, it supplies data to its output
+      terminals and passes the output data to the next node in the
+      dataflow path.
+    </para>
+    <para id="para2">
+      Visual Basic, C++, JAVA, and most other text-based programming
+      languages follow a control flow model of program execution. In
+      control flow, the sequential order of program elements
+      determines the execution order of a program.
+    </para>
+    <example id="ex1">
+      <para id="para3">
+	For a dataflow programming example, consider a <link target-id="f1">block diagram</link> that adds two numbers and
+	then subtracts
+	<m:math>
+	  <m:cn>50.00</m:cn> </m:math> from the result of the
+	addition. In this case, the block diagram executes from left
+	to right, not because the objects are placed in that order,
+	but because the <code>Subtract</code> function cannot execute
+	until the <code>Add</code> function finishes executing and
+	passes the data to the <code>Subtract</code>
+	function. Remember that a node executes only when data are
+	available at all of its input terminals, and it supplies data
+	to its output terminals only when it finishes execution.
+	<figure id="f1">
+	  <media id="idp6770256" alt=""><image src="../../media/dataflow.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+    </example>
+    <example id="ex2">
+      <para id="para4">
+	In the following <link target-id="f2">example</link>, consider
+	which code segment would execute first-the <code>Add</code>,
+	<code>Random Number</code>, or <code>Divide</code>
+	function. You cannot know because inputs to the
+	<code>Add</code> and <code>Divide</code> functions are
+	available at the same time, and the <code>Random Number</code>
+	function has no inputs. In a situation where one code segment
+	must execute before another, and no data dependency exists
+	between the functions, use other programming methods, such as
+	error clusters, to force the order of execution. Refer to the
+	<link document="m12231">Error Handling</link> section of Clusters for more information about error
+	clusters.
+	<figure id="f2">
+	  <media id="idp9223264" alt=""><image src="../../media/dataflowno.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+    </example>
+  </content>
+  
+</document>

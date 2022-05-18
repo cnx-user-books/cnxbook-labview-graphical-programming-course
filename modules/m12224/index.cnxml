@@ -1,0 +1,151 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Array Exercise VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>18c42804-06ca-4e3a-b06c-99a03b3b0052</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp3410064">
+	<para id="para1">
+	  Complete the following steps to build a VI that creates an array of
+	  random numbers, scales the resulting array, and takes a subset
+	  of that final array.
+	</para> 
+	<section id="section1">
+	  <title>Front Panel</title>
+	  <list id="list1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="f1"/>.
+	      <figure id="f1">
+		<media id="idp254208" alt=""><image src="../../media/arrex.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="list2" list-type="enumerated">
+		<item>      
+		  Place an <code>array</code>, located on the
+		  <code>Controls&gt;&gt;All Controls&gt;&gt;Array &amp; Cluster</code>
+		  palette, on the front panel.
+		</item>
+		<item>      
+		  Label the array <code>Random Array</code>.
+		</item>
+		<item> 
+		  Place a <code>numeric indicator</code>, located on the
+		  <code>Controls&gt;&gt;Numeric Indicators</code> palette, in
+		  the <code>array</code> shell.
+		</item>
+		<item>   
+		  Use the <code>Positioning</code> tool to resize the
+		  array control to contain
+		  <m:math><m:cn>10</m:cn></m:math> <code>numeric
+		    indicators</code>.
+		</item>
+		<item>  
+		  Press the <code>&lt;Ctrl&gt;</code> key while you click and
+		  drag the <code>Random Array</code> control to create two
+		  copies of the control.
+		</item>
+		<item>    
+		  Label the copies <code>Final Array</code> and
+		  <code>Subset Array</code>.
+		</item>
+		<item>      
+		  Place three <code>numeric controls</code>, located on
+		  the <code>Controls&gt;&gt;Numeric Controls</code> palette, and
+		  label them <code>Scaling Factor</code>, <code>Start
+		    Subset</code>, and <code># of Elements</code>.
+		</item>
+		<item>      
+		  Right-click the <code>Start Subset</code> and <code># of
+		    Elements</code> controls and select
+		  <code>Representation&gt;&gt;I32</code> from the shortcut menu.
+		</item>
+		<item>      
+		  Do not change the values of the front panel controls.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+	<section id="section2">
+	  <title>Block Diagram</title>
+	  <list id="list3" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="f2"/>.
+	      <figure id="f2">
+		<media id="idm6812256" alt=""><image src="../../media/arrexbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="list4" list-type="enumerated">
+		<item>     
+		  <media id="idp2799408" alt=""><image src="../../media/randnum-e63f.png" mime-type="image/png"/></media>
+		  Place the <code>Random Number (0-1)</code> function,
+		  located on the <code>Functions&gt;&gt;Arithmetic &amp;
+		    Comparison&gt;&gt;Express Numeric</code> palette, on the block
+		  diagram. This function generates a random number between
+		  <m:math><m:cn>0</m:cn></m:math> and
+		  <m:math><m:cn>1</m:cn></m:math>.
+		</item>
+		<item>
+		  <media id="idm5683600" alt=""><image src="../../media/forloop-835b.png" mime-type="image/png"/></media>
+		  Place the <code>For Loop</code>, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Structures</code>
+		  palette, on the block diagram. The loop accumulates an
+		  array of <m:math><m:cn>10</m:cn></m:math> random numbers
+		  at the output tunnel. Create a constant of
+		  <m:math><m:cn>10</m:cn></m:math> for the count terminal.
+		</item>
+		<item>
+		  <media id="idp3290416" alt=""><image src="../../media/multiply-06b5.png" mime-type="image/png"/></media>
+		  Place the <code>Multiply</code> function, located on the
+		  <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		    Numeric</code> palette, on the block diagram. In this
+		  exercise this function multiplies <code>Random
+		    Array</code> by <code>Scaling Factor</code> and returns
+		  <code>Final Array</code>.
+		</item>
+		<item>
+		  <media id="idp774432" alt=""><image src="../../media/ArraySubset.png" mime-type="image/png"/></media>
+		  Place the Array Subset function, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Array</code> palette, on
+		  the block diagram. This function returns a portion of an
+		  array starting at <code>Start Subset</code> and
+		  containing <code># of Elements</code> elements.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Array Exercise.vi</code> in the
+	      <code>C:\Exercises\ LabVIEW Basics I</code> directory.
+	    </item>
+	  </list>
+	</section>
+	<section id="section3">
+	  <title>Run the VI</title>
+	  <list id="list5" list-type="enumerated">
+	    <item>
+	      <!--needs to be corrected, should be seperate paragraphs-->
+	      Display the front panel, change the values of the controls,
+	      and run the VI a few times.
+	      <!--different para-->
+
+	      The <code>For Loop</code> runs for
+	      <m:math><m:cn>10</m:cn></m:math> iterations. Each iteration
+	      generates a random number and stores it at the output
+	      tunnel. <code>Random Array</code> displays an array of
+	      <m:math><m:cn>10</m:cn></m:math> random numbers. The VI
+	      multiplies each value in <code>Random Array</code> by
+	      <code>Scaling Factor</code> to create <code>Final
+		Array</code>. The VI takes a subset of <code>Final
+		Array</code> starting at <code>Start Subset</code> for
+	      <code># of Elements</code> and displays the subset in
+	      <code>Subset Array</code>.
+	    </item>
+	    <item>
+	      Close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

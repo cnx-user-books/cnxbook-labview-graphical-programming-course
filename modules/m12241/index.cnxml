@@ -1,0 +1,52 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Intensity Graph Example VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>28077523-ada1-4f91-b287-53a63d4ec6ff</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idp6206512">
+	<para id="p1">
+	  In this exercise, you use a VI that displays a wave interference
+	  pattern on an intensity graph. You also use the VI to plot a 2D
+	  array of data on the graph.
+	</para>
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="l1" list-type="enumerated">
+	    <item>
+	      Open and run the <link target-id="f1">Intensity Graph
+		Example</link> VI located in the <code>C:\Exercises\LabVIEW
+		Basics I</code> directory. By default, the VI plots an
+	      interference waveform. A <code>Property Node</code> on the
+	      block diagram defines the color range used in the intensity
+	      graph. You can change the color range by opening the block
+	      diagram and modifying the <code>Color Array</code> constant.
+	      <figure id="f1">
+		<media id="idm1067872" alt=""><image src="../../media/intensitygraphexfp.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      Change the <code>Plot</code> switch on the front panel to
+	      <code>User Data</code> and enter values between
+	      <m:math>
+		<m:cn>0.0</m:cn>
+	      </m:math> and 
+	      <m:math>
+		<m:cn>10.0</m:cn> </m:math> in the <code>User Data</code>
+	      array control. Run the VI. Notice how the magnitude of each
+	      element is mapped to the intensity graph.
+	      <figure id="f2">
+		<media id="idp268992" alt=""><image src="../../media/intensitygraphexfp2.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      Close the VI. Do not save changes.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

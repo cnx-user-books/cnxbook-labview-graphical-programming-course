@@ -1,0 +1,141 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Formula Node Exercise VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>41547715-e1c3-45ec-97c2-87c8092d96d2</md:uuid>
+</metadata>
+  <!--When CXNML 0.6 comes out, this module will need to be revised to
+  include para in the items indicated.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm717952">
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item>
+	      Open a blank VI and build the front panel shown in <link target-id="s1l1f1"/>.
+	      <figure id="s1l1f1">
+		<media id="idm538400" alt=""><image src="../../media/formulaexer.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Build the block diagram shown in <link target-id="s2l1f1"/>.
+	      <figure id="s2l1f1">
+		<media id="idp3621104" alt=""><image src="../../media/formulaexerbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		  Place the <code>Formula Node</code>, located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Structures</code>
+		  palette, on the block diagram.
+		</item>
+		<item>
+		  Create the <code>x</code> input terminal by
+		  right-clicking the left border and selecting
+		  <code>Add Input</code> from the shortcut menu. Type
+		  <code>x</code> in the box that appears.
+		</item>
+		<item>
+		  Create the <code>y</code> and a output terminals by
+		  right-clicking the right border and selecting
+		  <code>Add Output</code> from the shortcut
+		  menu. Enter <code>y</code> and <code>a</code>,
+		  respectively, in the boxes that appear. You must
+		  create output terminals for temporary variables like
+		  <m:math><m:ci>a</m:ci></m:math>.
+		  <note id="idm8583344">
+		    When you create an input or output terminal, you
+		    must use a variable name that exactly matches the
+		    one in the equation. Variable names are case
+		    sensitive.
+		  </note>
+		</item>
+		<item>
+		  Type the following equations in the <code>Formula
+		  Node</code>, where <code>**</code> is the
+		  exponentiation operator. Refer to the <cite><cite-title>LabVIEW
+		  Help</cite-title></cite> for more information about syntax for
+		  the <code>Formula Node</code>.
+		  <code display="block" id="idm136096">
+		    a = tanh(x) + cos(x);
+		    y = a**3 + a;
+		  </code>
+		</item>
+		<item>
+		  Complete the block diagram as shown in <link target-id="s2l1f1"/>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Formula Node Exercise.vi</code> in
+	      the <code>C:\Exercises\ LabVIEW Basics I</code>
+	      directory.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Run the VI</title>
+	  <list id="s3l1" list-type="enumerated">
+	    <item><!--needs para-->
+	      <!--para-->
+	      Display the front panel and run the VI. The graph
+	      displays the plot of the equation 
+	      <m:math>
+		<m:apply>
+		  <m:eq/>
+		  <m:ci>y</m:ci>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:power/>
+		      <m:apply>
+			<m:ci type="fn">f</m:ci>
+			<m:ci>x</m:ci>
+		      </m:apply>
+		      <m:cn>3</m:cn>
+		    </m:apply>
+		    <m:apply>
+		      <m:ci type="fn">f</m:ci>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:math>, where 
+	      <m:math>
+		<m:apply>
+		  <m:eq/>
+		  <m:apply>
+		    <m:ci type="fn">f</m:ci>
+		    <m:ci>x</m:ci>
+		  </m:apply>
+		  <m:apply>
+		    <m:plus/>
+		    <m:apply>
+		      <m:tanh/>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		    <m:apply>
+		      <m:cos/>
+		      <m:ci>x</m:ci>
+		    </m:apply>
+		  </m:apply>
+		</m:apply>
+	      </m:math>.
+	      <!--para-->
+	      During each iteration, the VI divides the iteration
+	      terminal value by <code>15.0</code>. The quotient is
+	      wired to the <code>Formula Node</code>, which calculates
+	      the function value. The VI plots the array as a graph.
+	    </item>
+	    <item>
+	      Close the VI.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content> 
+</document>

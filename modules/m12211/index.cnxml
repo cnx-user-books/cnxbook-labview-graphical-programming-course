@@ -1,0 +1,74 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Modular Programming</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>6c2ef6a1-b80c-429e-b5dd-f12dbfedb654</md:uuid>
+</metadata>
+
+  <content>
+    <list id="sum">
+      <item> 
+
+	A VI within another VI is called a subVI. Using subVIs helps
+	you manage changes and debug the block diagram quickly.
+      </item>
+      <item>	
+
+	After you build a VI front panel and block diagram, build the
+	icon and the connector pane so you can use the VI as a subVI.
+      </item>
+      <item> 
+
+	The connector pane is a set of terminals that corresponds to
+	the controls and indicators of that VI. Define connections by
+	assigning a front panel control or indicator to each of the
+	connector pane terminals.
+      </item>
+      <item> 
+
+	Create custom icons to replace the default icon by
+	double-clicking the icon in the upper right corner of the
+	front panel to open the <code> Icon Editor. </code> 
+      </item>
+      <item> 
+
+	In the <code>Icon Editor</code> dialog box, double-click the
+	Text tool to select a different font.
+      </item>
+      <item>
+
+	You can designate which inputs and outputs are required,
+	recommended, and optional to prevent users from forgetting to
+	wire subVI connections. Right-click a terminal in the
+	connector pane and select <code>This Connection Is</code>
+	from the shortcut menu.
+      </item>
+
+      <item> 
+
+	Document a VI by selecting <code>File&gt;&gt;VI Properties</code>
+	and selecting <code>Documentation from the Category</code>
+	pull-down menu. When you move the cursor over a VI icon, the
+	<code>Context Help</code> window displays this description and
+	indicates which terminals are required, recommended, or
+	optional.
+      </item>
+
+      <item> 
+
+	Add descriptions and tip strips to controls and indicators by
+	right-clicking them and selecting <code>Description and
+	Tip</code> from the shortcut menu. When you move the cursor
+	over controls and indicators, the <code>Context Help</code>
+	window displays this description.
+      </item>
+      <item> 
+
+	Convert a section of a VI into a subVI by using the
+	<code>Positioning</code> tool to select the section of the
+	block diagram you want to reuse and selecting
+	<code>Edit&gt;&gt;Create SubVI</code>.
+      </item>
+
+    </list>
+  </content>
+  
+</document>

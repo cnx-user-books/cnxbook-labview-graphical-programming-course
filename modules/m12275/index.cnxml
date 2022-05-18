@@ -1,0 +1,176 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Voltage Output VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b6bab16e-4693-47ce-b470-00904db33e78</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idm8520048">
+	<list id="l1" list-type="enumerated">
+	  <item>
+	    Connect Analog Out CH0 to Analog In CH1 on the DAQ Signal
+	    Accessory.
+	  </item>
+	</list>
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <list id="s1l1" list-type="enumerated">
+	    <item><!--needs para-->
+	      <!--para-->
+	      Open the <code>Voltage Output</code> VI located in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory. The
+	      <link target-id="s1l1f1">front panel</link> is already built.
+	      <figure id="s1l1f1">
+		<media id="idm925504" alt=""><image src="../../media/voltoutex.png" mime-type="image/png"/></media>
+	      </figure>
+	      <!--para-->
+	      <code>Voltage Output</code> displays the current voltage
+	      output.
+	    </item>
+	  </list>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Display and examine the <link target-id="s2l1f2">block
+		diagram</link>.
+	      <figure id="s2l1f2">
+		<media id="idp1497840" alt=""><image src="../../media/voltoutexbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1">
+		<item>
+		    <media id="idp987296" alt=""><image src="../../media/waitms-b4f9.png" mime-type="image/png"/></media>
+		  The <code>Wait Until Next ms
+		    Multiple</code> function located on the
+		  <code>Functions&gt;&gt;All Functions&gt;&gt;Time &amp; Dialog</code>
+		  palette causes the <code>For Loop</code> to execute
+		  every 500 ms.
+		</item>
+		<item>
+		    <media id="idm8488976" alt=""><image src="../../media/selecttherm-cae6.png" mime-type="image/png"/></media>
+		  The <code>Select</code> VI located on
+		  the <code>Functions&gt;&gt;Arithmetic &amp;
+		    Comparison&gt;&gt;Express Comparison</code> palette checks if
+		  the loop is in its last iteration. If the loop is in its
+		  last iteration, then the DAQ device outputs 0
+		  volts. This is a good technique to reset the output
+		  voltage to a known level. It is always a good idea to
+		  reset the output voltage to something that will not
+		  damage a device that is connected to the DAQ device.
+		</item>
+	      </list>
+	    </item>
+	    <item><!--needs para-->
+	      <!--para-->
+	      Modify the block diagram as shown in <link target-id="s2l1f3"/>.
+	      <figure id="s2l1f3">
+		<media id="idm1638480" alt=""><image src="../../media/voltouteditbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <!--para-->
+		<media id="idm1186576" alt=""><image src="../../media/DAQAssistantIcon-91d5.png" mime-type="image/png"/></media>
+	      Place the <code>DAQ Assistant</code> Express
+		VI, located on the <code>Functions&gt;&gt;Output</code>
+	      palette, in the <code>For Loop</code>. Complete the
+	      following steps to configure this Express VI to generate an
+	      analog output voltage.
+	      <list id="s2l1l1b" list-type="enumerated">
+		<item>
+		  Select <code>Analog Output&gt;&gt;Voltage</code> for the
+		  measurement to make.
+		</item>
+		<item>
+		  Select <code>Dev1&gt;&gt;ao0</code> for the physical channel
+		  and click the <code>Finish</code> button.
+		</item>
+		<item>
+		  In the <code>Analog Output Voltage Task
+		    Configuration</code> dialog box that appears, configure
+		  the <code>Task Timing</code> to <code>Generate 1
+		    Sample</code>. Change the output range minimum to
+		  <code>0</code> and maximum to <code>10</code>.
+		</item>
+		<item>
+		  Click the <code>OK</code> button to close the
+		  <code>Analog Output Voltage Task Configuration</code>
+		  dialog box. This saves the settings specified for the
+		  task in the <code>DAQ Assistant Express VI</code>.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI.
+	    </item>
+	    <item>
+	      Close the block diagram but leave the front panel open.
+	    </item>
+	  </list>
+	</section>
+	<section id="s3">
+	  <title>Front Panel</title>
+	  <list id="s3l1" list-type="enumerated">
+	    <item>
+	      Open the <link document="m12270">Voltmeter</link> VI.
+	    </item>
+	    <item>
+	      Configure the meter scale minimum to <code>0.0</code>
+	      and maximum to <code>10.0</code>.
+	    </item>
+	  </list>
+	</section>
+	<section id="s4">
+	  <title>Block Diagram</title>
+	  <list id="s4l1" list-type="enumerated">
+	    <item>
+	      Display the block diagram for the <code>Voltmeter</code>
+	      VI and double-click the <code>DAQ Assistant</code>
+	      Express VI to open the <code>Analog Input Voltage
+	      Task Configuration</code> dialog box.
+	    </item>
+	    <item>
+	      Right-click <code>Voltage</code> in the <code>Channel
+	      List</code> section and select <code>Change Physical
+	      Channel</code>. Select <code>ai1</code> for the channel
+	      because you wired the DAQ signal accessory to output a
+	      voltage on <code>Analog Out CH0</code> and acquire the
+	      voltage from <code>Analog In CH1</code>.
+	    </item>
+	    <item>
+	      Select <code>No Scale</code> from the <code>Custom
+	      Scaling</code> pull-down menu.
+	    </item>
+	    <item>
+	      Change the voltage range to <code>0</code> to
+	      <code>10</code>.
+	    </item>
+	    <item>
+	      Click the <code>OK</code> button to close the dialog
+	      box.
+	    </item>
+	    <item>
+	      Display the front panel and run the <code>Voltmeter</code>
+	      VI.
+	    </item>
+	    <item><!--para needed-->
+	      <!--para-->
+	      To acquire and display the voltage output, run the
+	      <code>Voltage Output</code> VI.
+	      <!--para-->
+	      The <link target-id="s4l3f1">Voltage Output</link> VI
+	      outputs the voltage in 0.5 V increments from 0 to 9.5
+	      V. When the <code>For Loop</code> executes its last iteration, the VI
+	      outputs 0 V to reset the analog output channel.
+	      <figure id="s4l3f1">
+		<media id="idm7374688" alt=""><image src="../../media/voltoutexfinal.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      Close both VIs.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+
+  </content> 
+</document>

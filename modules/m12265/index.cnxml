@@ -1,0 +1,87 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Additional Exercises for Strings and FileI/O</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>0ff5cadc-0027-40e7-aab7-f991b9a6196e</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp9308464">
+	<para id="e1p1">
+	  Build a VI that generates a 2D array of 
+	  <m:math>
+	    <m:apply>
+	      <m:cartesianproduct/>
+	      <m:apply>
+		<m:times/>
+		<m:cn>3</m:cn>
+		<m:ci>rows</m:ci>
+	      </m:apply>
+	      <m:apply>
+		<m:cn>100</m:cn>
+		<m:ci>columns</m:ci>
+	      </m:apply>
+	    </m:apply>
+	  </m:math> of random numbers and writes the data transposed
+	  to a spreadsheet file. Add a header to each column. Use the
+	  high-level File I/O VIs located on the <code>File I/O</code>
+	  palette.
+	</para>
+	<note type="tip" id="idp6196528">
+	  Use the <code>Write Characters To File</code> VI to write
+	  the header and the <code>Write To Spreadsheet File</code> VI
+	  to write the numeric data to the same file.
+	</note>
+	<para id="e1p2">
+	  Save the VI as <code>More Spreadsheets.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+    <exercise id="e2">
+      <problem id="idp8325104">
+	<para id="e2p1">
+	  Build a VI that converts tab-delimited spreadsheet strings
+	  to comma-delimited spreadsheet strings, that is, spreadsheet
+	  strings with columns separated by commas and rows separated
+	  by end of line characters. Display both the tab-delimited
+	  and comma-delimited spreadsheet strings on the front panel.
+	</para>
+	<note type="tip" id="idp419424">
+	  Use the <code>Search and Replace String</code> function.
+	</note>
+	<para id="e2p2">
+	  Save the VI as <code>Spreadsheet Converter.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+    <exercise id="e3">
+      <problem id="idp7460656">
+	<para id="e3p1">
+	  Modify the <link document="m12262">Temperature Logger VI</link> so
+	  the VI does not create a new file each time you run the
+	  VI. Append the data to the end of the existing
+	  <code>temp.dat</code> file that the <code>Temperature Logger
+	  VI</code> created. Run the VI several times and use a word
+	  processor application to confirm that the VI appended new
+	  temperature readings.
+	</para>
+	<note type="tip" id="idm1249504">
+	  Delete the <code>Format Into File</code> function and
+	  replace it with the <code>Format Into String</code> and
+	  <code>Write File</code> functions. Use the <code>pos
+	  mode</code> and <code>pos offset</code> parameters of the
+	  <code>Write File</code> function to move the current file
+	  mark.
+	</note>
+	<para id="e3p2">
+	  Select <code>File&gt;&gt;Save As</code> to save the VI as
+	  <code>Temperature Logger 2.vi</code> in the
+	  <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+
+  </content>
+  
+</document>

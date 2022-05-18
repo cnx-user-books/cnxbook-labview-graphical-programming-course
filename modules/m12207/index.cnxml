@@ -1,0 +1,400 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Convert C to F VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1946c84d-b675-4ca3-ad4e-44718be2ebe0</md:uuid>
+</metadata>
+  
+  <content>
+    <exercise id="e1">
+      <problem id="idm2111968">
+	<para id="intro">
+	  Complete the following steps to create a VI that takes a number
+	  representing degrees Celsius and converts it to a number
+	  representing degrees Fahrenheit.
+	</para>
+	
+	<section id="idm2024576">
+	  <title> Front Panel</title>
+	  <list id="steps1" list-type="enumerated">
+	    <item> Open a blank VI and begin building the following front
+	      panel.
+	      <figure id="idm2273440">
+		<media id="idm10634512" alt=""><image src="../../media/convertctoffp.png" mime-type="image/png"/></media>
+	      </figure>
+	    </item>
+	    <item>
+	      (Optional) Select <code> Window&gt;&gt;Tile Left and Right </code> to 
+	      display the front panel and block diagram side by side or <code>
+		Window&gt;&gt;Tile Up and Down </code> to display the front panel and
+	      block diagram stacked.
+	    </item>
+	    
+	    <item>
+	      Create a numeric control. You will use this control to enter the 
+	      value for degrees Celsius.
+	      
+	      <list id="dsje" list-type="enumerated">
+		<item> 
+		  Select <code> Controls&gt;&gt;Numeric Controls </code> 
+		  to display the <code> Numeric Controls </code> palette.
+		  If the <code> Controls </code> palette is not visible, 
+		  right-click an open space on the front panel workspace to 
+		  display it.
+		</item>
+		
+		<item>
+		  <media id="idm826000" alt=""><image src="../../media/numericcontrol.png" mime-type="image/png"/></media>
+		  Select the <code>Numeric Control</code>. Move the
+		  control to the front panel and click to place the
+		  control.
+		</item>
+		
+		<item>
+		  <media id="idm9505696" alt=""><image src="../../media/enter-491c.png" id="m1" mime-type="image/png"/></media> Type
+		  <code>deg C</code> in the label of the control and press
+		  the <code>&lt;Enter&gt;</code> key or click the
+		  <code>Enter</code> button, shown in <link target-id="m1"/>,
+		  on the toolbar. If you do not type the name immediately,
+		  LabVIEW uses a default label.
+		</item>
+	      </list>
+	      <note id="idm2601360"> 
+		You can edit a label at any time by double-clicking the
+		label, using the <code>Labeling</code> tool, or
+		right-clicking and selecting <code>Properties</code> from
+		the shortcut menu to display the property dialog box.
+	      </note>
+	    </item>
+
+	    <item>
+	      Create a numeric indicator. You will use this indicator to
+	      display the value for degrees Fahrenheit.
+	      <list id="shls" list-type="enumerated">
+		<item>
+		  <media id="idm593040" alt=""><image src="../../media/numericindicator.png" mime-type="image/png"/></media>
+		  Select the <code>Numeric Indicator</code> located on
+		  the <code> Controls&gt;&gt;Numeric Indicators </code>
+		  palette.
+		</item>
+
+		<item>
+		  Move the indicator to the front panel and
+		  click to place the indicator.
+		</item>
+
+		<item>
+		  Type <code> deg F </code> in the label and press the
+		  <code>&lt;Enter&gt;</code> key or click the <code> Enter
+		  </code> button.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+
+	<section id="idm770128">
+	  <title> Block Diagram</title>
+
+	  <list id="ask" list-type="enumerated">
+	    <item> Display the block diagram by clicking it or by
+	      selecting <code> Window&gt;&gt; Show Block Diagram</code>.
+	      LabVIEW creates corresponding control and indicator
+	      terminal icons on the block diagram when you place
+	      controls and indicators on the front panel. The
+	      terminals represent the data type of the control or
+	      indicator. You should see two double-precision,
+	      floating-point terminals on the block diagram, one
+	      indicator, and one control.
+	      <note id="idm2203216">
+		Control terminals have a thicker border than indicator
+		terminals.
+	      </note>
+	    </item>
+	    
+	    <item> 
+
+	      <media id="idm9570336" alt=""><image src="../../media/multiply-7c4e.png" mime-type="image/png"/></media> Place the
+	      <code>Multiply</code> function, located on the
+	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Numeric</code> palette, on the block diagram to the right of
+	      the <code>deg C</code> indicator. If the
+	      <code>Functions</code> palette is not visible, right-click
+	      an open space on the block diagram workspace to display it.
+	    </item>
+	    
+	    <item>
+	      <media id="idm9964864" alt=""><image src="../../media/add.png" mime-type="image/png"/></media> Place the
+	      <code>Add</code> function, located on the <code>
+		Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express Numeric
+	      </code> palette, on the block diagram to the right of the
+	      <code>Multiply</code> function.
+	    </item>
+
+	    <item> <media id="idm1691472" alt=""><image src="../../media/numericconstant.png" mime-type="image/png"/></media>
+	      Place a <code>Numeric Constant</code>, located on the <code>
+		Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express Numeric
+	      </code> palette, to the lower left of the
+	      <code>Multiply</code> function.  Type <code>1.80</code> in
+	      the constant. When you first place a numeric constant, it is
+	      highlighted so you can type a value. If the constant is no
+	      longer highlighted, double-click the constant to activate
+	      the <code>Labeling</code> tool.
+	    </item>
+	    
+	    <item>
+	      <media id="idm8743888" alt=""><image src="../../media/numericconstant.png" mime-type="image/png"/></media> Place a
+	      <code>Numeric Constant</code>, located on the
+	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
+		Numeric</code> palette, to the left of the <code>Add</code>
+	      function. Type <code>32.0 </code> in the constant.
+	    </item>
+	    
+	    <item>
+	      <media id="idm1793488" alt=""><image src="../../media/wiring-1552.png" id="media" mime-type="image/png"/></media> Use
+	      the <code>Wiring</code> tool, shown in <link target-id="media"/>, to wire the icons as shown in <link target-id="fnmsha"/>.
+	      <figure id="fnmsha">
+		<media id="idm2228288" alt=""><image src="../../media/convertctofbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      
+	      <list id="sdhajh">
+		<item>
+		  To wire from one terminal to another, use the
+		  <code>Wiring</code> tool to click the first terminal,
+		  move the tool to the second terminal, and click the
+		  second terminal. You can start wiring at either
+		  terminal.
+		</item>
+		
+		<item>
+		  You can bend a wire by clicking to tack down the wire
+		  and moving the cursor in a perpendicular
+		  direction. Press the <code>spacebar</code> to toggle the
+		  wire direction.
+		</item>
+		
+		<item>
+		  To identify terminals on the nodes, right-click the
+		  <code>Multiply </code> and <code>Add</code> functions
+		  and select <code> Visible Items&gt;&gt;Terminals </code> from
+		  the shortcut menu to display the connector pane on the
+		  block diagram. Return to the icons after wiring by
+		  right-clicking the functions and selecting <code>
+		    Visible Items&gt;&gt;Terminals </code> from the shortcut menu
+		  to remove the checkmark.
+		</item>
+
+		<item>
+		  When you move the <code>Wiring</code> tool over a
+		  terminal, the terminal area blinks, indicating that
+		  clicking will connect the wire to that terminal and a
+		  tip strip appears, displaying the name of the
+		  terminal. If the <code> Context Help </code> window is
+		  open, the terminal area also blinks in the <code>
+		    Context Help </code> window.
+		</item>
+		
+		<item>
+		  To cancel a wire you started, press the
+		  <code>&lt;Esc&gt;</code> key, right-click, or click the
+		  terminal where you started the wire.
+		</item>
+	      </list>
+
+	    </item>
+
+	    <item>
+	      Display the front panel by clicking it or by selecting
+	      <code>Window&gt;&gt;Show Front Panel</code>.
+	    </item>
+
+	    <item>
+	      Save the VI as <code>Convert C to F.vi </code> in the 
+	      <code> C:\Exercises\LabVIEW Basics I </code>directory.
+	    </item>
+
+	  </list>
+	</section>
+
+
+	<section id="idm388432">
+	  <title>Run the VI</title>
+	  <list id="iwoiqp" list-type="enumerated">
+	    <item>
+	      Enter a number in the numeric control and run the VI.
+	      <list id="ahak" list-type="enumerated">
+		<item> 
+
+		  <media id="idm2399792" alt=""><image src="../../media/operate-40ee.png" id="media1" mime-type="image/png"/></media>
+		  Use the <code>Operating</code> tool, shown in <link target-id="media1"/>, or the <code>Labeling</code> tool to
+		  double-click the numeric control and type a new number.
+		</item>
+		<item>
+		  <media id="idm8786992" alt=""><image src="../../media/run-3fc2.png" mime-type="image/png"/></media> Click the
+		  <code>Run</code> button, shown at left, to run the VI.
+		</item>
+		<item>
+		  Try several different numbers and run the VI again.
+		</item>
+	      </list>
+	      
+	    </item>
+	  </list>
+	</section>
+	
+	<section id="idm1810448">
+	  <title>Icon and Connector Pane</title>
+	  
+	  <list id="cinnect" list-type="enumerated">
+	    <item>
+	      Right-click the icon in the upper right corner of the front panel
+	      window and select <code> Edit Icon </code> from the shortcut menu.
+	      The <code>Icon Editor</code> dialog box appears.
+	    </item>
+
+	    <item>
+	      <media id="idm158768" alt=""><image src="../../media/select.png" id="media2" mime-type="image/png"/></media>
+	      Double-click the <code>Select</code> tool, shown in <link target-id="media2"/>, on the left side of the <code>Icon Editor
+	      </code> dialog box to select the default icon.
+	    </item>
+
+	    <item>
+	      Press the <code>&lt;Delete&gt;</code> key to remove the default
+	      icon.
+	    </item>
+
+	    <item>
+	      <media id="idm2272208" alt=""><image src="../../media/rect.png" id="media3" mime-type="image/png"/></media>
+	      Double-click the <code>Rectangle</code> tool, shown in <link target-id="media3"/>, to redraw the border.
+	    </item>
+
+	    <item>
+	      Create the icon in <link target-id="fignmsha"/>.
+	      <figure id="fignmsha">
+		<media id="idm2368" alt=""><image src="../../media/ctoficoned.png" mime-type="image/png"/></media>
+	      </figure>
+
+	      <list id="nnnn" list-type="enumerated">
+		<item>
+		  <media id="idm100544" alt=""><image src="../../media/text.png" id="media4" mime-type="image/png"/></media>
+		  Double-click the <code>Text</code> tool, shown in <link target-id="media4"/>, and change the font to <code>Small
+		    Fonts </code>.
+		</item>
+		
+		<item>
+		  Use the <code>Text</code> tool to click the editing area
+		  where you will begin typing.
+		</item>
+		
+		<item> Type <code>C</code> and <code>F</code>. While the
+		  text is active, you can move the text by pressing the
+		  arrow keys.
+		</item>
+		
+		<item> <media id="idm2147952" alt=""><image src="../../media/pencil.png" id="media5" mime-type="image/png"/></media> Use the <code>Pencil</code> tool,
+		  shown in <link target-id="media5"/>, to create the arrow.
+		  <note id="idm9610144">
+		    To draw horizontal or vertical straight lines, press
+		    the <code>&lt;Shift&gt;</code> key while you use the
+		    <code>Pencil</code> tool to drag the cursor.
+		  </note>
+		</item>
+		
+		<item>
+		  Use the <code>Select</code> tool and the arrow keys to
+		  move the text and arrow you created.
+		</item>
+		
+		<item> 
+		  Select the <code> B &amp; W </code> icon and click the
+		  <code> 256 Colors </code> button in the <code> Copy from
+		  </code> section to create a black and white icon, which
+		  LabVIEW uses for printing unless you have a color
+		  printer.
+		</item>
+		
+		<item>
+		  Select the <code> 16 Colors </code> icon and click the
+		  <code> 256 Colors </code> button in the <code> Copy from
+		  </code> section.
+		</item>
+		
+		<item>
+		  When you complete the icon, click the <code> OK </code>
+		  button to close the <code> Icon Editor </code> dialog
+		  box.  The icon appears in the upper right corner of the
+		  front panel and block diagram.
+		</item>
+	      </list>
+	    </item>
+	    
+	    <item>
+	      <media id="idm1596448" alt=""><image src="../../media/ctofconpane.png" id="blah" mime-type="image/png"/></media>
+	      Right-click the icon on the front panel and select <code>
+		Show Connector </code> from the shortcut menu to define the
+	      connector pane terminal pattern.  LabVIEW selects a default
+	      connector pane pattern based on the number of controls and
+	      indicators on the front panel. For example, this front panel
+	      has two terminals, <code>deg C </code> and <code> deg F
+	      </code>, so LabVIEW selects a connector pane pattern with
+	      two terminals, shown in <link target-id="blah"/>.
+	    </item>
+
+	    <item>
+	      Assign the terminals to the numeric control and numeric
+	      indicator.
+	      <list id="ahasj" list-type="enumerated">
+		<item>
+		  Select <code> Help&gt;&gt;Show Context Help </code> to display
+		  the <code> Context Help </code> window.
+		</item>
+
+		<item>
+		  Click the left terminal in the connector pane. The
+		  tool automatically changes to the
+		  <code>Wiring</code> tool, and the terminal turns
+		  black.
+		</item>
+
+		<item>
+		  Click the <code> deg C </code> control. A marquee
+		  highlights the control on the front panel.
+		</item>
+
+		<item>
+		  Click an open space on the front panel. The marquee
+		  disappears, and the terminal changes to the data type
+		  color of the control to indicate that you connected the
+		  terminal.
+		</item>
+
+		<item>
+		  Click the right terminal in the connector pane, and
+		  click the <code> deg F </code> indicator.
+		</item>
+		
+		<item>
+		  Click an open space on the front panel. Both terminals
+		  of the connector pane are orange.
+		</item>
+		
+		<item>
+		  Move the cursor over the connector pane. The <code>
+		    Context Help </code> window shows that both terminals
+		  are connected to double-precision, floating-point
+		  values.
+		</item>
+
+	      </list>
+	    </item>
+
+	    <item>
+	      Save and close the VI. You will use this VI later in the course.
+	    </item>
+
+	  </list>
+	  
+	</section>
+      </problem>
+    </exercise>
+  </content>
+  
+</document>

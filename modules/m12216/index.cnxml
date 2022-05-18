@@ -1,0 +1,163 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Timed Temperature VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3b657183-78e8-4ad1-aa54-f472923621f4</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idp654112">
+	<para id="delete_me">
+	  Complete the following steps to build a VI that uses the
+	  Thermometer VI to read a temperature once every second for a
+	  duration of one minute.
+	</para>
+	
+	<section id="idm6916720">
+	  <title>Front Panel </title>
+	  
+	  <list id="santa1" list-type="enumerated">
+	    <item> Open a blank VI and build the front panel shown in
+	      <link target-id="fig2"/>.
+	      <figure id="fig2">
+		<media id="idm5963584" alt=""><image src="../../media/timedtempfp.png" mime-type="image/png"/></media>
+	      </figure>
+	      
+	      <list id="santa11" list-type="enumerated">
+
+		<item>
+		  Place a <code>thermometer</code>, located on the
+		  <code>Controls&gt;&gt;Numeric Indicators </code> palette, on
+		  the front panel. This provides a visual indication of
+		  the temperature reading. 
+		</item>
+
+		<item> 
+		  Place a <code>numeric indicator</code>, located on the
+		  <code> Controls&gt;&gt;Numeric Indicators </code> palette, on
+		  the front panel. Label this indicator <code>Seconds
+		    Elapsed</code>. Right-click the indicator and select
+		  <code> Representation&gt;&gt;I32 </code> from the shortcut
+		  menu.
+		</item>
+	      </list>
+	    </item>
+	  </list>
+	</section>
+
+	<section id="idp1268240">
+	  <title> Block Diagram </title>
+
+	  <list id="santa2" list-type="enumerated">
+	    <item> Build the block diagram shown in <link target-id="fig1"/>.
+	      <figure id="fig1">
+		<media id="idp3102064" alt=""><image src="../../media/timedtempbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="smnfl" list-type="labeled-item">
+		
+		<item> 
+		  <media id="idp4390256" alt=""><image src="../../media/forloop-2adb.png" mime-type="image/png"/></media> 
+		  Place a <code>For Loop</code>, located on the <code>
+		    Functions&gt;&gt;All Functions&gt;&gt;Structures </code> palette, on
+		  the block diagram. Right-click the <code>Loop
+		    Count</code> terminal in the upper left corner of the
+		  <code>For Loop</code> and select <code>Create
+		    Constant</code> from the shortcut menu. Type
+		  <code>60</code> in the constant to set the <code>For
+		    Loop</code> to repeat 60 times.
+		</item>
+
+		<item> 
+		  <media id="idm5914016" alt=""><image src="../../media/tempicon-7084.png" mime-type="image/png"/></media>  
+		  Place the <code>Thermometer</code> VI on the block
+		  diagram. Select <code>Functions&gt;&gt;All Functions&gt;&gt;Select a
+		    VI</code> and navigate to <code>C:\Exercises\LabVIEW
+		    Basics I\Thermometer.vi</code>to place the VI. This VI
+		  reads the temperature from the DAQ device. Right-click
+		  the <code>Temp Scale</code> input and select
+		  <code>Create&gt;&gt;Constant</code> from the shortcut
+		  menu. Use a <code>False</code> constant for Fahrenheit
+		  or a <code>True</code> constant for Celsius.  <note id="idm5938080"> If
+		    you do not have a DAQ device with a temperature sensor
+		    on Channel 0, use the <code>(Demo) Thermometer</code> VI
+		    instead.
+		  </note>
+		</item> 
+
+		<item> 
+		  <media id="idp1240096" alt=""><image src="../../media/waitms-3b6f.png" mime-type="image/png"/></media>
+		  Place the <code>Wait Until Next ms Multiple</code>
+		  function, located on the <code>Functions&gt;&gt;All
+		    Functions&gt;&gt;Time &amp; Dialog</code> palette, on the
+		  block diagram. Right-click the input and select
+		  <code>Create&gt;&gt;Constant</code> from the shortcut
+		  menu. Enter a value of <code>1000</code> to set the wait
+		  to every second.  </item>
+
+		<item> 
+		  <media id="idm6382288" alt=""><image src="../../media/incremicon-c838.png" mime-type="image/png"/></media>
+		  Place the <code>Increment</code> function, located
+		  on the <code>Functions&gt;&gt;Arithmetic &amp;
+		    Comparison&gt;&gt;Express Numeric </code> palette, on the
+		  block diagram. This function adds one to the
+		  iteration terminal output.
+		</item>
+	      </list>
+	    </item>
+
+	    <item> 	
+	      Save this VI as <code>Timed Temperature.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+
+	    <item> 
+	      Run the VI. The first reading might take longer than one
+	      second to retrieve if the computer needs to configure the
+	      DAQ device.  
+	    </item>
+
+	    <item> 
+	      If time permits, complete the following optional and
+	      challenge steps, otherwise close the VI.  
+	    </item>
+	  </list>
+	</section>
+
+	<section id="idp1487680">
+	  <title> Optional </title>
+	  <list id="santa3" list-type="enumerated">
+
+	    <item> 
+	      Build a VI that generates random numbers in a
+	      <code>While Loop</code> and stops when you click a stop
+	      button on the front panel.
+	    </item>
+
+	    <item> 
+	      Save the VI as <code>General While Loop.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	  </list>
+	</section>
+
+	<section id="idp1707168">
+	  <title> Challenge </title>
+	  <list id="santa4" list-type="enumerated">
+
+	    <item> 
+	      Modify the <code>General While Loop</code> VI to stop when
+	      the stop button is clicked or when the <code>While
+		Loop</code> reaches a number of iterations specified by a
+	      front panel control.
+	    </item>
+
+	    <item> 
+	      Select <code>File&gt;&gt;Save As</code> to save the VI as
+	      <code>Combo While-For Loop.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+</document>

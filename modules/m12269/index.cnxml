@@ -1,0 +1,96 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Analog Input</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>5725b236-c051-4f9f-8c1c-35bd2ec961ed</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      Use analog input to perform analog-to-digital (A/D) conversions.
+    </para>
+    <para id="p2">
+      The available <link target-id="f1">analog input measurement
+      types</link> for a task are voltage, temperature, strain,
+      current, resistance, or frequency.
+    </para>
+    <figure id="f1">
+      <media id="idm8019952" alt=""><image src="../../media/aitasks.png" mime-type="image/png"/></media>
+    </figure>
+    <para id="p3">
+      Each measurement type has its own characteristics, such as
+      resistor values for current measurements or strain gauge
+      parameters for strain measurements.
+    </para>
+    <section id="s1">
+      <title>Task Timing</title>
+      <para id="s1p1">
+	When performing analog input, the task can be timed to <link target-id="s1s1">Acquire
+	1 Sample</link>, <link target-id="s1s2">Acquire n Samples</link>, or
+	<link target-id="s1s3">Acquire Continuously</link>.
+      </para>
+      <section id="s1s1">
+	<title>Acquire 1 Sample</title>
+	<para id="s1s1p1">
+	  Acquiring a single sample is an on-demand operation. In
+	  other words, NI-DAQmx acquires one value from an input
+	  channel and immediately returns the value. This operation
+	  does not require any buffering or hardware timing. For
+	  example, if you periodically monitor the fluid level in a
+	  tank, you would acquire single data points. You can connect
+	  the transducer that produces a voltage representing the
+	  fluid level to a single channel on the measurement device
+	  and initiate a single-channel, single-point acquisition when
+	  you want to know the fluid level.
+	</para>
+      </section>
+      <section id="s1s2">
+	<title>Acquire n Samples</title>
+	<para id="s1s2p1">
+	  One way to acquire multiple samples for one or more channels
+	  is to acquire single samples in a repetitive
+	  manner. However, acquiring a single data sample on one or
+	  more channels over and over is inefficient and time
+	  consuming. Moreover, you do not have accurate control over
+	  the time between each sample or channel. Instead you can use
+	  hardware timing, which uses a buffer in computer memory, to
+	  acquire data more efficiently. Programmatically, you need to
+	  include the timing function and specify the <code>sample
+	  rate</code> and the <code>sample mode (finite)</code>. As
+	  with other functions, you can acquire multiple samples for a
+	  single channel or multiple channels.
+	</para>
+	<para id="s1s2p2">
+	  With NI-DAQmx, you also can gather data from multiple
+	  channels. For instance, you might want to monitor both the
+	  fluid level in the tank and the temperature. In such a case,
+	  you need two transducers connected to two channels on the
+	  device.
+	</para>
+      </section>
+      <section id="s1s3">
+	<title>Acquire Continuously</title>
+	<para id="s1s3p1">
+	  If you want to view, process, or log a subset of the samples
+	  as they are acquired, you need to continually acquire
+	  samples. For these types of applications, set the
+	  <code>sample mode</code> to <code>continuous</code>.
+	</para>
+      </section>
+    </section>
+    <section id="s2">
+      <title>Task Triggering</title>
+      <para id="s2p1">
+	When a device controlled by NI-DAQmx does something, it
+	performs an action. Two very common actions are producing a
+	sample and starting a waveform acquisition. Every NI-DAQmx
+	action needs a stimulus or cause. When the stimulus occurs,
+	the action is performed. Causes for actions are called
+	<term>triggers</term>. The start trigger starts the
+	acquisition. The reference trigger establishes the reference
+	point in a set of input samples. Data acquired up to the
+	reference point is pretrigger data. Data acquired after the
+	reference point is posttrigger data.
+      </para>
+    </section>
+  </content>
+  
+</document>

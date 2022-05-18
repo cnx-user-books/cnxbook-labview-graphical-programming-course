@@ -1,0 +1,132 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Cluster Functions</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>2bca4b73-e38c-4159-a9be-bf1cd5e83d7c</md:uuid>
+</metadata>
+  
+  <content>
+    <para id="para1">
+      Use the <code>Cluster</code> functions located on the
+      <code>Functions&gt;&gt;All Functions&gt;&gt;Cluster</code> palette to
+      create and manipulate clusters. Use the <code>Bundle</code>
+      and <code>Bundle by Name</code> functions to assemble and
+      manipulate clusters and use the <code>Unbundle</code> and
+      <code>Unbundle by Name</code> functions to disassemble
+      clusters.  </para>
+    <para id="para2">
+      You also can create the <code>Bundle</code>, <code>Bundle by
+	Name</code>, <code>Unbundle</code>, and <code>Unbundle by
+	Name</code> functions by right-clicking a cluster terminal on
+      the block diagram and selecting <code>Cluster Palette</code>
+      from the shortcut menu. The <code>Bundle</code> and
+      <code>Unbundle</code> functions automatically contain the
+      correct number of terminals. The <code>Bundle by Name</code>
+      and <code>Unbundle by Name</code> functions appear with the
+      first element in the cluster. Use the <code>Positioning</code>
+      tool to resize the <code>Bundle by Name</code> and
+      <code>Unbundle by Name</code> functions to show the other
+      elements of the cluster.
+    </para>
+    <section id="section1">
+      <title>Assembling Clusters</title>
+      <para id="para3">
+	Use the <code>Bundle</code> function to assemble a cluster
+	from individual elements or to change the values of
+	individual elements in an existing cluster without having to
+	specify new values for all elements. Use the
+	<code>Positioning</code> tool to resize the function or
+	right-click an <code>element</code> input and select
+	<code>Add Input</code> from the shortcut menu. If you wire a
+	cluster to the <code>cluster</code> input, the number of
+	inputs must match the number of elements in the input
+	cluster.
+      </para>
+      <para id="para4">
+	If you wire the <code>cluster</code> input, you can wire
+	only the <code>elements</code> you want to change. For
+	example, the cluster in <link target-id="f1"/> contains three
+	controls.
+	<figure id="f1">
+	  <media id="idp9303136" alt=""><image src="../../media/bundle-3ff6.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+      <para id="para5">
+	If you know the cluster order, you can use the
+	<code>Bundle</code> function to change the
+	<code>Command</code> value by wiring the elements shown in
+	<link target-id="f2"/>.
+	<figure id="f2">
+	  <media id="idp620592" alt=""><image src="../../media/bundlebd.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+    </section>
+    <section id="section2">
+      <title>Replacing or Accessing Cluster Elements</title>
+      <para id="para6">
+	Use the <code>Bundle by Name</code> function to replace or
+	access labeled elements of an existing cluster. <code>Bundle
+	  by Name</code> works similarly to the <code>Bundle</code>
+	function, but instead of referencing cluster elements by
+	their cluster order, it references them by their owned
+	labels. You can access only elements with owned labels. The
+	number of inputs does not need to match the number of
+	elements in <code>output cluster</code>.
+      </para>
+      <para id="para7">
+	Use the <code>Operating</code> tool to click an input
+	terminal and select an element from the pull-down menu. You
+	also can right-click the input and select the element from
+	the <code>Select Item</code> shortcut menu.
+      </para>
+      <para id="para8">
+	In <link target-id="f3"/>, you can use the <code>Bundle by
+	  Name</code> function to change <code>Command</code> and
+	<code>Function</code>.
+	<figure id="f3">
+	  <media id="idp9115856" alt=""><image src="../../media/bundbyname.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+      <para id="para9">
+	Use the <code>Bundle by Name</code> function for data
+	structures that might change during development. If you add
+	a new element to the cluster or modify its order, you do not
+	need to rewire the <code>Bundle by Name</code> function
+	because the names still are valid.
+      </para>
+    </section>
+    <section id="section3">
+      <title>Disassembling CLusters</title>
+      <para id="para10">
+	Use the <code>Unbundle</code> function to split a cluster
+	into its individual elements.
+      </para>
+      <para id="para11">
+	Use the <code>Unbundle by Name</code> function to return the
+	cluster elements whose names you specify. The number of
+	output terminals does not depend on the number of elements
+	in the input cluster.
+      </para>
+      <para id="para12">
+	Use the <code>Operating</code> tool to click an output
+	terminal and select an element from the pull-down menu. You
+	also can right-click the output terminal and select the
+	element from the <code>Select Item</code> shortcut menu.
+      </para>
+      <para id="para13">
+	For example, if you use the <code>Unbundle</code> function
+	with the cluster in <link target-id="f4"/>, it has four output
+	terminals that correspond to the four controls in the
+	cluster. You must know the cluster order so you can associate
+	the correct <code>Boolean</code> terminal of the unbundled
+	cluster with the corresponding switch in the cluster. In <link target-id="f4"/>, the elements are ordered from top to bottom
+	starting with element <m:math><m:cn>0</m:cn></m:math>. If you
+	use the <code>Unbundle by Name</code> function, you can have
+	an arbitrary number of output terminals and access individual
+	elements by name in any order.
+	<figure id="f4">
+	  <media id="idp6999424" alt=""><image src="../../media/unbundlebyname.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+    </section>
+  </content>
+  
+</document>

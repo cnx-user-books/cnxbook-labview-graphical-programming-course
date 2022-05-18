@@ -1,0 +1,147 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Strings</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>adb30340-ec52-477e-b683-1b8e6c67021e</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      A string is a sequence of displayable or non-displayable ASCII
+      characters. Strings provide a platform-independent format for
+      information and data. Some of the more common applications of
+      strings include the following:
+      <list id="p1l1">
+	<item>
+	  Creating simple text messages.
+	</item>
+	<item>
+	  Passing numeric data as character strings to instruments and
+	  then converting the strings to numeric values.
+	</item>
+	<item>
+	  Storing numeric data to disk. To store numeric values in an
+	  ASCII file, you must first convert numeric values to strings
+	  before writing the numeric values to a disk file.
+	</item>
+	<item>
+	  Instructing or prompting the user with dialog boxes.
+	</item>
+      </list>
+    </para>
+    <para id="p2">
+      On the front panel, strings appear as tables, text entry boxes,
+      and labels.
+    </para>
+    <section id="s1">
+      <title>Creating String Controls and Indicators</title>
+      <para id="s1p1">
+	Use the string control and indicator located on the
+	<code>Controls&gt;&gt;Text Controls</code> and <code>Controls&gt;&gt;Text
+	Indicators</code> palettes to simulate text entry boxes and
+	labels. Use the Operating tool or Labeling tool to type or
+	edit text in a string control. Use the Positioning tool to
+	resize a front panel string object. To minimize the space that
+	a string object occupies, right-click the object and select
+	the <code>Visible Items&gt;&gt;Scrollbar</code> option from the
+	shortcut menu.
+      </para>
+      <para id="s1p2">
+	Right-click a string control or indicator on the front panel
+	to select from the display types shown in the following
+	table. The table also shows an example message for each
+	display type.
+      </para>
+      <table frame="all" id="s1t1" summary="">
+	<tgroup cols="3" align="left" colsep="1" rowsep="1">
+	  <thead valign="top">
+	    <row>
+	      <entry align="center">Display Type</entry>
+	      <entry align="center">Description</entry>
+	      <entry align="center">Message</entry>
+	    </row>
+	  </thead>
+	  <tbody valign="top">
+	    <row>
+	      <entry>Normal Display</entry>
+	      <entry>
+		Displays printable characters using the font of the
+		control. Non-printable characters generally appear as
+		boxes. There are four display types.
+	      </entry>
+	      <entry>
+		<code>There are four display types. \ is a
+		backslash.</code>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>'\' Codes Display</entry>
+	      <entry>
+		Displays backslash codes for all non-displayable
+		characters.
+	      </entry>
+	      <entry>
+		<code>There\sare\sfour\sdisplay\stypes.\n\\\sis\sa\sbackslash.</code>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>Password Display</entry>
+	      <entry>
+		Displays an asterisk (*) for each character including
+		spaces.
+	      </entry>
+	      <entry>
+		<code>***************************** *****************</code>
+	      </entry>
+	    </row>
+	    <row>
+	      <entry>Hex Display</entry>
+	      <entry>
+		Displays the ASCII value of each character in hex
+		instead of the character itself.
+	      </entry>
+	      <entry>
+		<code>5468 6572 6520 6172 6520 666F 7572 2064 6973 706C 6179
+		2074 7970 6573 2E0A 5C20 6973 2061 2062 6163 6B73 6C61
+		7368 2E</code> 
+	      </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+    </section>
+    <section id="s2">
+      <title>Tables</title>
+      <para id="s2p1">
+	Use the table control located on the <code>Controls&gt;&gt;All
+	Controls&gt;&gt;List &amp; Table</code> palette or the <code>Express
+	Table</code> VI located on the <code>Controls&gt;&gt;Text
+	Indicators</code> palette to create a table on the front
+	panel. Each cell in a table is a string, and each cell resides
+	in a column and a row. Therefore, a table is a display for a
+	2D array of strings. The illustration in <link target-id="f1"/>
+	shows a table and all its parts.
+      </para>
+      <figure id="f1">
+	<media id="idp2963952" alt=""><image src="../../media/tableparts.png" mime-type="image/png"/></media>
+	<caption>
+	  1. Cell Indicated by Index Values, 2. Column Headings,
+	  3. Vertical Scrollbar, 4. Horizontal Scrollbar, 5. Row Headings,
+	  6. Horizontal Index, 7. Vertical Index
+	</caption>
+      </figure>
+      <para id="s2p2">
+	Define cells in the table by using the <code>Operating</code> tool or the
+	<code>Labeling</code> tool to select a cell and typing text in the selected
+	cell.
+      </para>
+      <para id="s2p3">
+	The table displays a 2D array of strings, so you must convert
+	2D numeric arrays to 2D string arrays before you can display
+	them in a table indicator. The row and column headers are not
+	automatically displayed as in a spreadsheet. You must create
+	1D string arrays for the row and column headers.
+      </para>
+    </section>
+      
+
+  </content> 
+</document>

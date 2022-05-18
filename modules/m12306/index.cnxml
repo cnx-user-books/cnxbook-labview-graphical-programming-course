@@ -1,0 +1,67 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Customizing the Controls and Functions Palettes</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>acf7b01b-8792-413f-aea1-834bd7dbe791</md:uuid>
+</metadata>
+
+  <content>
+    <para id="p1">
+      You can customize the <code>Controls</code> and
+      <code>Functions</code> palettes to add VIs and controls to the
+      palettes, hide VIs and functions, or rearrange the built-in
+      palettes to make the VIs and functions you use frequently more
+      accessible.
+    </para>
+    <section id="s1">
+      <title>Adding VIs and Controls to the User Library and the
+	Instrument Library</title>
+      <para id="s1p1">
+	The simplest method for adding VIs and controls to the
+	<code>Controls</code> and <code>Functions</code> palettes is
+	to save them in the <code>labview\user.lib</code>
+	directory. When you restart LabVIEW, the
+	<code>Functions&gt;&gt;Express User Libraries</code> and
+	<code>Controls&gt;&gt;Express User Controls</code> palettes contain
+	subpalettes for each directory, VI library
+	(<code>.llb</code>), or menu (<code>.mnu</code>) file in the
+	<code>labview\user.lib</code> directory, and icons for each
+	file in the <code>labview\user.lib</code> directory. After you
+	add files to or remove files from specific directories,
+	LabVIEW automatically updates the palettes when you restart
+	LabVIEW.
+      </para>
+      <para id="s1p2">
+	The <code>Functions&gt;&gt;All Functions&gt;&gt;Instrument I/O</code>
+	palette corresponds to the <code>labview\instr.lib</code>
+	directory. Save instrument drivers in this directory to add
+	them to the <code>Functions</code> palette.
+      </para>
+      <para id="s1p3">
+	When you add VIs or controls to the <code>Controls</code> and
+	<code>Functions</code> palettes using this method, you cannot
+	set the name of each subpalette or the exact location of the
+	VIs or controls on the palettes.
+      </para>
+    </section>
+    <section id="s2">
+      <title>Creating and Editing Custom Palette Views</title>
+      <para id="s2p1">
+	To control the name of each subpalette and the exact location
+	of the VIs and controls you add to the <code>Controls</code>
+	and <code>Functions</code> palettes, you must create a custom
+	palette view. LabVIEW includes two built-in palette
+	views--<code>Express</code> and <code>Advanced</code>. Select
+	<code>Tools&gt;&gt;Advanced&gt;&gt;Edit Palette Views</code> to create or
+	edit custom palette views.
+      </para>
+      <note id="idp2787856">
+	You cannot edit a built-in palette view.
+      </note>
+      <para id="s2p2">
+	Refer to the <cite><cite-title>LabVIEW User Manual</cite-title></cite> and the
+	<cite><cite-title>LabVIEW Help</cite-title></cite> for more information about palette
+	views.
+      </para>
+    </section>
+  </content>
+  
+</document>

@@ -1,0 +1,129 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>While Loops</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>44d21c5a-b9fb-4166-a4c2-9c5f30f288be</md:uuid>
+</metadata>
+  
+  <content>
+    
+    <para id="p1">
+      A <code>While Loop</code> executes a subdiagram until a
+      condition is met. The <code>While Loop</code> is similar to a
+      <code>Do Loop</code> or a <code>Repeat-Until Loop</code> in
+      text-based programming. <link target-id="troy"/> shows a
+      <code>While Loop</code> in LabVIEW, a flow chart equivalent of
+      the <code>While Loop</code> functionality, and a pseudo code
+      example of the functionality of the <code>While Loop</code>.
+      <figure id="troy">
+	<media id="idm13403280" alt=""><image src="../../media/WhileLooptheory.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+    
+    <para id="p2">
+      The <code>While Loop</code> is located on the
+      <code>Functions&gt;&gt;Execution Control </code> palette. Select the
+      <code>While Loop</code> from the palette then use the cursor to
+      drag a selection rectangle around the section of the block
+      diagram you want to repeat. When you release the mouse button, a
+      <code>While Loop</code> boundary encloses the section you
+      selected.
+    </para>
+    
+    <para id="p3">
+      Add block diagram objects to the <code>While Loop</code> by
+      dragging and dropping them inside the <code>While Loop</code>.
+      <note id="idm5849856">
+	The <code>While Loop</code> always executes at least once.
+      </note>
+    </para>
+    
+    <para id="p4">
+      <media id="idm13296368" alt=""><image src="../../media/stopiftrue.png" id="m1" mime-type="image/png"/></media> The
+      <code>While Loop</code> executes the subdiagram until the
+      conditional terminal, an input terminal, receives a specific
+      Boolean value. The default behavior and appearance of the
+      conditional terminal is <code>Stop If True</code>, shown in
+      <link target-id="m1"/>. When a conditional terminal is <code>Stop
+	If True</code>, the <code>While Loop</code> executes its
+      subdiagram until the conditional terminal receives a
+      <code>True</code> value.
+    </para>
+    
+    <para id="p5">
+      <media id="idm4656944" alt=""><image src="../../media/iteration.png" id="m2" mime-type="image/png"/></media> The
+      <code>iteration</code> terminal, an output terminal, shown in
+      <link target-id="m2"/>, contains the number of completed
+      iterations. The iteration count always starts at zero. During
+      the first iteration, the iteration terminal returns
+      <code>0</code>.
+    </para>
+    
+    <para id="p6"> 
+      In the block diagram in <link target-id="tree"/>, the <code>While
+	Loop</code> executes until the subVI output is greater than or
+      equal to <code>10.00</code> and the <code>Enable</code> control
+      is <code>True</code>. The <code>And</code> function returns
+      <code>True</code> only if both inputs are
+      <code>True</code>. Otherwise, it returns <code>False</code>.
+      <figure id="tree">
+	<media id="idm6319696" alt=""><image src="../../media/stoptrueex.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+    
+    <para id="p7">
+      In the <link target-id="tree">previous example</link>, there is an
+      increased probability of an infinite loop. Generally, the
+      desired behavior is to have one condition met to stop the loop,
+      rather than requiring both conditions to be met.
+    </para>
+    
+    <para id="p8">
+      <media id="idm13765664" alt=""><image src="../../media/continueiftrue.png" mime-type="image/png"/></media> You can
+      change the behavior and appearance of the conditional terminal
+      by right-clicking the terminal or the border of the <code>While
+	Loop</code> and selecting <code>Continue if True</code>, shown
+      at left. You also can use the <code>Operating</code> tool to
+      click the conditional terminal to change the condition. When a
+      conditional terminal is <code>Continue if True</code>, the
+      <code>While Loop</code> executes its subdiagram until the
+      conditional terminal receives a <code>False</code> value, as
+      shown in <link target-id="tre"/>.
+      <figure id="tre">
+	<media id="idm6262976" alt=""><image src="../../media/conttrueex.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+    
+    <para id="p9">
+      The <code>While Loop</code> executes until the subVI output is
+      less than <code>10.00</code> or the <code>Enable</code> control
+      is <code>False</code>.
+    </para>
+    
+    <section id="idm6374848">
+      <title>Structure Tunnels</title>
+      <para id="se29">
+	Data can be passed out of or into a <code>While Loop</code>
+	through a tunnel. Tunnels feed data into and out of
+	structures. The tunnel appears as a solid block on the border
+	of the <code>While Loop</code>. The block is the color of the
+	data type wired to the tunnel. Data pass out of a loop after
+	the loop terminates. When a tunnel passes data into a loop,
+	the loop executes only after data arrive at the tunnel.
+      </para>
+      
+      <para id="se26">
+	In <link target-id="t33ee"/>, the <code>iteration</code> terminal
+	is connected to a tunnel. The value in the tunnel does not get
+	passed to the <code>Iteration Number</code> indicator until
+	the <code>While Loop</code> has finished execution.
+	<figure id="t33ee">
+	  <media id="idm4292032" alt=""><image src="../../media/tunnelex.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+      
+      <para id="se23">
+	Only the last value of the iteration terminal displays in the
+	<code>Iteration Number</code> indicator.
+      </para>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,153 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Pop-up Graph VI and Use Pop-up Graph VI</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>19d81345-97ce-46fb-bae0-c896ab4b6d8e</md:uuid>
+</metadata>
+<!--When CNXML 0.6 comes out, this module will need to be revised to
+  include para in an item tag in the noted placed.-->
+  <content>
+    <exercise id="e1">
+      <problem id="idm185760">
+	<para id="p1">
+	  Complete the following steps to build a VI that acquires
+	  temperature once every 0.5 seconds for 10 seconds, displays a
+	  subVI front panel that shows the acquired data in a graph, and
+	  keeps the front panel open until you click a button.
+	</para>
+	<section id="s1">
+	  <title>Front Panel</title>
+	  <para id="s1p1"><!--needs para-->
+	    <!--para-->
+	    Open a blank VI and build the following front panel.
+	    <figure id="s1l1f1">
+	      <media id="idm8398400" alt=""><image src="../../media/usepopup.png" mime-type="image/png"/></media>
+	    </figure>
+	    <!--para-->
+	    Use the following guidelines to assist you in building the
+	    front panel.
+	    <list id="s1l1l1">
+	      <item>
+		The indicator to the right of the thermometer is a
+		digital display belonging to the
+		thermometer. Right-click the thermometer and select
+		<code>Visible Items&gt;&gt;Digital Display</code> from the
+		shortcut menu to display the digital value.
+	      </item>
+	      <item>
+		Change <code># of data values</code> to signed
+		32-bit integer (I32) representation.
+	      </item>
+	    </list>
+	  </para>
+	</section>
+	<section id="s2">
+	  <title>Block Diagram</title>
+	  <list id="s2l1" list-type="enumerated">
+	    <item>
+	      Build the following block diagram.
+	      <figure id="s2l1f1">
+		<media id="idm1592992" alt=""><image src="../../media/usepopupbd.png" mime-type="image/png"/></media>
+	      </figure>
+	      <list id="s2l1l1" list-type="enumerated">
+		<item>
+		  <media id="idp1291168" alt=""><image src="../../media/tempicon-9747.png" mime-type="image/png"/></media> Place
+		  the <code>Thermometer</code> VI from a <link document="m12209">previous exercise</link> on the block
+		  diagram. This VI acquires the current temperature
+		  value.
+		</item>
+		<item>
+		  <media id="idm1594736" alt=""><image src="../../media/waitms-0124.png" mime-type="image/png"/></media> Place the
+		  <code>Wait Until Next ms Multiple</code> function,
+		  located on the <code>Functions&gt;&gt;All Functions&gt;&gt;Time
+		  &amp; Dialog</code> palette, on the block
+		  diagram. Right-click the input, select
+		  <code>Create&gt;&gt;Constant</code>, and type
+		  <code>500</code> in the constant to cause the
+		  <code>For Loop</code> to execute every 500 ms.
+		</item>
+		<item>
+		  <media id="idm7254448" alt=""><image src="../../media/multiply-ff0a.png" mime-type="image/png"/></media>
+		  Place the <code>Multiply</code> function, located on the
+		  <code>Functions&gt;&gt;Arithmetic &amp;
+		  Comparison&gt;&gt;Express Numeric</code> palette, on
+		  the block diagram. This function multiplies each
+		  element of the output array by 0.50 to scale the
+		  <m:math><m:ci>x</m:ci></m:math> values to represent
+		  the time interval at which the VI takes the
+		  measurements.
+		</item>
+		<item>
+		  <media id="idp485568" alt=""><image src="../../media/popupicon.png" mime-type="image/png"/></media>
+		  Place the <code>Pop-up Graph</code> VI, located in the
+		  <code>C:\Exercises\LabVIEW Basics I</code>
+		  directory, on the block diagram. This VI plots the
+		  temperature data on an XY graph.
+		</item>
+		<item>
+		  Complete the block diagram as shown in the previous
+		  figure.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Save the VI as <code>Use Pop-up Graph.vi</code> in the
+	      <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	    </item>
+	    <item>
+	      Configure the subVI to display its front panel when
+	      called.
+	      <list id="s2l1l2" list-type="enumerated">
+		<item>
+		  Double-click the <code>Pop-up Graph</code> subVI to open its
+		  front panel.
+		</item>
+		<item>
+		  Select <code>File&gt;&gt;VI Properties</code>.
+		</item>
+		<item>
+		  Select <code>Window Appearance</code> from the
+		  <code>Category</code> pull-down menu.
+		</item>
+		<item>
+		  Click the <code>Customize</code> button. Configure
+		  the window appearance as shown in the <link target-id="s2l12f1">dialog box</link>.
+		  <figure id="s2l12f1">
+		    <media id="idm8081984" alt=""><image src="../../media/custwinapp.png" mime-type="image/png"/></media>
+		  </figure>
+		</item>
+		<item>
+		  Click the <code>OK</code> button twice and save and
+		  close the subVI. If the front panel is not closed,
+		  it will not close after the subVI runs.
+		</item>
+	      </list>
+	    </item>
+	    <item>
+	      Run the <code>Use Pop-up Graph</code> VI. After the VI
+	      acquires 10 seconds of temperature data, the front panel
+	      of the <code>Pop-up Graph</code> VI displays and plots
+	      the temperature data. Click the <code>DONE</code> button
+	      to return to the calling VI.
+	    </item>
+	    <item>
+	      Change the window appearance settings for the
+	      <code>Pop-up Graph</code> subVI to the
+	      <code>Dialog</code> window style.
+	    </item>
+	    <item>
+	      Save and close the subVI.
+	    </item>
+	    <item>
+	      Run the <code>Use Pop-up Graph</code> VI again. The
+	      <code>Pop-up Graph</code> subVI front panel window
+	      behaves as a dialog box. For example, the window stays
+	      on top of all other windows and uses the system colors.
+	    </item>
+	    <item>
+	      Close all open VIs.
+	    </item>
+	  </list>
+	</section>
+      </problem>
+    </exercise>
+  </content>
+</document>

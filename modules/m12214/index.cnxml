@@ -1,0 +1,160 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>For Loops</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8e54c62f-4184-42b1-a124-7e17fe4eb141</md:uuid>
+</metadata>
+
+  <content>
+    <para id="intro">
+      A <code>For Loop</code> executes a subdiagram a set number of
+      times. <link target-id="shrek2"/> shows a <code>For Loop</code> in
+      LabVIEW, a flow chart equivalent of the <code>For Loop</code>
+      functionality, and a pseudo code example of the functionality of
+      the <code>For Loop</code>.
+      <figure id="shrek2">
+	<media id="idm7403408" alt=""><image src="../../media/ForLoopTheory.png" mime-type="image/png"/></media>
+      </figure>
+    </para>   
+
+    <para id="intro1">
+      <media id="idm660736" alt=""><image src="../../media/count.png" id="m1" mime-type="image/png"/></media> 
+
+      The <code>For Loop</code> is located on the <code>
+	Functions&gt;&gt;All Functions&gt;&gt;Structures </code> palette. You also
+      can place a <code>While Loop</code> on the block diagram,
+      right-click the border of the <code>While Loop</code>, and
+      select <code>Replace with For Loop</code> from the shortcut menu
+      to change a <code>While Loop</code> to a <code>For
+	Loop</code>. The value in the <code>count</code> terminal (an
+      input terminal), shown in <link target-id="m1"/>, indicates how
+      many times to repeat the subdiagram.
+    </para>
+    
+    <para id="intro2">
+      <media id="idm157040" alt=""><image src="../../media/iteration.png" id="m2" mime-type="image/png"/></media> 
+
+      The <code>iteration</code> terminal (an output terminal), shown
+      in <link target-id="m2"/>, contains the number of completed
+      iterations. The iteration count always starts at zero. During
+      the first iteration, the iteration terminal returns
+      <code>0</code>.
+    </para>
+    
+    <para id="intro3">
+      The <code>For Loop</code> differs from the <code>While
+	Loop</code> in that the <code>For Loop</code> executes a set
+      number of times. A <code>While Loop</code> stops executing the
+      subdiagram only if the value at the conditional terminal exists.
+    </para>
+
+    <para id="intro4">
+      The <code>For Loop</code> in <link target-id="troy"/> generates a
+      random number every second for <m:math><m:cn>100</m:cn></m:math>
+      seconds and displays the random numbers in a numeric indicator.
+      <figure id="troy">
+	<media id="idm7763552" alt=""><image src="../../media/forloopex.png" mime-type="image/png"/></media>
+      </figure>
+    </para>
+
+    <section id="idm7108688">
+      <title>Wait Functions</title>
+
+      <para id="ahjh">
+	<media id="idm1178592" alt=""><image src="../../media/waitms-3b6f.png" id="m3" mime-type="image/png"/></media> 
+	The <code>Wait Until Next ms Multiple</code> function, shown
+	in <link target-id="m3"/>, monitors a millisecond counter and
+	waits until the millisecond counter reaches a multiple of the
+	amount you specify. Use this function to synchronize
+	activities. Place this function within a loop to control the
+	loop execution rate.
+      </para>
+
+      <para id="ah">
+	<media id="idp1403632" alt=""><image src="../../media/wait.png" id="m4" mime-type="image/png"/></media>
+	The <code>Wait (ms)</code> function, shown in <link target-id="m4"/>, adds the wait time to the code execution
+	time. This can cause a problem if code execution time is
+	variable.
+
+	<note id="idp2237920">
+	  The <code>Time Delay</code> Express VI, located on the
+	  <code>Functions&gt;&gt;Execution Control</code> palette, behaves
+	  similar to the <code>Wait (ms)</code> function with the
+	  addition of built-in error clusters. Refer to <link document="m12231">Clusters</link> for more information about error
+	  clusters.
+	</note>
+      </para>
+    </section>
+
+    <section id="idp2017424">
+      <title>Wait Functions</title>
+      <para id="ah1">
+	LabVIEW can represent numeric data types as signed or unsigned
+	integers (8-bit, 16-bit, or 32-bit), floating-point numeric
+	values (single-, double-, or extended-precision), or complex
+	numeric values (single-, double-, or extended-precision). When
+	you wire two or more numeric inputs of different
+	representations to a function, the function usually returns
+	output in the larger or wider format. The functions coerce the
+	smaller representations to the widest representation before
+	execution, and LabVIEW places a coercion dot on the terminal
+	where the conversion takes place.
+      </para>
+
+      <para id="ah2">
+	For example, the <code>For Loop</code> count terminal is a
+	32-bit signed integer. If you wire a double-precision,
+	floating-point numeric to the count terminal, LabVIEW converts
+	the numeric to a 32-bit signed integer. A coercion dot appears
+	on the count terminal of the first <code>For Loop</code>, as
+	shown in <link target-id="saved"/>.
+	<figure id="saved">
+	  <media id="idm418128" alt=""><image src="../../media/coercion.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+
+      <para id="ah3">
+	If you wire two different numeric data types to a numeric
+	function that expects the inputs to be the same data type,
+	LabVIEW converts one of the terminals to the same
+	representation as the other terminal. LabVIEW chooses the
+	representation that uses more bits. If the number of bits is
+	the same, LabVIEW chooses unsigned over signed.
+      </para>
+
+      <para id="ah4">
+	In the example in <link target-id="brucealmgty"/>, a 32-bit
+	signed integer (I32) and a double-precision, floating-point
+	numeric value (DBL) are wired to the <code>Divide</code>
+	function. The 32-bit signed integer is coerced since it uses
+	fewer bits than the double-precision, floating-point numeric
+	value.
+	<figure id="brucealmgty">
+	  <media id="idm1838160" alt=""><image src="../../media/funcconvert.png" mime-type="image/png"/></media>
+	</figure>
+      </para>
+
+      <para id="ah5">
+	To change the representation of a numeric object, right-click
+	the object and select <code>Representation</code> from the
+	shortcut menu. Select the data type that best represents the
+	<code>data.ut</code> data types.
+      </para>
+
+      <para id="ah6">
+	When LabVIEW converts double-precision, floating-point numeric
+	values to integers, it rounds to the nearest integer. LabVIEW
+	rounds <code>x.5</code> to the nearest even integer. For
+	example, LabVIEW rounds <m:math><m:cn>2.5</m:cn></m:math> to
+	<m:math><m:cn>2</m:cn></m:math> and
+	<m:math><m:cn>3.5</m:cn></m:math> to
+	<m:math><m:cn>4</m:cn></m:math>.
+      </para>
+
+      <para id="ah7">
+	Refer to the Data Types section of
+	Introduction to LabVIEW, of this
+	manual or to the LabVIEW Help for more information about data
+	types.
+      </para>
+    </section>
+  </content>
+</document>

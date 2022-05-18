@@ -1,0 +1,94 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Using SubVIs</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>e72abdda-9c38-47ff-859b-c1df63cf5da7</md:uuid>
+</metadata>
+
+  <content>
+    <para id="intro">
+      After you build a VI and create its icon and connector pane, you
+      can use the VI as a subVI. To place a subVI on the block
+      diagram, select <code> Functions&gt;&gt;All Functions&gt;&gt;Select a VI
+      </code>. Navigate to the VI you want to use as a subVI and and
+      double-click to place it on the block diagram.
+    </para>
+
+    <para id="intro_1">
+      You also can place an open VI on the block diagram of another
+      open VI. Use the <code>Positioning</code> tool to click the icon
+      in the upper right corner of the front panel or block diagram of
+      the VI you want to use as a subVI and drag the icon to the block
+      diagram of the other VI.  </para>
+
+    <section id="idm241872">
+      <title>Opening and Editing SubVIs</title>
+      <para id="p11">
+	To display the front panel of a subVI from the calling VI, use
+	the <code>Operating</code> or <code>Positioning</code> tool to
+	double-click the subVI on the block diagram. You also can
+	select <code>Browse&gt;&gt;This VI's SubVIs</code>.  To display
+	the block diagram of a subVI from the calling VI, press the
+	<code>&lt;Ctrl&gt;</code> key and use the <code>Operating</code>
+	or <code>Positioning</code> tool to double-click the subVI on
+	the block diagram.
+      </para>
+
+      <para id="p12">
+	Any changes you make to a subVI affect only the current
+	instance of the subVI until you save the subVI. When you save
+	the subVI, the changes affect all calls to the subVI, not just
+	the current instance.
+      </para>
+    </section>
+
+    <section id="idm5575808">
+      <title>Setting Required, Recommended, and Optional Inputs and
+	Outputs</title>
+      <para id="p21">
+	In the <code> Context Help </code> window, which you can
+	access by selecting <code> Help&gt;&gt;Show Context Help </code>
+	required terminals appear bold, recommended terminals appear
+	as plain text, and optional terminals appear dimmed. The
+	labels of optional terminals do not appear if you click the
+	<code> Hide Optional Terminals and Full Path </code> button in
+	the <code> Context Help </code> window.
+      </para>
+
+      <para id="p22">
+	You can designate which inputs and outputs are required,
+	recommended, and optional to prevent users from forgetting to
+	wire subVI terminals.
+      </para>
+      
+      <para id="p23">
+	Right-click a terminal in the connector pane and select
+	<code>This Connection Is </code> from the shortcut menu. A
+	checkmark indicates the terminal setting. Select <code>
+	  Required</code>, <code>Recommended</code>, or <code> Optional
+	</code>.
+      </para>
+      
+      <para id="p24">
+	For terminal inputs, required means that the block diagram on
+	which you placed the subVI will be broken if you do not wire
+	the required inputs.  Required is not available for terminal
+	outputs. For terminal inputs and outputs, recommended or
+	optional means that the block diagram on which you placed the
+	subVI can execute if you do not wire the recommended or
+	optional terminals. If you do not wire the terminals, the VI
+	does not generate any warnings.
+      </para>
+
+      <para id="p25">
+	LabVIEW sets inputs and outputs of VIs you create to <code>
+	  Recommended </code> by default. Set a terminal setting to
+	required only if the VI must have the input or output to run
+	properly. Refer to the Read File function located on the
+	<code> Functions&gt;&gt;All Functions&gt;&gt;File I/O </code> palette for
+	examples of required, recommended, and optional inputs and
+	outputs.
+      </para>
+      
+    </section>
+    
+  </content>
+</document>

@@ -1,0 +1,26 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Additional Exercises for Data Acquisition and Waveforms</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>6010801a-db25-45fb-818f-d2ddae6fb892</md:uuid>
+</metadata>
+
+  <content>
+    <exercise id="e1">
+      <problem id="idm6105584">
+	<para id="p1">
+	  Build a VI that continuously measures temperature twice
+	  per second and displays the temperature on a waveform
+	  chart. If the temperature goes over a preset limit, the VI
+	  should turn on a front panel LED and LED 0 on the DAQ
+	  Signal Accessory. The LEDs on the box are labeled. The
+	  chart should plot both the temperature and limit.
+	</para>
+	<para id="p2">
+	  Save the VI as <code>Temp Monitor with LED.vi</code> in
+	  the <code>C:\Exercises\LabVIEW Basics I</code> directory.
+	</para>
+      </problem>
+    </exercise>
+	    
+  </content>
+  
+</document>

@@ -1,0 +1,191 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>VISA</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>e0e520d3-8d8b-4627-ae5e-a77f3da4bcc8</md:uuid>
+</metadata>
+
+  <content>
+    <section id="s1">
+      <title>Overview</title>
+      <para id="s1p1">
+	In 1993, National Instruments joined with GenRad, Racal
+	Instruments, Tektronix, and Wavetek to form the
+	VXIplug&amp;play Systems Alliance. The goals of the alliance
+	are to ensure multivendor interoperability for VXI systems and
+	to reduce the development time for an operational system.
+      </para>
+      <para id="s1p2">
+	A key part of these goals was to develop a new standard for
+	instrument drivers, soft front panels, and I/O interface
+	software. The term VXIplug&amp;play has come to indicate the
+	conformity of hardware and software to these standards.
+      </para>
+      <para id="s1p3">
+	In directing their efforts toward software standardization,
+	VXIplug&amp;play members identified the following set of guiding
+	principles:
+	<list id="s1p3l1">
+	  <item>
+	    Maximize ease of use and performance
+	  </item>
+	  <item>
+	    Maintain long-term compatibility with the installed base
+	  </item>
+	  <item>
+	    Maintain multivendor open architectures
+	  </item>
+	  <item>
+	    Maximize multiplatform capability
+	  </item>
+	  <item>
+	    Maximize expandability and modularity in frameworks
+	  </item>
+	  <item>
+	    Maximize software reuse
+	  </item>
+	  <item>
+	    Standardize the use of system software elements
+	  </item>
+	  <item>
+	    Treat instrument drivers as part of the instrument
+	  </item>
+	  <item>
+	    Accommodate established standards
+	  </item>
+	  <item>
+	    Maximize cooperative support of users
+	  </item>
+	</list>
+      </para>
+      <para id="s1p4">
+	<term target-id="visa">VISA</term> is the VXIplug&amp;play I/O
+	software language that is the basis for the software
+	standardization efforts of the VXIplug&amp;play Systems
+	Alliance. VISA by itself does not provide instrumentation
+	programming capability. It is a high-level API that calls in
+	low-level drivers. VISA can control VXI, GPIB, serial, or
+	computer-based instruments and makes the appropriate driver
+	calls depending on the type of instrument used. When debugging
+	VISA problems, remember this hierarchy. An apparent VISA
+	problem could be an installation problem with one of the
+	drivers that VISA calls.
+      </para>
+      <para id="s1p5">
+	In LabVIEW, VISA is a single library of functions you use to
+	communicate with GPIB, serial, VXI, and computer-based
+	instruments. You do not need to use separate I/O palettes to
+	program an instrument. For example, some instruments give you
+	a choice for the type of interface. If the LabVIEW instrument
+	driver were written with functions on the <code>Functions&gt;&gt;All
+	Functions&gt;&gt;Instrument I/O&gt;&gt;GPIB</code> palette, those
+	instrument driver VIs would not work for the instrument with
+	the serial port interface. VISA solves this problem by
+	providing a single set of functions that work for any type of
+	interface. Therefore, all LabVIEW instrument drivers use VISA
+	as the I/O language.
+      </para>
+    </section>
+    <section id="s2">
+      <title>VISA Programming Terminology</title>
+      <para id="s2p1">
+	The functions you can use with a resource are operations. The
+	resource also has variables, or attributes, that contain
+	information related to the resource. The following terminology
+	is similar to that used for instrument driver VIs:
+	<list id="s2p1l1" list-type="labeled-item">
+	  <item><label>Resource</label>
+	    
+
+	    Any instrument in the system, including serial and
+	    parallel ports.
+	  </item>
+	  <item><label>Session</label>
+	    
+	    
+	    You must open a VISA session to a resource to communicate
+	    with it, similar to a communication channel. When you open
+	    a session to a resource, LabVIEW returns a VISA session
+	    number, which is a unique refnum to that instrument. You
+	    must use the session number in all subsequent VISA
+	    functions.
+	  </item>
+	  <item><label>Instrument Descriptor</label>
+	    
+
+	    Exact name of a resource. The descriptor specifies the
+	    interface type (GPIB, VXI, ASRL), the address of the
+	    device (logical address or primary address), and the VISA
+	    session type (INSTR or Event).
+	  </item>
+	</list>
+      </para>
+      <para id="s2p2">
+	The instrument descriptor is similar to a telephone number,
+	the resource is similar to the person with whom you want to
+	speak, and the session is similar to the telephone line. Each
+	call uses its own line, and crossing these lines results in an
+	error. The <link target-id="s2t1">table</link> shows the proper
+	syntax for the instrument descriptor.
+      </para>
+      <table frame="all" id="s2t1" summary="">
+	<tgroup cols="2" align="left" colsep="1" rowsep="1">
+	  <thead valign="top">
+	    <row>
+	      <entry>Interface</entry>
+	      <entry>Syntax</entry>
+	    </row>
+	  </thead>
+	  <tbody valign="top">
+	    <row>
+	      <entry>Asynchronous serial</entry>
+	      <entry><code>ASRL[board][::INSTR]</code></entry>
+            </row>
+            <row>
+	      <entry>GPIB</entry> 
+	      <entry><code>GPIB[board]::primary
+	        address[::secondary address][::INSTR]</code></entry>
+            </row>
+            <row>
+	      <entry>VXI instrument through embedded or MXIbus controller</entry>
+	      <entry><code>VXI[board]::VXI logical address[::INSTR]</code></entry>
+            </row>
+            <row>
+	      <entry>GPIB-VXI controller</entry>
+	      <entry><code>GPIB-VXI[board][::GPIB-VXI primary address]::VXI logical address[::INSTR]</code></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="s2p3">
+	You can use an alias you assign in MAX instead of the
+	instrument descriptor. (<emphasis>Mac OS</emphasis>) Edit the
+	<code>visaconf.ini</code> file to assign a VISA
+	alias. (<emphasis>UNIX</emphasis>) Use the
+	<code>visaconf</code> utility.
+      </para>
+      <para id="s2p4">
+	If you choose not to use the <code>Instrument I/O
+	Assistant</code> to automatically generate code for you, you
+	can still write a VI to communicate with the instrument. The
+	most commonly used VISA communication functions are the
+	<code>VISA Write</code> and <code>VISA Read</code>
+	functions. Most instruments require you to send information in
+	the form of a command or query before you can read information
+	back from the instrument. Therefore, the <code>VISA
+	Write</code> function is usually followed by a <code>VISA
+	Read</code> function.
+      </para>
+    </section>
+  </content>  
+  
+  <glossary>
+    <definition id="visa">
+      <term>VISA</term>
+      <meaning id="idp8688784">
+	Virtual Instrument Software Architecture (VISA) is the lower
+	layer of functions in the LabVIEW instrument driver VIs that
+	communicates with the driver software.
+      </meaning>
+    </definition>
+  </glossary>
+
+</document>

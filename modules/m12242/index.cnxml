@@ -1,0 +1,84 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Summary, Tips, and Tricks on Plotting Data</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c4568572-d65a-49aa-925a-b56cf1e0c6d5</md:uuid>
+</metadata>
+
+  <content>
+    <list id="begin">
+      <item>	
+
+	The <code>waveform chart</code> is a special numeric indicator
+	that displays one or more plots.
+
+      </item>	
+      <item>	
+
+	The <code>waveform chart</code> has the following three update
+	modes:
+
+	<list id="sub">
+	  <item>	
+
+	    A <code>strip chart</code> shows running data continuously
+	    scrolling from left to right across the chart.
+
+	  </item>	
+	  <item>	
+
+	    A <code>scope chart</code> shows one item of data, such as
+	    a pulse or wave, scrolling partway across the chart from
+	    left to the right.
+
+	  </item>	
+
+	  <item>	
+	  
+	    A <code>sweep display</code> is similar to an EKG
+	    display. A sweep works similarly to a scope except it
+	    shows the old data on the right and the new data on the
+	    left separated by a vertical line.  </item>
+	</list>
+      </item>
+      <item> 
+
+	<code>Waveform graphs</code> and <code>XY graphs</code>
+	display data from arrays.
+
+      </item>	
+      <item>	
+
+	Right-click a <code>waveform chart</code> or <code>graph</code>
+	or its components to set attributes of the chart and its
+	plots.
+
+      </item>	
+      <item>	
+
+	You can display more than one plot on a graph using the
+	<code>Build Array</code> function located on the
+	<code>Functions&gt;&gt;All Functions&gt;&gt;Array</code> palette and the
+	Bundle function located on the <code>Functions&gt;&gt;All
+	Functions&gt;&gt;Cluster</code> palette for charts and XY
+	graphs. The graph becomes a multiplot graph when you wire the
+	array of outputs to the terminal.
+
+      </item>	
+      <item>	
+
+	You can use intensity charts and graphs to plot
+	three-dimensional data. The third dimension is represented by
+	different colors corresponding to a color mapping that you
+	define. Intensity charts and graphs are commonly used in
+	conjunction with spectrum analysis, temperature display, and
+	image processing.
+
+      </item>	
+      <item>	
+
+	When you wire data to charts and graphs, use the <code>Context
+	Help</code> window to determine how to wire them.
+      </item>
+    </list>
+  </content>
+  
+</document>
