@@ -55,7 +55,7 @@
 	      <list id="smnfl" list-type="labeled-item">
 		
 		<item> 
-		  <media id="idp4390256" alt=""><image src="../../media/forloop-2adb.png" mime-type="image/png"/></media> 
+		  <media id="idp4390256" alt=""><image src="../../media/forloop.png" mime-type="image/png"/></media> 
 		  Place a <code>For Loop</code>, located on the <code>
 		    Functions&gt;&gt;All Functions&gt;&gt;Structures </code> palette, on
 		  the block diagram. Right-click the <code>Loop
@@ -94,7 +94,7 @@
 		  to every second.  </item>
 
 		<item> 
-		  <media id="idm6382288" alt=""><image src="../../media/incremicon-c838.png" mime-type="image/png"/></media>
+		  <media id="idm6382288" alt=""><image src="../../media/incremicon.png" mime-type="image/png"/></media>
 		  Place the <code>Increment</code> function, located
 		  on the <code>Functions&gt;&gt;Arithmetic &amp;
 		    Comparison&gt;&gt;Express Numeric </code> palette, on the

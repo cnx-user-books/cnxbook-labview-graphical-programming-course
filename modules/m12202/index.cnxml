@@ -42,7 +42,7 @@
 	      <figure id="f2">
 		<media id="idp1095136" alt=""><image src="../../media/debugbd.png" mime-type="image/png"/></media>
 	      </figure>
-	      <media id="idp1096096" alt=""><image src="../../media/randnum-e63f.png" mime-type="image/png"/></media>
+	      <media id="idp1096096" alt=""><image src="../../media/randnum.png" mime-type="image/png"/></media>
 	      <!--different para-->
 	      The <code>Random Number (0-1)</code> function, located on
 	      the <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
@@ -130,7 +130,7 @@
 	      Animate the flow of data through the block diagram.
 	      <list id="list5" list-type="enumerated">
 		<item>
-		  <media id="idp292800" alt=""><image src="../../media/exehilit-bc04.png" id="m2" mime-type="image/png"/></media> Click the
+		  <media id="idp292800" alt=""><image src="../../media/exehilit.png" id="m2" mime-type="image/png"/></media> Click the
 		  <code>Highlight Execution</code> button, shown in <link target-id="m2"/>, on the toolbar to enable execution
 		  highlighting.
 		</item>

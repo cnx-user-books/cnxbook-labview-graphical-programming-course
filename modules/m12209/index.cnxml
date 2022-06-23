@@ -189,7 +189,7 @@
 	      Select <code>Window&gt;&gt;Show Block Diagram</code> to display the
 	      <link target-id="tepsa">block diagram</link>.
 	      <figure id="tepsa">
-		<media id="idm12720" alt=""><image src="../../media/thermbd-b212.png" mime-type="image/png"/></media> 
+		<media id="idm12720" alt=""><image src="../../media/thermbd.png" mime-type="image/png"/></media> 
 	      </figure>
 	    </item>
 	    
@@ -261,7 +261,7 @@
 	    </item>
 
 	    <item>
-	      <media id="idm7015008" alt=""><image src="../../media/selecttherm-342a.png" mime-type="image/png"/></media> Place the
+	      <media id="idm7015008" alt=""><image src="../../media/selecttherm.png" mime-type="image/png"/></media> Place the
 	      <code>Select</code> function, located on the
 	      <code>Functions&gt;&gt;Arithmetic &amp; Comparison&gt;&gt;Express
 		Comparison</code> palette, on the block diagram. This

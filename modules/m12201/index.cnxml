@@ -27,7 +27,7 @@
       <section id="section2">
 	<title>Execution Highlighting</title>
 	<para id="para3">
-	  <media id="idp2504176" alt=""><image src="../../media/exehilit-bc04.png" id="m1" mime-type="image/png"/></media> View
+	  <media id="idp2504176" alt=""><image src="../../media/exehilit.png" id="m1" mime-type="image/png"/></media> View
 	  an animation of the execution of the block diagram by
 	  clicking the <code>Highlight Execution</code> button, shown
 	  in <link target-id="m1"/>. Execution highlighting shows the
