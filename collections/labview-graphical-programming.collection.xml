@@ -1,230 +1,63 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Textbook">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Textbook" authors="National Instruments">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
-  <md:content-id>col11408</md:content-id>
-  <md:title>LabVIEW Graphical Programming</md:title>
-  
-  
-  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
-  <md:language>en</md:language>
-
-  
-
-  
-  
-  
-  
-  
-
-  <md:uuid>5b64890b-c13b-4ee5-b355-6f7b8c6e26e0</md:uuid>
-<md:slug>labview-graphical-programming</md:slug>
-</metadata>
-
+    <md:content-id>col11408</md:content-id>
+    <md:title>LabVIEW Graphical Programming</md:title>
+    <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+    <md:language>en</md:language>
+    <md:uuid>5b64890b-c13b-4ee5-b355-6f7b8c6e26e0</md:uuid>
+    <md:slug>labview-graphical-programming</md:slug>
+  </metadata>
   <col:content>
-    
-      
-        
-      <col:subcollection>
-        <md:title>Introduction</md:title>
-        
-        
-        
-
-        <col:content>
-          
-    
-      <col:module document="m12192"/>
-        
-      
-    
-    
-      <col:module document="m12193"/>
-        
-      
-    
-    
-      <col:module document="m12194"/>
-        
-      
-    
-    
-      <col:module document="m12195"/>
-        
-      
-    
-    
-      <col:module document="m12196"/>
-        
-      
-    
-    
-      <col:module document="m12199"/>
-        
-      
-    
-    
-      <col:module document="m12200"/>
-        
-      
-    
-    
-      <col:module document="m12201"/>
-        
-      
-    
-    
-      <col:module document="m12202"/>
-        
-      
-    
-    
-      <col:module document="m12203"/>
-        
-      
-    
-        </col:content>
-      </col:subcollection>
-    
-    
-      
-        
-      <col:subcollection>
-        <md:title>Modular Programming</md:title>
-        
-        
-        
-
-        <col:content>
-          
-    
-      <col:module document="m12204"/>
-        
-      
-    
-    
-      <col:module document="m12205"/>
-        
-      
-    
-    
-      <col:module document="m12207"/>
-        
-      
-    
-    
-      <col:module document="m12208"/>
-        
-      
-    
-    
-      <col:module document="m12209"/>
-        
-      
-    
-    
-      <col:module document="m12210"/>
-        
-      
-    
-    
-      <col:module document="m12211"/>
-        
-      
-    
-        </col:content>
-      </col:subcollection>
-    
-    
-      
-        
-      <col:subcollection>
-        <md:title>Repetition and Loops</md:title>
-        
-        
-        
-
-        <col:content>
-          
-    
-      <col:module document="m12212"/>
-        
-      
-    
-    
-      <col:module document="m12214"/>
-        
-      
-    
-    
-      <col:module document="m12216"/>
-        
-      
-    
-    
-      <col:module document="m12219"/>
-        
-      
-    
-        </col:content>
-      </col:subcollection>
-    
-    
-      
-        
-      <col:subcollection>
-        <md:title>Customizing VIs</md:title>
-        
-        
-        
-
-        <col:content>
-          
-    
-      <col:module document="m12299"/>
-        
-      
-    
-    
-      <col:module document="m12300"/>
-        
-      
-    
-    
-      <col:module document="m12301"/>
-        
-      
-    
-    
-      <col:module document="m12302"/>
-        
-      
-    
-    
-      <col:module document="m12303"/>
-        
-      
-    
-    
-      <col:module document="m12304"/>
-        
-      
-    
-    
-      <col:module document="m12305"/>
-        
-      
-    
-    
-      <col:module document="m12306"/>
-        
-      
-    
-    
-      <col:module document="m12307"/>
-        
-      
-    
-        </col:content>
-      </col:subcollection>
-    
+    <col:subcollection>
+      <md:title>Introduction</md:title>
+      <col:content>
+        <col:module document="m12192"/>
+        <col:module document="m12193"/>
+        <col:module document="m12194"/>
+        <col:module document="m12195"/>
+        <col:module document="m12196"/>
+        <col:module document="m12199"/>
+        <col:module document="m12200"/>
+        <col:module document="m12201"/>
+        <col:module document="m12202"/>
+        <col:module document="m12203"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Modular Programming</md:title>
+      <col:content>
+        <col:module document="m12204"/>
+        <col:module document="m12205"/>
+        <col:module document="m12207"/>
+        <col:module document="m12208"/>
+        <col:module document="m12209"/>
+        <col:module document="m12210"/>
+        <col:module document="m12211"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Repetition and Loops</md:title>
+      <col:content>
+        <col:module document="m12212"/>
+        <col:module document="m12214"/>
+        <col:module document="m12216"/>
+        <col:module document="m12219"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
+      <md:title>Customizing VIs</md:title>
+      <col:content>
+        <col:module document="m12299"/>
+        <col:module document="m12300"/>
+        <col:module document="m12301"/>
+        <col:module document="m12302"/>
+        <col:module document="m12303"/>
+        <col:module document="m12304"/>
+        <col:module document="m12305"/>
+        <col:module document="m12306"/>
+        <col:module document="m12307"/>
+      </col:content>
+    </col:subcollection>
   </col:content>
 </col:collection>
